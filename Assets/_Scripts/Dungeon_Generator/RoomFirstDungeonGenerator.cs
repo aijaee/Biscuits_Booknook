@@ -17,6 +17,9 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private bool randomWalkRooms = false;
     [SerializeField]
     private PlayerSpawner playerSpawner;
+    [SerializeField] private EnemySpawner enemySpawner; // Assign in Inspector
+    [SerializeField] private GridManager gridManager; // Assign in Inspector
+    [SerializeField] private LayerMask unwalkableMask; // Assign in Inspector
 
 
     private void Start()
@@ -58,12 +61,38 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
 
+        // --- Initialize GridManager for pathfinding ---
+        if (gridManager != null)
+        {
+            gridManager.Initialize(new Vector2Int(dungeonWidth, dungeonHeight), 1f, unwalkableMask);
+        }
+        else
+        {
+            Debug.LogWarning("GridManager reference not set in RoomFirstDungeonGenerator!");
+        }
+
         // Now spawn player inside the actual floor tiles, ensuring it’s inside the map
         if (playerSpawner != null && roomsList.Count > 0)
         {
             Vector2Int roomCenter = (Vector2Int)Vector3Int.RoundToInt(roomsList[0].center);
             Vector2Int spawnPosition = FindClosestFloorTile(roomCenter, floor); // Ensures it's an actual walkable tile
             playerSpawner.SpawnPlayer(spawnPosition);
+        }
+
+        // --- Spawn enemies ---
+        if (enemySpawner != null && floor.Count > 0)
+        {
+            int enemyCount = enemySpawner.EnemyCount; // <-- Use the value from EnemySpawner
+            List<Vector2Int> floorList = new List<Vector2Int>(floor);
+            List<Vector2Int> enemySpawns = new List<Vector2Int>();
+            System.Random rng = new System.Random();
+
+            for (int i = 0; i < enemyCount; i++)
+            {
+                Vector2Int spawnTile = floorList[rng.Next(floorList.Count)];
+                enemySpawns.Add(spawnTile);
+            }
+            enemySpawner.SpawnEnemies(enemySpawns);
         }
     }
 

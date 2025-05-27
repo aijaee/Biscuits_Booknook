@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem.OnScreen;
+using UnityEngine.UI;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] private OnScreenButton onScreenDashButton;
     [SerializeField] private OnScreenButton onScreenAttackButton;
     [SerializeField] private VariableJoystick variableJoystick;
+    [SerializeField] private GameObject deathScreen; // Assign DeathScreen in Inspector
+    [SerializeField] private Image hpBarFiller; // Assign HP bar filler Image in Inspector
 
     private GameObject playerInstance;
     private CameraFollow cameraFollow;
@@ -33,6 +36,22 @@ public class PlayerSpawner : MonoBehaviour
         }
 
         playerInstance = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+
+        // Set deathScreen and hpBarFiller reference on PlayerController
+        var playerController = playerInstance.GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            if (deathScreen != null)
+            {
+                playerController.deathScreen = deathScreen;
+                deathScreen.SetActive(false);
+            }
+            if (hpBarFiller != null)
+            {
+                playerController.hpBarFiller = hpBarFiller;
+                playerController.UpdateHPBar();
+            }
+        }
 
         Rigidbody2D rb = playerInstance.GetComponent<Rigidbody2D>();
         Animator animator = playerInstance.GetComponentInChildren<Animator>();
