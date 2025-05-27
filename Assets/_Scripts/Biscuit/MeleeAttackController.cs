@@ -16,6 +16,9 @@ public class MeleeAttackController : MonoBehaviour
     public GameObject meleeWeapon;
     [SerializeField] public OnScreenButton onScreenAttackButton;
 
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+
     private float lastAttackTime = -Mathf.Infinity;
     private bool buttonPressed = false;
 
@@ -117,7 +120,7 @@ public class MeleeAttackController : MonoBehaviour
     private void ShowWeaponSwing()
     {
         meleeWeapon.SetActive(true);
-        Invoke(nameof(HideWeaponSwing), 0.1f);
+        Invoke(nameof(HideWeaponSwing), 0.4f);
     }
 
     private void HideWeaponSwing()

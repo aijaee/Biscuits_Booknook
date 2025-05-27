@@ -22,7 +22,14 @@ public class PlayerSpawner : MonoBehaviour
 
         if (playerInstance != null)
         {
-            Destroy(playerInstance);
+            if (Application.isPlaying)
+            {
+                Object.Destroy(playerInstance);
+            }
+            else
+            {
+                Object.DestroyImmediate(playerInstance);
+            }
         }
 
         playerInstance = Instantiate(playerPrefab, spawnPos, Quaternion.identity);

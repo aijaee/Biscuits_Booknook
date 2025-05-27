@@ -6,15 +6,17 @@ public static class WallTypesHelper
 {
     public static HashSet<int> wallTop = new HashSet<int>
     {
-        0b1111,
+        // 0b1111,
         0b0110,
         0b0011,
         0b0010,
-        0b1010,
-        0b1100,
-        0b1110,
-        0b1011,
-        0b0111
+        // 0b1010,
+        // 0b1100,
+        // 0b1110,
+        // 0b1011,
+        // 0b0111
+        0b11011100,
+        0b11011101
     };
 
     public static HashSet<int> wallSideLeft = new HashSet<int>
@@ -27,9 +29,12 @@ public static class WallTypesHelper
         0b0001
     };
 
-    public static HashSet<int> wallBottm = new HashSet<int>
+    public static HashSet<int> wallBottom = new HashSet<int>
     {
-        0b1000
+        0b1000,
+        0b11011001,
+        0b11011101,
+        0b11111101
     };
 
     public static HashSet<int> wallInnerCornerDownLeft = new HashSet<int>
@@ -75,6 +80,27 @@ public static class WallTypesHelper
         0b11000100,
         0b01000010
 
+
+    };
+
+    public static HashSet<int> wallInnerCornerUpLeft = new HashSet<int>
+    {
+        0b00111100,
+        0b01111100,
+        0b01111000,
+        0b10000010,
+        0b01110100,
+    };
+
+        public static HashSet<int> wallInnerCornerUpRight = new HashSet<int>
+    {
+        0b00011111,
+        0b00011110,
+        0b00001111,
+        0b00111111,
+        0b00001110,
+        0b00010111,
+        0b00011101
     };
 
     public static HashSet<int> wallDiagonalCornerDownLeft = new HashSet<int>
@@ -143,11 +169,19 @@ public static class WallTypesHelper
         0b01010110,
         0b11010101,
         0b11010100,
-        0b10010101
-
+        0b10010101,
+        0b01110110,
+        0b01110111,
+        0b01111111,
+        0b11110111,
+        0b11011001,
+        0b11011101,
+        0b11111101,
+        0b10011101,
+        0b11011111,
     };
 
-    public static HashSet<int> wallBottmEightDirections = new HashSet<int>
+    public static HashSet<int> wallBottomEightDirections = new HashSet<int>
     {
         0b01000001
     };

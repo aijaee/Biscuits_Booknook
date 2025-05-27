@@ -10,8 +10,9 @@ public class TilemapVisualizer : MonoBehaviour
     private Tilemap floorTilemap, wallTilemap;
     [SerializeField]
     private TileBase floorTile, wallTop, wallSideRight, wallSiderLeft, wallBottom, wallFull, 
-        wallInnerCornerDownLeft, wallInnerCornerDownRight, 
-        wallDiagonalCornerDownRight, wallDiagonalCornerDownLeft, wallDiagonalCornerUpRight, wallDiagonalCornerUpLeft;
+    wallInnerCornerDownLeft, wallInnerCornerDownRight, 
+    wallDiagonalCornerDownRight, wallDiagonalCornerDownLeft, wallDiagonalCornerUpRight, wallDiagonalCornerUpLeft,
+    wallInnerCornerUpLeft, wallInnerCornerUpRight;
 
     public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions)
     {
@@ -41,7 +42,7 @@ public class TilemapVisualizer : MonoBehaviour
         {
             tile = wallSiderLeft;
         }
-        else if (WallTypesHelper.wallBottm.Contains(typeAsInt))
+        else if (WallTypesHelper.wallBottom.Contains(typeAsInt))
         {
             tile = wallBottom;
         }
@@ -71,7 +72,15 @@ public class TilemapVisualizer : MonoBehaviour
         int typeASInt = Convert.ToInt32(binaryType, 2);
         TileBase tile = null;
 
-        if (WallTypesHelper.wallInnerCornerDownLeft.Contains(typeASInt))
+        if (WallTypesHelper.wallInnerCornerUpLeft.Contains(typeASInt))
+        {
+            tile = wallInnerCornerUpLeft;
+        }
+        else if (WallTypesHelper.wallInnerCornerUpRight.Contains(typeASInt))
+        {
+            tile = wallInnerCornerUpRight;
+        }
+        else if (WallTypesHelper.wallInnerCornerDownLeft.Contains(typeASInt))
         {
             tile = wallInnerCornerDownLeft;
         }
@@ -99,7 +108,7 @@ public class TilemapVisualizer : MonoBehaviour
         {
             tile = wallFull;
         }
-        else if (WallTypesHelper.wallBottmEightDirections.Contains(typeASInt))
+        else if (WallTypesHelper.wallBottomEightDirections.Contains(typeASInt))
         {
             tile = wallBottom;
         }
