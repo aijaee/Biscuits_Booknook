@@ -20,15 +20,17 @@ public class PlayerSpawner : MonoBehaviour
     {
         Vector3 spawnPos = new Vector3(spawnTile.x + 0.5f, spawnTile.y + 0.5f, 0);
 
-        if (playerInstance != null)
+        // Destroy any existing player in the scene, even if it wasn't spawned by this script
+        var existingPlayer = GameObject.FindWithTag("Player");
+        if (existingPlayer != null)
         {
             if (Application.isPlaying)
             {
-                Object.Destroy(playerInstance);
+                Destroy(existingPlayer);
             }
             else
             {
-                Object.DestroyImmediate(playerInstance);
+                DestroyImmediate(existingPlayer);
             }
         }
 
@@ -64,6 +66,7 @@ public class PlayerSpawner : MonoBehaviour
             cameraFollow.SetTarget(playerInstance.transform);
         }
     }
+
 
     public Transform GetPlayerTransform()
     {
