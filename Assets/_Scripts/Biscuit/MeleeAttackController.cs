@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.OnScreen;
-using System.Collections;
 
-public class MeleeAttack : MonoBehaviour
+public class MeleeAttackController : MonoBehaviour
 {
     [Header("Attack Settings")]
     public Transform swingPoint;
@@ -19,6 +18,8 @@ public class MeleeAttack : MonoBehaviour
 
     private float lastAttackTime = -Mathf.Infinity;
     private bool buttonPressed = false;
+
+    private Vector2 lastMoveDirection = Vector2.right; // Default direction
 
     private void Start()
     {
@@ -49,11 +50,16 @@ public class MeleeAttack : MonoBehaviour
             buttonPressed = true;
     }
 
+    public void UpdateMovementDirection(Vector2 moveInput)
+    {
+        if (moveInput.sqrMagnitude > 0.01f)
+            lastMoveDirection = moveInput.normalized;
+    }
+
     public void PerformAttack()
     {
         if (Time.time - lastAttackTime < attackCooldown) return;
 
-        // Auto-aim at nearest enemy
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, detectionRange, enemyLayers);
         Transform closestEnemy = GetClosestEnemy(enemies);
 
@@ -64,12 +70,11 @@ public class MeleeAttack : MonoBehaviour
         }
         else
         {
-            PositionSwingPoint(Vector2.right); // Default right swing
+            PositionSwingPoint(lastMoveDirection); // Use movement direction
         }
 
-        // Damage logic
         DamageEnemiesInRange();
-        ShowWeaponSwing(); // Visual feedback
+        ShowWeaponSwing();
         lastAttackTime = Time.time;
     }
 
@@ -92,8 +97,9 @@ public class MeleeAttack : MonoBehaviour
 
     private void PositionSwingPoint(Vector2 direction)
     {
-        swingPoint.position = (Vector2)transform.position + direction * swingRange;
-        swingPoint.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        swingPoint.localPosition = direction * swingRange;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        swingPoint.localRotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void DamageEnemiesInRange()
