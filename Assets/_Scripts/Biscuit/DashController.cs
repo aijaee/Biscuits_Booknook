@@ -11,7 +11,7 @@ public class DashController : MonoBehaviour
     public float dashCooldown = 1f;
 
     [Header("Input")]
-    [SerializeField] private OnScreenButton onScreenDashButton;
+    [SerializeField] public OnScreenButton onScreenDashButton;
 
     [Header("References")]
     public Rigidbody2D rb;

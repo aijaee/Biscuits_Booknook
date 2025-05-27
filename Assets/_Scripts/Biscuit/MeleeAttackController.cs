@@ -14,7 +14,7 @@ public class MeleeAttackController : MonoBehaviour
     [Header("References")]
     public LayerMask enemyLayers;
     public GameObject meleeWeapon;
-    [SerializeField] private OnScreenButton onScreenAttackButton;
+    [SerializeField] public OnScreenButton onScreenAttackButton;
 
     private float lastAttackTime = -Mathf.Infinity;
     private bool buttonPressed = false;

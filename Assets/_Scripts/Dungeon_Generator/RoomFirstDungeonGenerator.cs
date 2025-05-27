@@ -19,6 +19,11 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private PlayerSpawner playerSpawner;
 
 
+    private void Start()
+    {
+        RunProceduralGeneration();
+    }
+
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
@@ -26,6 +31,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void CreateRooms()
     {
+        tilemapVisualizer.Clear();  
+        
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition, new Vector3Int(dungeonWidth, dungeonHeight, 0)), minRoomWidth, minRoomHeight);
 
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
