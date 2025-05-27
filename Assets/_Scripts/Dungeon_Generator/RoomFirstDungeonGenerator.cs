@@ -15,6 +15,9 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private int offset = 1;
     [SerializeField]
     private bool randomWalkRooms = false;
+    [SerializeField]
+    private PlayerSpawner playerSpawner;
+
 
     protected override void RunProceduralGeneration()
     {
@@ -35,7 +38,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         {
             floor = CreateSimpleRooms(roomsList);
         }
-        
 
         List<Vector2Int> roomCenters = new List<Vector2Int>();
         foreach (var room in roomsList)
@@ -48,8 +50,33 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
+
+        // Now spawn player inside the actual floor tiles, ensuring it’s inside the map
+        if (playerSpawner != null && roomsList.Count > 0)
+        {
+            Vector2Int roomCenter = (Vector2Int)Vector3Int.RoundToInt(roomsList[0].center);
+            Vector2Int spawnPosition = FindClosestFloorTile(roomCenter, floor); // Ensures it's an actual walkable tile
+            playerSpawner.SpawnPlayer(spawnPosition);
+        }
     }
 
+    private Vector2Int FindClosestFloorTile(Vector2Int center, HashSet<Vector2Int> floorTiles)
+    {
+        Vector2Int closest = center;
+        float minDist = float.MaxValue;
+
+        foreach (var floorTile in floorTiles)
+        {
+            float dist = Vector2Int.Distance(floorTile, center);
+            if (dist < minDist)
+            {
+                minDist = dist;
+                closest = floorTile;
+            }
+        }
+        return closest;
+    }
+ 
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)
     {
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
@@ -60,7 +87,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             var roomFloor = RunRandomWalk(randomWalkParameters, roomCenter);
             foreach (var position in roomFloor)
             {
-                if(position.x >= (roomBounds.xMin + offset) && position.x <= (roomBounds.xMax - offset) && position.y >= (roomBounds.yMin + offset) && position.y <= (roomBounds.yMax - offset))
+                if (position.x >= (roomBounds.xMin + offset) && position.x <= (roomBounds.xMax - offset) && position.y >= (roomBounds.yMin + offset) && position.y <= (roomBounds.yMax - offset))
                 {
                     floor.Add(position);
                 }
