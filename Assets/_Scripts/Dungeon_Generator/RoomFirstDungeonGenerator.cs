@@ -67,10 +67,28 @@ public class RoomData
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
+// MINE
     [Header("Room Size Constraints")]
     [SerializeField] private int minCombatRoomWidth = 4, minCombatRoomHeight = 4;
     [SerializeField] private int minPuzzleRoomWidth = 6, minPuzzleRoomHeight = 6;
     [SerializeField] private int minBossRoomWidth = 8, minBossRoomHeight = 8;
+// MINE
+// YOURS
+    [SerializeField]
+    private int minRoomWidth = 4, minRoomHeight = 4;
+    [SerializeField]
+    private int dungeonWidth = 20, dungeonHeight = 20;
+    [SerializeField]
+    [Range(0,10)]
+    private int offset = 1;
+    [SerializeField]
+    private bool randomWalkRooms = false;
+    [SerializeField]
+    private PlayerSpawner playerSpawner;
+    [SerializeField] private EnemySpawner enemySpawner; // Assign in Inspector
+    [SerializeField] private GridManager gridManager; // Assign in Inspector
+    [SerializeField] private LayerMask unwalkableMask; // Assign in Inspector
+// YOURS
 
     [Header("Dungeon Settings")]
     [SerializeField] private int dungeonWidth = 20, dungeonHeight = 20;
@@ -145,7 +163,23 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
 
+// MINE
         if (playerSpawner != null)
+// MINE
+//YOURS
+            // --- Initialize GridManager for pathfinding ---
+            if (gridManager != null)
+            {
+                gridManager.Initialize(new Vector2Int(dungeonWidth, dungeonHeight), 1f, unwalkableMask);
+            }
+            else
+            {
+                Debug.LogWarning("GridManager reference not set in RoomFirstDungeonGenerator!");
+            }
+
+        // Now spawn player inside the actual floor tiles, ensuring it’s inside the map
+        if (playerSpawner != null && roomsList.Count > 0)
+// YOURS
         {
             Vector2Int spawnPos = FindClosestFloorTile(roomDataList[0].Center, floor);
             playerSpawner.SpawnPlayer(spawnPos);
@@ -157,6 +191,22 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         foreach (var room in roomDataList)
         {
             Debug.Log($"Room at {room.Center} is a {room.Type} room with bounds {room.Bounds}");
+        }
+
+        // --- Spawn enemies ---
+        if (enemySpawner != null && floor.Count > 0)
+        {
+            int enemyCount = enemySpawner.EnemyCount; // <-- Use the value from EnemySpawner
+            List<Vector2Int> floorList = new List<Vector2Int>(floor);
+            List<Vector2Int> enemySpawns = new List<Vector2Int>();
+            System.Random rng = new System.Random();
+
+            for (int i = 0; i < enemyCount; i++)
+            {
+                Vector2Int spawnTile = floorList[rng.Next(floorList.Count)];
+                enemySpawns.Add(spawnTile);
+            }
+            enemySpawner.SpawnEnemies(enemySpawns);
         }
     }
 
