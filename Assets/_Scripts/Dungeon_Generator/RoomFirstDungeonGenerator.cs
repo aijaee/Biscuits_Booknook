@@ -76,15 +76,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 // YOURS
     [SerializeField]
     private int minRoomWidth = 4, minRoomHeight = 4;
-    [SerializeField]
-    private int dungeonWidth = 20, dungeonHeight = 20;
-    [SerializeField]
-    [Range(0,10)]
-    private int offset = 1;
-    [SerializeField]
-    private bool randomWalkRooms = false;
-    [SerializeField]
-    private PlayerSpawner playerSpawner;
     [SerializeField] private EnemySpawner enemySpawner; // Assign in Inspector
     [SerializeField] private GridManager gridManager; // Assign in Inspector
     [SerializeField] private LayerMask unwalkableMask; // Assign in Inspector
@@ -176,9 +167,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             {
                 Debug.LogWarning("GridManager reference not set in RoomFirstDungeonGenerator!");
             }
-
-        // Now spawn player inside the actual floor tiles, ensuring it’s inside the map
-        if (playerSpawner != null && roomsList.Count > 0)
 // YOURS
         {
             Vector2Int spawnPos = FindClosestFloorTile(roomDataList[0].Center, floor);
