@@ -74,8 +74,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private int minBossRoomWidth = 8, minBossRoomHeight = 8;
 // MINE
 // YOURS
-    [SerializeField]
-    private int minRoomWidth = 4, minRoomHeight = 4;
     [SerializeField] private EnemySpawner enemySpawner; // Assign in Inspector
     [SerializeField] private GridManager gridManager; // Assign in Inspector
     [SerializeField] private LayerMask unwalkableMask; // Assign in Inspector
@@ -154,20 +152,16 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
 
-// MINE
-        if (playerSpawner != null)
-// MINE
-//YOURS
-            // --- Initialize GridManager for pathfinding ---
-            if (gridManager != null)
-            {
-                gridManager.Initialize(new Vector2Int(dungeonWidth, dungeonHeight), 1f, unwalkableMask);
-            }
-            else
-            {
-                Debug.LogWarning("GridManager reference not set in RoomFirstDungeonGenerator!");
-            }
-// YOURS
+        // --- Initialize GridManager for pathfinding ---
+        if (gridManager != null)
+        {
+            gridManager.Initialize(new Vector2Int(dungeonWidth, dungeonHeight), 1f, unwalkableMask);
+        }
+        else
+        {
+            Debug.LogWarning("GridManager reference not set in RoomFirstDungeonGenerator!");
+        }
+
         {
             Vector2Int spawnPos = FindClosestFloorTile(roomDataList[0].Center, floor);
             playerSpawner.SpawnPlayer(spawnPos);
@@ -181,19 +175,17 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             Debug.Log($"Room at {room.Center} is a {room.Type} room with bounds {room.Bounds}");
         }
 
+        // --- Set valid spawn tiles for EnemySpawner ---
+        if (enemySpawner != null)
+        {
+            enemySpawner.SetValidSpawnTiles(floor);
+        }
+
         // --- Spawn enemies ---
         if (enemySpawner != null && floor.Count > 0)
         {
-            int enemyCount = enemySpawner.EnemyCount; // <-- Use the value from EnemySpawner
-            List<Vector2Int> floorList = new List<Vector2Int>(floor);
-            List<Vector2Int> enemySpawns = new List<Vector2Int>();
-            System.Random rng = new System.Random();
-
-            for (int i = 0; i < enemyCount; i++)
-            {
-                Vector2Int spawnTile = floorList[rng.Next(floorList.Count)];
-                enemySpawns.Add(spawnTile);
-            }
+            int enemyCount = enemySpawner.EnemyCount;
+            List<Vector2Int> enemySpawns = enemySpawner.GetRandomWalkableTiles(enemyCount);
             enemySpawner.SpawnEnemies(enemySpawns);
         }
     }

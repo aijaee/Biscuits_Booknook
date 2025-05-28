@@ -100,4 +100,12 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player attacks!");
         // Your attack logic here
     }
+
+    public void Heal(int amount)
+    {
+        if (isDead) return;
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        UpdateHPBar();
+        Debug.Log($"{gameObject.name} healed {amount} HP. Current HP: {currentHealth}");
+    }
 }

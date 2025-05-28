@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: e3fb8da8a280e7a4dbe2104a71ada409
   - enabled: 1
-    path: Assets/Scenes/2TestGameplay.unity
-    guid: 4b417ca5c671e2340af0e8e31e8bffd8
+    path: Assets/Scenes/3TestGameplay.unity
+    guid: 6a3e6e5e47ae18240b2c5441226f44be
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 0c3b5650c5f447c4c9f761e017588382, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: ea0a49d91f33c704389169f55260ec82, type: 2}
