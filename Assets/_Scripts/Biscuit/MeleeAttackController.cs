@@ -40,6 +40,9 @@ public class MeleeAttackController : MonoBehaviour
             OnAttackButtonPressed();
         }
 
+        if (Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
+            OnAttackButtonPressed();
+
         if (buttonPressed)
         {
             PerformAttack();

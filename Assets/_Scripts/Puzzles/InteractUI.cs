@@ -19,6 +19,24 @@ public class InteractUI : MonoBehaviour
         interactButtonObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            var pm = PassageMenuUI.Instance;
+            // if the passage menu GameObject is active, close it; otherwise interact
+            if (pm != null && pm.gameObject.activeSelf)
+            {
+                pm.CloseMenu();
+                ShowButton(false);
+            }
+            else
+            {
+                OnInteractButtonPressed();
+            }
+        }
+    }
+
     public void SetCurrentInteractable(IInteractable interactable)
     {
         currentInteractable = interactable;
