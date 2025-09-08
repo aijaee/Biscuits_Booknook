@@ -183,7 +183,7 @@ public class EnemyController : MonoBehaviour
                 return;
             }
 
-            Debug.Log($"{gameObject.name} moving from {currentPosition} towards {nextPosition} (moveTo: {moveTo})");
+           // Debug.Log($"{gameObject.name} moving from {currentPosition} towards {nextPosition} (moveTo: {moveTo})");
 
             if (rb != null)
                 rb.MovePosition(moveTo);

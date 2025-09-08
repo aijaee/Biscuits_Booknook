@@ -543,4 +543,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
-  deathScreenPrefab: {fileID: 2298033983116332245, guid: 98cc2b6de4177ba4a8867971a33f1106, type: 3}
+  deathScreen: {fileID: 0}
+  hpBarFiller: {fileID: 0}

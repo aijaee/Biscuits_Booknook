@@ -22,8 +22,12 @@ public class JoystickPlayerExample : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 direction = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
-        Debug.Log($"Joystick input: {direction}, lastDirection before update: {lastDirection}");
+        Vector2 direction = new Vector2(
+            Input.GetAxisRaw("Horizontal"),
+            Input.GetAxisRaw("Vertical")
+        );
+
+        //Debug.Log($"Input direction: {direction}, lastDirection before update: {lastDirection}");
 
         if (!isDashing)
         {
@@ -39,7 +43,7 @@ public class JoystickPlayerExample : MonoBehaviour
                 animator.SetFloat("Speed", direction.sqrMagnitude);
 
                 lastDirection = direction.normalized;
-                Debug.Log($"Updated lastDirection to {lastDirection}");
+                //Debug.Log($"Updated lastDirection to {lastDirection}");
             }
             else
             {

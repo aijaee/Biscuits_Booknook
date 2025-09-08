@@ -29,6 +29,11 @@ public class DashController : MonoBehaviour
         {
             TryDash();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            TryDash();
+        }
     }
 
     private void TryDash()
