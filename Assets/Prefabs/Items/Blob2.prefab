@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1672986966730869711}
   - component: {fileID: 1324639499070475004}
-  - component: {fileID: -7064398652297892294}
+  - component: {fileID: -176884959886198379}
+  - component: {fileID: 4080614473519733906}
   m_Layer: 0
   m_Name: Blob2
   m_TagString: Untagged
@@ -74,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 1205215129
+  m_SortingLayer: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: -2039186188, guid: 08f1fd4311c91274ebf69fca6838db45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -88,8 +89,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &-7064398652297892294
-PolygonCollider2D:
+--- !u!70 &-176884959886198379
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,56 +119,23 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.25366187, y: -0.17480466}
-      - {x: -0.29321265, y: -0.18798825}
-      - {x: -0.29321265, y: -0.3066406}
-      - {x: -0.25366187, y: -0.3374023}
-      - {x: -0.14819312, y: -0.3374023}
-      - {x: -0.095458746, y: -0.30224606}
-      - {x: -0.095458746, y: -0.20556638}
-      - {x: -0.12182593, y: -0.17480466}
-    - - {x: 0.21215844, y: -0.13085935}
-      - {x: 0.21215844, y: -0.26269528}
-      - {x: 0.37915063, y: -0.26269528}
-      - {x: 0.37915063, y: -0.095703095}
-      - {x: 0.36596704, y: -0.03857419}
-      - {x: 0.27368188, y: -0.03857419}
-      - {x: 0.2209475, y: -0.0825195}
-    - - {x: 0.27368188, y: 0.07128909}
-      - {x: 0.27368188, y: 0.17236331}
-      - {x: 0.26928735, y: 0.1987305}
-      - {x: 0.25170922, y: 0.22509769}
-      - {x: 0.16821313, y: 0.3129883}
-      - {x: 0.07153344, y: 0.3657227}
-      - {x: -0.020751715, y: 0.3657227}
-      - {x: -0.06469703, y: 0.35693362}
-      - {x: -0.09985328, y: 0.3393555}
-      - {x: -0.18334937, y: 0.24707034}
-      - {x: -0.23608375, y: 0.16796878}
-      - {x: -0.24487281, y: 0.12402347}
-      - {x: -0.26245093, y: 0.049316436}
-      - {x: -0.26245093, y: -0.016601533}
-      - {x: -0.23608375, y: -0.056152314}
-      - {x: -0.16577125, y: -0.11328122}
-      - {x: -0.007568121, y: -0.17919919}
-      - {x: 0.10229516, y: -0.17919919}
-      - {x: 0.1638186, y: -0.13525388}
-      - {x: 0.18579125, y: -0.10449216}
-      - {x: 0.20776391, y: -0.06494138}
-  m_UseDelaunayMesh: 0
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0
+--- !u!114 &4080614473519733906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589290092252027362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c8ce953833f2a94ab2d1b1b612546c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowFactor: 0.5

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 204607580030649624}
   - component: {fileID: 3030338319844839439}
   - component: {fileID: 3102893449711401429}
+  - component: {fileID: -7994937655688911286}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -80,9 +81,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: 1661798873
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: -8317413853428517802, guid: 67002faea9b2104409ae2ec14667a9d5, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -261,3 +262,15 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 2.5
+--- !u!114 &-7994937655688911286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778905128114026574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8297733deebd20e4188ce54d18f70fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
