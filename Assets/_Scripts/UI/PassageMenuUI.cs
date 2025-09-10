@@ -25,6 +25,7 @@ public class PassageMenuUI : MonoBehaviour
     public void OpenMenu(string passage)
     {
         passageTextUI.text = passage;
+        passageTextUI.enableAutoSizing = true;
         passageMenuPanel.SetActive(true);
         Time.timeScale = 0f;
         isOpen = true;
