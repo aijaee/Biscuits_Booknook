@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 2074552521308508368}
   m_Layer: 0
   m_Name: Chest4
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,6 +292,7 @@ MonoBehaviour:
   rewardAmount: 10
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
+  explosionDamage: 20
 --- !u!60 &2074552521308508368
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -385,7 +386,7 @@ GameObject:
   - component: {fileID: 3281418548799194745}
   m_Layer: 0
   m_Name: Chest5
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,6 +478,7 @@ MonoBehaviour:
   rewardAmount: 10
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
+  explosionDamage: 20
 --- !u!60 &3281418548799194745
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1132,7 +1134,7 @@ GameObject:
   - component: {fileID: 7072154586992083412}
   m_Layer: 0
   m_Name: Chest6
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1246,6 +1248,7 @@ MonoBehaviour:
   rewardAmount: 10
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
+  explosionDamage: 20
 --- !u!60 &7072154586992083412
 PolygonCollider2D:
   m_ObjectHideFlags: 0

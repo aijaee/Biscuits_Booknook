@@ -86,6 +86,9 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private bool randomWalkRooms = false;
     [SerializeField] private PlayerSpawner playerSpawner;
 
+    [Header("Corridor Settings")]
+    [SerializeField, Range(1, 5)] private int corridorWidth = 1;
+
     [Header("Combat Room Prefabs")]
     [SerializeField] private List<RoomPrefab> combatRoomPrefabs;
     [SerializeField] private int maxPrefabsPerCombatRoom = 3;
@@ -147,7 +150,19 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         List<Vector2Int> roomCenters = roomDataList.ConvertAll(r => r.Center);
         HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
-        floor.UnionWith(corridors);
+        HashSet<Vector2Int> thickCorridors = new HashSet<Vector2Int>();
+        int halfWidth = corridorWidth / 2;
+        foreach (var pos in corridors)
+        {
+            for (int dx = -halfWidth; dx <= halfWidth; dx++)
+            {
+                for (int dy = -halfWidth; dy <= halfWidth; dy++)
+                {
+                    thickCorridors.Add(pos + new Vector2Int(dx, dy));
+                }
+            }
+        }
+        floor.UnionWith(thickCorridors);
 
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
@@ -240,7 +255,18 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
                 MarkAreaOccupied(spawnPos, prefabSize, occupiedTiles);
                 Vector3 worldPos = new Vector3(spawnPos.x, spawnPos.y, 0);
-                Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
+                GameObject roomInstance = Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
+                // Randomize chest positions
+                Transform[] allTransforms = roomInstance.GetComponentsInChildren<Transform>();
+                foreach (var t in allTransforms)
+                {
+                    if (t.CompareTag("Chest"))
+                    {
+                        float localX = Random.Range(wallBuffer, prefabSize.x - wallBuffer);
+                        float localY = Random.Range(wallBuffer, prefabSize.y - wallBuffer);
+                        t.localPosition = new Vector3(localX, localY, t.localPosition.z);
+                    }
+                }
 
                 placedCount++;
             }
