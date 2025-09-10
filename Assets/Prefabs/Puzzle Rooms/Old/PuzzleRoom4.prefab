@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 3481178947969527980}
   m_Layer: 0
   m_Name: Chest10
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 8061646255624534542}
   m_Layer: 0
   m_Name: Chest12
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1191,7 +1191,7 @@ GameObject:
   - component: {fileID: 1690323663845078213}
   m_Layer: 0
   m_Name: Chest11
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
