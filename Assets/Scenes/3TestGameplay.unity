@@ -4684,6 +4684,16 @@ MonoBehaviour:
     size: {x: 0, y: 0}
   - prefab: {fileID: 2258546063865880603, guid: 25989dc10de66a649a7d8b4bfb4b2473, type: 3}
     size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 1851baef4f12e81409a270633e7f8eb4, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: ee244ce13bd4224428921c27ba57bcca, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: b1e336418b10d894e96cd82844426ef1, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: fbc9e9af149c64b4488cb02fc204f4b3, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: a0d7acc8a7402504f922d8afcc5d1ec0, type: 3}
+    size: {x: 0, y: 0}
   notePrefab: {fileID: 8188768632608287906, guid: 4429960cf4523754899a7700e86bc5ee, type: 3}
   noteOffset: {x: 0, y: 2}
 --- !u!4 &1208139128
