@@ -3,35 +3,41 @@ using UnityEngine;
 
 public class JoystickPlayerExample : MonoBehaviour
 {
-    public float speed;
+    [Header("Movement")]
+    public float baseSpeed = 5f;   // Normal movement speed
+    private float currentSpeed;    // Modified speed (e.g., slowed in zones)
     public VariableJoystick variableJoystick;
     public Rigidbody2D rb;
-    public Animator animator;
-    public bool isDashing = false;  // Flag to disable movement during dash
+    public bool isDashing = false;  // Disable movement during dash
 
-    private const float Tolerance = 0.01f;
+    [Header("Animation")]
+    public Animator animator;
     private SpriteRenderer spriteRenderer;
     private Vector2 lastDirection = Vector2.down;
-    public MeleeAttackController meleeAttackController; // Reference to MeleeAttack
+    private const float Tolerance = 0.01f;
 
+    [Header("Combat")]
+    public MeleeAttackController meleeAttackController; // Reference to melee attack controller
 
     private void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        currentSpeed = baseSpeed;
     }
 
     private void FixedUpdate()
     {
+        // You can swap this with joystick input if needed:
+        // Vector2 direction = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
         Vector2 direction = new Vector2(
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
         );
 
-        //Debug.Log($"Input direction: {direction}, lastDirection before update: {lastDirection}");
-
         if (!isDashing)
         {
-            rb.linearVelocity = direction * speed;
+            // Normalize direction to avoid diagonal speed boost
+            rb.linearVelocity = direction.normalized * currentSpeed;
 
             if (spriteRenderer != null)
                 spriteRenderer.flipX = (direction.x < -0.45f);
@@ -43,7 +49,6 @@ public class JoystickPlayerExample : MonoBehaviour
                 animator.SetFloat("Speed", direction.sqrMagnitude);
 
                 lastDirection = direction.normalized;
-                //Debug.Log($"Updated lastDirection to {lastDirection}");
             }
             else
             {
@@ -54,6 +59,7 @@ public class JoystickPlayerExample : MonoBehaviour
         }
         else
         {
+            // Lock animations to last facing direction during dash
             animator.SetFloat("Speed", 0f);
             animator.SetFloat("Horizontal", lastDirection.x);
             animator.SetFloat("Vertical", lastDirection.y);
@@ -62,6 +68,7 @@ public class JoystickPlayerExample : MonoBehaviour
                 spriteRenderer.flipX = (lastDirection.x < -0.45f);
         }
 
+        // Pass direction to melee controller
         if (meleeAttackController != null)
         {
             meleeAttackController.UpdateMovementDirection(lastDirection);
@@ -75,5 +82,16 @@ public class JoystickPlayerExample : MonoBehaviour
     public Vector2 GetLastDirection()
     {
         return lastDirection;
+    }
+
+    // --- SlowZone support ---
+    public void ModifySpeed(float factor)
+    {
+        currentSpeed = baseSpeed * factor;
+    }
+
+    public void ResetSpeed()
+    {
+        currentSpeed = baseSpeed;
     }
 }

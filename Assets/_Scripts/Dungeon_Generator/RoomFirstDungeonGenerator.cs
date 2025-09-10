@@ -49,7 +49,6 @@ public class RoomPrefab
     }
 }
 
-
 public class RoomData
 {
     public BoundsInt Bounds;
@@ -59,42 +58,45 @@ public class RoomData
     public RoomData(BoundsInt bounds)
     {
         Bounds = bounds;
-        Type = RoomType.Combat; // Default type
+        Type = RoomType.Combat;
     }
 }
 
-
-
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
-// MINE
     [Header("Room Size Constraints")]
     [SerializeField] private int minCombatRoomWidth = 4, minCombatRoomHeight = 4;
     [SerializeField] private int minPuzzleRoomWidth = 6, minPuzzleRoomHeight = 6;
     [SerializeField] private int minBossRoomWidth = 8, minBossRoomHeight = 8;
-// MINE
-// YOURS
-    [SerializeField] private EnemySpawner enemySpawner; // Assign in Inspector
-    [SerializeField] private GridManager gridManager; // Assign in Inspector
-    [SerializeField] private LayerMask unwalkableMask; // Assign in Inspector
-// YOURS
+    [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private GridManager gridManager;
+    [SerializeField] private LayerMask unwalkableMask;
 
     [Header("Dungeon Settings")]
     [SerializeField] private int dungeonWidth = 20, dungeonHeight = 20;
     [SerializeField][Range(0, 10)] private int offset = 1;
     [SerializeField] private int wallBuffer = 1;
+    [SerializeField] private int objectBuffer = 1;
     [SerializeField] private bool randomWalkRooms = false;
     [SerializeField] private PlayerSpawner playerSpawner;
 
     [Header("Combat Room Prefabs")]
     [SerializeField] private List<RoomPrefab> combatRoomPrefabs;
     [SerializeField] private int maxPrefabsPerCombatRoom = 3;
+    [SerializeField] private int minDistanceBetweenPrefabs = 1;
 
     [Header("Puzzle Room Prefabs")]
     [SerializeField] private List<RoomPrefab> puzzleRoomPrefabs;
-    [SerializeField] private int maxPrefabsPerPuzzleRoom = 2;
+    [Header("Special Item")]
+    [SerializeField] private GameObject notePrefab;
+    [SerializeField] private Vector2Int noteOffset = new Vector2Int(0, 2);
+
+
 
     private List<RoomData> roomDataList;
+    private HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
+    private HashSet<Vector2Int> prefabOccupiedTiles = new HashSet<Vector2Int>();
+    private HashSet<Vector2Int> dungeonCorridors;
 
     private void Start()
     {
@@ -105,7 +107,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         RunProceduralGeneration();
     }
-
 
     protected override void RunProceduralGeneration()
     {
@@ -146,26 +147,36 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             : CreateSimpleRooms(roomDataList);
 
         List<Vector2Int> roomCenters = roomDataList.ConvertAll(r => r.Center);
-        HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
-        floor.UnionWith(corridors);
+        dungeonCorridors = ConnectRooms(roomCenters);
+        floor.UnionWith(dungeonCorridors);
 
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
 
-        // --- Initialize GridManager for pathfinding ---
         if (gridManager != null)
         {
             gridManager.Initialize(new Vector2Int(dungeonWidth, dungeonHeight), 1f, unwalkableMask);
-        }
-        else
-        {
-            Debug.LogWarning("GridManager reference not set in RoomFirstDungeonGenerator!");
         }
 
         {
             Vector2Int spawnPos = FindClosestFloorTile(roomDataList[0].Center, floor);
             playerSpawner.SpawnPlayer(spawnPos);
         }
+
+        if (notePrefab != null)
+        {
+            Vector2Int playerTile = FindClosestFloorTile(roomDataList[0].Center, floor);
+            Vector2Int spawnTile = playerTile + noteOffset;
+
+            RoomData playerRoom = roomDataList[0];
+            spawnTile.x = Mathf.Clamp(spawnTile.x, playerRoom.Bounds.xMin + wallBuffer, playerRoom.Bounds.xMax - wallBuffer);
+            spawnTile.y = Mathf.Clamp(spawnTile.y, playerRoom.Bounds.yMin + wallBuffer, playerRoom.Bounds.yMax - wallBuffer);
+
+            Instantiate(notePrefab, new Vector3(spawnTile.x, spawnTile.y, 0), Quaternion.identity, this.transform);
+        }
+
+        occupiedTiles.Clear();
+        prefabOccupiedTiles.Clear();
 
         PlacePrefabsInCombatRooms();
         PlacePrefabsInPuzzleRooms();
@@ -175,13 +186,11 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             Debug.Log($"Room at {room.Center} is a {room.Type} room with bounds {room.Bounds}");
         }
 
-        // --- Set valid spawn tiles for EnemySpawner ---
         if (enemySpawner != null)
         {
             enemySpawner.SetValidSpawnTiles(floor);
         }
 
-        // --- Spawn enemies ---
         if (enemySpawner != null && floor.Count > 0)
         {
             int enemyCount = enemySpawner.EnemyCount;
@@ -192,61 +201,28 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void PlacePrefabsInPuzzleRooms()
     {
-        HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
-
         foreach (var room in roomDataList)
         {
             if (room.Type != RoomType.Puzzle) continue;
 
-            int placedCount = 0;
-            int attempts = 0;
-            int maxAttempts = 10 * maxPrefabsPerPuzzleRoom;
+            var prefabData = puzzleRoomPrefabs[Random.Range(0, puzzleRoomPrefabs.Count)];
+            Vector2Int prefabSize = prefabData.size;
 
-            // Keep track of used puzzle prefab indices for this room or overall
-            HashSet<int> usedPrefabIndices = new HashSet<int>();
+            Vector2Int roomCenter = room.Center;
+            Vector2Int spawnPos = new Vector2Int(
+                roomCenter.x - prefabSize.x / 2,
+                roomCenter.y - prefabSize.y / 2
+            );
 
-            while (placedCount < maxPrefabsPerPuzzleRoom && attempts < maxAttempts)
-            {
-                attempts++;
+            if (!IsWithinRoomBounds(room, spawnPos, prefabSize)) continue;
+            if (IsAreaOccupied(spawnPos, prefabSize, occupiedTiles)) continue;
+            if (!IsFarEnough(spawnPos, prefabSize)) continue;
 
-                // Get list of available prefabs (not used yet)
-                List<int> availableIndices = new List<int>();
-                for (int i = 0; i < puzzleRoomPrefabs.Count; i++)
-                {
-                    if (!usedPrefabIndices.Contains(i))
-                        availableIndices.Add(i);
-                }
-
-                // No more unique prefabs available
-                if (availableIndices.Count == 0)
-                    break;
-
-                // Pick a random available prefab index
-                int randomIndex = availableIndices[Random.Range(0, availableIndices.Count)];
-                var prefabData = puzzleRoomPrefabs[randomIndex];
-                Vector2Int prefabSize = prefabData.size;
-
-                Vector2Int roomCenter = room.Center;
-                Vector2Int spawnPos = new Vector2Int(
-                    roomCenter.x - prefabSize.x / 2,
-                    roomCenter.y - prefabSize.y / 2
-                );
-
-                if (!IsWithinRoomBounds(room, spawnPos, prefabSize) || IsAreaOccupied(spawnPos, prefabSize, occupiedTiles))
-                    continue;
-
-                // Mark prefab index as used to prevent reuse
-                usedPrefabIndices.Add(randomIndex);
-
-                MarkAreaOccupied(spawnPos, prefabSize, occupiedTiles);
-                Vector3 worldPos = new Vector3(spawnPos.x, spawnPos.y, 0);
-                Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
-
-                placedCount++;
-            }
+            MarkAreaOccupied(spawnPos, prefabSize, occupiedTiles);
+            MarkPrefabArea(spawnPos, prefabSize);
+            Instantiate(prefabData.prefab, new Vector3(spawnPos.x, spawnPos.y, 0), Quaternion.identity, this.transform);
         }
     }
-
 
     private void EnsureRoomMinSize(RoomData room)
     {
@@ -286,7 +262,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         spawnPos.x + size.x <= room.Bounds.xMax - wallBuffer &&
         spawnPos.y + size.y <= room.Bounds.yMax - wallBuffer;
     }
-
 
     private Vector2Int FindClosestFloorTile(Vector2Int center, HashSet<Vector2Int> floorTiles)
     {
@@ -404,7 +379,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void PlacePrefabsInCombatRooms()
     {
-        HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
+        if (dungeonCorridors != null)
+        {
+            foreach (var c in dungeonCorridors) occupiedTiles.Add(c);
+        }
 
         foreach (var room in roomDataList)
         {
@@ -420,10 +398,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 var prefabData = combatRoomPrefabs[Random.Range(0, combatRoomPrefabs.Count)];
                 Vector2Int prefabSize = prefabData.size;
 
-                int minX = room.Bounds.xMin + wallBuffer;
-                int maxX = room.Bounds.xMax - wallBuffer - prefabSize.x + 1;
-                int minY = room.Bounds.yMin + wallBuffer;
-                int maxY = room.Bounds.yMax - wallBuffer - prefabSize.y + 1;
+                int minX = room.Bounds.xMin + wallBuffer + objectBuffer;
+                int maxX = room.Bounds.xMax - wallBuffer - objectBuffer - prefabSize.x + 1;
+                int minY = room.Bounds.yMin + wallBuffer + objectBuffer;
+                int maxY = room.Bounds.yMax - wallBuffer - objectBuffer - prefabSize.y + 1;
 
                 if (maxX < minX || maxY < minY) break;
 
@@ -437,14 +415,16 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                     int spawnY = Random.Range(minY, maxY + 1);
                     Vector2Int spawnPos = new Vector2Int(spawnX, spawnY);
 
-                    if (!IsAreaOccupied(spawnPos, prefabSize, occupiedTiles))
-                    {
-                        MarkAreaOccupied(spawnPos, prefabSize, occupiedTiles);
-                        Vector3 worldPos = new Vector3(spawnX, spawnY, 0);
-                        Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
-                        placedCount++;
-                        placed = true;
-                    }
+                    if (!IsAreaWithinDungeonFloor(spawnPos, prefabSize)) continue;
+                    if (IsAreaOccupied(spawnPos, prefabSize, occupiedTiles)) continue;
+                    if (!IsFarEnough(spawnPos, prefabSize)) continue;
+
+                    MarkAreaOccupied(spawnPos, prefabSize, occupiedTiles);
+                    MarkPrefabArea(spawnPos, prefabSize);
+                    Vector3 worldPos = new Vector3(spawnX, spawnY, 0);
+                    Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
+                    placedCount++;
+                    placed = true;
                 }
 
                 if (!placed) break;
@@ -474,5 +454,53 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 occupied.Add(new Vector2Int(startPos.x + x, startPos.y + y));
             }
         }
+    }
+
+    private void MarkPrefabArea(Vector2Int startPos, Vector2Int size)
+    {
+        for (int x = 0; x < size.x; x++)
+        {
+            for (int y = 0; y < size.y; y++)
+            {
+                prefabOccupiedTiles.Add(new Vector2Int(startPos.x + x, startPos.y + y));
+            }
+        }
+    }
+
+    private bool IsFarEnough(Vector2Int startPos, Vector2Int size)
+    {
+        if (minDistanceBetweenPrefabs <= 0 || prefabOccupiedTiles.Count == 0)
+            return true;
+
+        for (int x = 0; x < size.x; x++)
+        {
+            for (int y = 0; y < size.y; y++)
+            {
+                Vector2Int tile = new Vector2Int(startPos.x + x, startPos.y + y);
+                foreach (var occ in prefabOccupiedTiles)
+                {
+                    int dx = Math.Abs(tile.x - occ.x);
+                    int dy = Math.Abs(tile.y - occ.y);
+                    int cheb = Math.Max(dx, dy);
+                    if (cheb <= minDistanceBetweenPrefabs)
+                        return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private bool IsAreaWithinDungeonFloor(Vector2Int startPos, Vector2Int size)
+    {
+        for (int x = 0; x < size.x; x++)
+        {
+            for (int y = 0; y < size.y; y++)
+            {
+                Vector2Int tile = new Vector2Int(startPos.x + x, startPos.y + y);
+                if (!dungeonCorridors.Contains(tile) && !occupiedTiles.Contains(tile))
+                    return false;
+            }
+        }
+        return true;
     }
 }

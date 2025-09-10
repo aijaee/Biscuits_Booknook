@@ -45,9 +45,16 @@ public class PuzzleChest : MonoBehaviour, IInteractable
         {
             Debug.Log("Wrong! Chest exploded.");
             if (explosionEffect)
-                Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            {
+                GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
-            // Damage the player if in range
+                var sr = explosion.GetComponent<SpriteRenderer>();
+                if (sr != null)
+                {
+                    sr.sortingLayerName = "Foreground";
+                    sr.sortingOrder = 100;
+                }
+            }
             var player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {

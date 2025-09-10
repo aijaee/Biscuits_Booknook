@@ -22,7 +22,9 @@ public class MeleeAttackController : MonoBehaviour
     private float lastAttackTime = -Mathf.Infinity;
     private bool buttonPressed = false;
 
-    private Vector2 lastMoveDirection = Vector2.right; // Default direction
+    private Vector2 lastMoveDirection = Vector2.right;
+    private bool useMouseAim = false;
+    private Vector2 mouseDirection;
 
     private void Start()
     {
@@ -35,13 +37,32 @@ public class MeleeAttackController : MonoBehaviour
 
     private void Update()
     {
-        if (onScreenAttackButton != null && onScreenAttackButton.control.IsPressed())
+        if (Mouse.current != null)
         {
-            OnAttackButtonPressed();
+            Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector2 dirToMouse = (mouseWorld - (Vector2)transform.position).normalized;
+
+            if (dirToMouse.sqrMagnitude > 0.01f)
+                mouseDirection = dirToMouse;
+
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                useMouseAim = true;
+                OnAttackButtonPressed();
+            }
         }
 
         if (Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
+        {
+            useMouseAim = false;
             OnAttackButtonPressed();
+        }
+
+        if (onScreenAttackButton != null && onScreenAttackButton.control.IsPressed())
+        {
+            useMouseAim = false;
+            OnAttackButtonPressed();
+        }
 
         if (buttonPressed)
         {
@@ -66,17 +87,24 @@ public class MeleeAttackController : MonoBehaviour
     {
         if (Time.time - lastAttackTime < attackCooldown) return;
 
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, detectionRange, enemyLayers);
-        Transform closestEnemy = GetClosestEnemy(enemies);
-
-        if (closestEnemy != null)
+        if (useMouseAim)
         {
-            Vector2 direction = (closestEnemy.position - transform.position).normalized;
-            PositionSwingPoint(direction);
+            PositionSwingPoint(mouseDirection);
         }
         else
         {
-            PositionSwingPoint(lastMoveDirection); // Use movement direction
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, detectionRange, enemyLayers);
+            Transform closestEnemy = GetClosestEnemy(enemies);
+
+            if (closestEnemy != null)
+            {
+                Vector2 direction = (closestEnemy.position - transform.position).normalized;
+                PositionSwingPoint(direction);
+            }
+            else
+            {
+                PositionSwingPoint(lastMoveDirection);
+            }
         }
 
         DamageEnemiesInRange();
@@ -133,8 +161,11 @@ public class MeleeAttackController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(swingPoint.position, swingRange);
+        if (swingPoint != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(swingPoint.position, swingRange);
+        }
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
