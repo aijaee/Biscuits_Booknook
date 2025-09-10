@@ -4655,7 +4655,11 @@ MonoBehaviour:
   wallBuffer: 4
   randomWalkRooms: 0
   playerSpawner: {fileID: 412539304}
-  corridorWidth: 2
+  objectBuffer: 1
+  minDistanceBetweenPrefabs: 1
+  notePrefab: {fileID: 0}
+  noteOffset: {x: 0, y: 2}
+  corridorWidth: 1
   combatRoomPrefabs:
   - prefab: {fileID: 4481769733883249602, guid: 92249c7210f87b24d8f9890e7e165082, type: 3}
     size: {x: 1, y: 1}
@@ -4687,7 +4691,7 @@ MonoBehaviour:
     size: {x: 0, y: 0}
   - prefab: {fileID: 2258546063865880603, guid: f8302fc8e52564346af0cd46b7ff9520, type: 3}
     size: {x: 0, y: 0}
-  maxPrefabsPerPuzzleRoom: 1
+  maxPrefabsPerPuzzleRoom: 2
 --- !u!4 &1208139128
 Transform:
   m_ObjectHideFlags: 0
@@ -38762,7 +38766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1129, y: -293}
+  m_AnchoredPosition: {x: 1283, y: -298}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952616654

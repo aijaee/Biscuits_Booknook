@@ -67,17 +67,15 @@ public class RoomData
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
-// MINE
+
     [Header("Room Size Constraints")]
     [SerializeField] private int minCombatRoomWidth = 4, minCombatRoomHeight = 4;
     [SerializeField] private int minPuzzleRoomWidth = 6, minPuzzleRoomHeight = 6;
     [SerializeField] private int minBossRoomWidth = 8, minBossRoomHeight = 8;
-// MINE
-// YOURS
-    [SerializeField] private EnemySpawner enemySpawner; // Assign in Inspector
-    [SerializeField] private GridManager gridManager; // Assign in Inspector
-    [SerializeField] private LayerMask unwalkableMask; // Assign in Inspector
-// YOURS
+
+    [SerializeField] private EnemySpawner enemySpawner; 
+    [SerializeField] private GridManager gridManager; 
+    [SerializeField] private LayerMask unwalkableMask;  
 
     [Header("Dungeon Settings")]
     [SerializeField] private int dungeonWidth = 20, dungeonHeight = 20;
@@ -85,6 +83,11 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private int wallBuffer = 1;
     [SerializeField] private bool randomWalkRooms = false;
     [SerializeField] private PlayerSpawner playerSpawner;
+
+    [SerializeField] private int objectBuffer = 1;
+    [SerializeField] private int minDistanceBetweenPrefabs = 1;
+    [SerializeField] private GameObject notePrefab;
+    [SerializeField] private Vector2Int noteOffset = new Vector2Int(0,2);
 
     [Header("Corridor Settings")]
     [SerializeField, Range(1, 5)] private int corridorWidth = 1;
@@ -98,6 +101,9 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private int maxPrefabsPerPuzzleRoom = 2;
 
     private List<RoomData> roomDataList;
+    private HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
+    private HashSet<Vector2Int> prefabOccupiedTiles = new HashSet<Vector2Int>();
+    private HashSet<Vector2Int> dungeonCorridors;
 
     private void Start()
     {
