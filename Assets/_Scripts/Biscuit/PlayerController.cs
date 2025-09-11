@@ -14,6 +14,14 @@ public class PlayerController : MonoBehaviour
     public GameObject deathScreen; // Now public for spawner assignment
     public Image hpBarFiller; // Assign the Image component using filler.png
 
+    [Header("Movement")]
+    public float moveSpeed = 5f;
+    private float originalMoveSpeed;
+
+    [Header("Combat")]
+    public int baseDamage = 1;
+    private int currentDamage;
+
     private RectTransform hpBarRect; // Store the original rect for resizing
 
     private bool isDead = false;
@@ -27,6 +35,9 @@ public class PlayerController : MonoBehaviour
         // Cache the RectTransform if using resize mode
         if (hpBarFiller != null)
             hpBarRect = hpBarFiller.GetComponent<RectTransform>();
+
+        originalMoveSpeed = moveSpeed;
+        currentDamage = baseDamage;
     }
 
     private void Start()
@@ -107,5 +118,19 @@ public class PlayerController : MonoBehaviour
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
         UpdateHPBar();
         Debug.Log($"{gameObject.name} healed {amount} HP. Current HP: {currentHealth}");
+    }
+
+    public void ApplySpeedBoost(float multiplier, float duration)
+    {
+        StartCoroutine(SpeedBoostCoroutine(multiplier, duration));
+    }
+
+    private IEnumerator SpeedBoostCoroutine(float multiplier, float duration)
+    {
+        moveSpeed = originalMoveSpeed * multiplier;
+        Debug.Log($"Speed boost applied: x{multiplier} for {duration} seconds.");
+        yield return new WaitForSeconds(duration);
+        moveSpeed = originalMoveSpeed;
+        Debug.Log("Speed boost ended.");
     }
 }
