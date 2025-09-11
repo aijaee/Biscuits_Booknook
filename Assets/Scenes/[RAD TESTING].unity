@@ -4657,7 +4657,7 @@ MonoBehaviour:
   playerSpawner: {fileID: 412539304}
   objectBuffer: 1
   minDistanceBetweenPrefabs: 1
-  notePrefab: {fileID: 0}
+  notePrefab: {fileID: 8188768632608287906, guid: 4429960cf4523754899a7700e86bc5ee, type: 3}
   noteOffset: {x: 0, y: 2}
   corridorWidth: 2
   combatRoomPrefabs:

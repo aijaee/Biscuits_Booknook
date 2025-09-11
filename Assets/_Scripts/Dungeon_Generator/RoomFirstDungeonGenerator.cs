@@ -191,6 +191,18 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             playerSpawner.SpawnPlayer(spawnPos);
         }
 
+          if (notePrefab != null)
+        {
+            Vector2Int playerTile = FindClosestFloorTile(roomDataList[0].Center, floor);
+            Vector2Int spawnTile = playerTile + noteOffset;
+
+            RoomData playerRoom = roomDataList[0];
+            spawnTile.x = Mathf.Clamp(spawnTile.x, playerRoom.Bounds.xMin + wallBuffer, playerRoom.Bounds.xMax - wallBuffer);
+            spawnTile.y = Mathf.Clamp(spawnTile.y, playerRoom.Bounds.yMin + wallBuffer, playerRoom.Bounds.yMax - wallBuffer);
+
+            Instantiate(notePrefab, new Vector3(spawnTile.x, spawnTile.y, 0), Quaternion.identity, this.transform);
+        }
+
         PlacePrefabsInCombatRooms();
         PlacePrefabsInPuzzleRooms();
 
