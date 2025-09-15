@@ -1204,8 +1204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8ef87fd1b2c6e4d927f777b9100862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passageText: While telling a story, the teacher asks the kids to make predictions
-    on what may happen next. The teacher wants them to _____ the event.
+  passageTitle: Question
+  passageBody: While telling a story, the teacher asks the kids to make predictions
+    on what may happen next. The teacher wants them to __ the event.
+  isStartingNote: 0
 --- !u!1 &9093308208188241536
 GameObject:
   m_ObjectHideFlags: 0

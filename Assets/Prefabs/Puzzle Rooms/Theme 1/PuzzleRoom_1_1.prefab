@@ -1204,8 +1204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8ef87fd1b2c6e4d927f777b9100862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passageText: The teacher presents a sequential plot, where the story shows the
-    _____ on how the characters solved the problem.
+  passageTitle: Question
+  passageBody: The teacher presents a sequential plot, where the story shows the
+    _ on how the characters solved the problem.
+  isStartingNote: 0
 --- !u!1 &9093308208188241536
 GameObject:
   m_ObjectHideFlags: 0

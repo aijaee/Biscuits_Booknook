@@ -1204,8 +1204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8ef87fd1b2c6e4d927f777b9100862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passageText: The connotative meaning of a word is _____ based on its association
-    with the story.
+  passageTitle: Question
+  passageBody: The connotative meaning of a word is __ based on its association with
+    the story.
+  isStartingNote: 0
 --- !u!1 &9093308208188241536
 GameObject:
   m_ObjectHideFlags: 0

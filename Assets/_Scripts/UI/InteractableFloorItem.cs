@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class InteractableFloorItem : MonoBehaviour, IInteractable
 {
-    [TextArea] public string passageText;
+    [Header("Passage Data")]
+    public string passageTitle;
+    [TextArea(3, 10)] public string passageBody;
+    public bool isStartingNote;
 
     private bool playerInRange = false;
 
@@ -30,7 +33,7 @@ public class InteractableFloorItem : MonoBehaviour, IInteractable
     {
         if (!playerInRange) return;
 
-        PassageMenuUI.Instance.OpenMenu(passageText);
+        PassageMenuUI.Instance.OpenMenu(passageTitle, passageBody, isStartingNote);
         InteractUI.Instance.ShowButton(false);
     }
 }
