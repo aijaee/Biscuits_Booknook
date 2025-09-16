@@ -169,4 +169,10 @@ public class MeleeAttackController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
+
+    public void AddDamageBuff(int amount)
+    {
+        attackDamage += amount;
+        Debug.Log($"Damage buff applied: +{amount} damage. Current damage: {attackDamage}.");
+    }
 }

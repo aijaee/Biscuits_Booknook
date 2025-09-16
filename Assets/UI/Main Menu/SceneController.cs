@@ -8,7 +8,15 @@ public class SceneController : MonoBehaviour
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-            SceneManager.LoadScene(nextSceneIndex);
+            LevelTransition.Instance.TransitionToScene(nextSceneIndex);
+        }
+    }
+
+        public void GoToScene(int sceneIndex)
+    {
+        if (sceneIndex >= 0 && sceneIndex < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
+        {
+            LevelTransition.Instance.TransitionToScene(sceneIndex);
         }
     }
 }

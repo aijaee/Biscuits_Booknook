@@ -494,6 +494,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
   explosionDamage: 20
+  rewardDatabase: {fileID: 11400000, guid: c1994d6e9f8db6440928bb88c9edf2bc, type: 2}
 --- !u!114 &943283198431173358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,6 +1081,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
   explosionDamage: 20
+  rewardDatabase: {fileID: 11400000, guid: c1994d6e9f8db6440928bb88c9edf2bc, type: 2}
 --- !u!114 &5374282719927101694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1284,6 +1286,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
   explosionDamage: 20
+  rewardDatabase: {fileID: 11400000, guid: c1994d6e9f8db6440928bb88c9edf2bc, type: 2}
 --- !u!114 &5126853279540469452
 MonoBehaviour:
   m_ObjectHideFlags: 0

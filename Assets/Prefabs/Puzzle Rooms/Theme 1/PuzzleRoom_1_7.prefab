@@ -132,6 +132,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
   explosionDamage: 20
+  rewardDatabase: {fileID: 11400000, guid: c1994d6e9f8db6440928bb88c9edf2bc, type: 2}
 --- !u!114 &7807755946826275320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +370,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
   explosionDamage: 20
+  rewardDatabase: {fileID: 11400000, guid: c1994d6e9f8db6440928bb88c9edf2bc, type: 2}
 --- !u!114 &4186829626304449517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +575,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
   explosionDamage: 20
+  rewardDatabase: {fileID: 11400000, guid: c1994d6e9f8db6440928bb88c9edf2bc, type: 2}
 --- !u!114 &4112615988497288130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,7 +1204,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8ef87fd1b2c6e4d927f777b9100862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passageText: Does the story "The North Wind and the Sun" use sequential plot?
+  passageTitle: Question
+  passageBody: Does the story "The North Wind and the Sun" use sequential plot?
+  isStartingNote: 0
 --- !u!1 &9093308208188241536
 GameObject:
   m_ObjectHideFlags: 0
