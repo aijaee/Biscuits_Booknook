@@ -11,16 +11,13 @@ public class MinimapRenderer : MonoBehaviour
     public Color playerColor = Color.red;
     public bool showPlayerDot = true;
 
-    // new: only highlight current room
     public bool showOnlyCurrentRoom = false;
     public Color outsideRoomColor = Color.grey;
     private HashSet<Vector2Int> currentRoomTiles;
     private List<HashSet<Vector2Int>> allRoomTiles;
 
-    // assign your player Transform here (world coords == tile coords)
     public Transform player;
 
-    // new: puzzle room icon
     public bool showPuzzleRoomIcons = false;
     public Sprite puzzleRoomIconSprite;
     private List<GameObject> puzzleRoomIcons = new List<GameObject>();
@@ -30,12 +27,10 @@ public class MinimapRenderer : MonoBehaviour
     private int width, height;
     private Vector2Int playerPosition;
 
-    // cache for runtime updates
     private HashSet<Vector2Int> cachedFloor;
     private HashSet<Vector2Int> cachedWall;
     private Vector2Int cachedMapSize;
 
-    // 1) Compute wall tiles from floor set
     public HashSet<Vector2Int> CalculateWallPositions(HashSet<Vector2Int> floorTiles)
     {
         var wallTiles = new HashSet<Vector2Int>();
@@ -46,13 +41,11 @@ public class MinimapRenderer : MonoBehaviour
         return wallTiles;
     }
 
-    // 2) Simplified draw call: floor + auto walls
     public void DrawMinimap(HashSet<Vector2Int> floorTiles, Vector2Int mapSize)
     {
         DrawMinimap(floorTiles, CalculateWallPositions(floorTiles), mapSize);
     }
 
-    // 3) Remember player tile for marker
     public void SetPlayerPosition(Vector2Int pos)
     {
         playerPosition = pos;
@@ -73,7 +66,6 @@ public class MinimapRenderer : MonoBehaviour
         puzzleRoomCenters = centers;
     }
 
-    // 4) Original draw, now also caches for Update()
     public void DrawMinimap(HashSet<Vector2Int> floorTiles, HashSet<Vector2Int> wallTiles, Vector2Int mapSize)
     {
         width = mapSize.x;
@@ -85,12 +77,10 @@ public class MinimapRenderer : MonoBehaviour
         minimapTexture = new Texture2D(width, height, TextureFormat.RGBA32, false);
         minimapTexture.filterMode = FilterMode.Point;
 
-        // Clear
         for (int x = 0; x < width; x++)
             for (int y = 0; y < height; y++)
                 minimapTexture.SetPixel(x, y, Color.clear);
 
-        // Draw floor, grey out if not in current room
         foreach (var pos in floorTiles)
         {
             var c = floorColor;
@@ -99,11 +89,10 @@ public class MinimapRenderer : MonoBehaviour
             minimapTexture.SetPixel(pos.x, pos.y, c);
         }
 
-        // Draw walls
         foreach (var pos in wallTiles)
             minimapTexture.SetPixel(pos.x, pos.y, wallColor);
 
-        // Draw player as a red dot if enabled
+        // Draw player as a red dot 
         if (showPlayerDot &&
             playerPosition.x >= 0 && playerPosition.x < width &&
             playerPosition.y >= 0 && playerPosition.y < height)
@@ -187,7 +176,6 @@ public class MinimapRenderer : MonoBehaviour
         {
             SetPlayerPosition(worldTile);
 
-            // determine which room the player is in
             if (showOnlyCurrentRoom && allRoomTiles != null)
             {
                 foreach (var room in allRoomTiles)
