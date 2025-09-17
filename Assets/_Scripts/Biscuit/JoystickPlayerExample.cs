@@ -6,7 +6,6 @@ public class JoystickPlayerExample : MonoBehaviour
     [Header("Movement")]
     public float baseSpeed = 5f;   // Normal movement speed
     private float currentSpeed;    // Modified speed (e.g., slowed in zones)
-    public VariableJoystick variableJoystick;
     public Rigidbody2D rb;
     public bool isDashing = false;  // Disable movement during dash
 
@@ -27,8 +26,6 @@ public class JoystickPlayerExample : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // You can swap this with joystick input if needed:
-        // Vector2 direction = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
         Vector2 direction = new Vector2(
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")

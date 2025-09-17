@@ -7,9 +7,8 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private OnScreenButton onScreenDashButton;
     [SerializeField] private OnScreenButton onScreenAttackButton;
-    [SerializeField] private VariableJoystick variableJoystick;
-    [SerializeField] private GameObject deathScreen; // Assign DeathScreen in Inspector
-    [SerializeField] private Image hpBarFiller; // Assign HP bar filler Image in Inspector
+    [SerializeField] private GameObject deathScreen; 
+    [SerializeField] private Image hpBarFiller;
 
     private GameObject playerInstance;
     private CameraFollow cameraFollow;
@@ -58,11 +57,6 @@ public class PlayerSpawner : MonoBehaviour
         Rigidbody2D rb = playerInstance.GetComponent<Rigidbody2D>();
         Animator animator = playerInstance.GetComponentInChildren<Animator>();
         JoystickPlayerExample movementScript = playerInstance.GetComponent<JoystickPlayerExample>();
-
-        if (movementScript != null && variableJoystick != null)
-        {
-            movementScript.variableJoystick = variableJoystick;
-        }
 
         DashController dash = playerInstance.GetComponent<DashController>();
         if (dash != null)
