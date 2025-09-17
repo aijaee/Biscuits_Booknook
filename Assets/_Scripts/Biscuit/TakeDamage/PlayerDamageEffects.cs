@@ -18,15 +18,28 @@ public class PlayerDamageEffects : MonoBehaviour
         if (spriteRenderer != null)
             originalColor = spriteRenderer.color;
 
-        if (hpBarFiller != null)
+        if (hpBarFiller == null)
+        {
+            hpBarFiller = GameObject.Find("Filler")?.GetComponent<Image>();
+            if (hpBarFiller != null)
+                hpBarOriginalColor = hpBarFiller.color;
+            else
+                Debug.LogWarning("PlayerDamageEffects: HP bar filler not found!");
+        }
+        else
+        {
             hpBarOriginalColor = hpBarFiller.color;
+        }
 
         if (vignetteImage == null)
         {
-            vignetteImage = GameObject.Find("DmgVignette").GetComponent<Image>();
-            Color c = vignetteImage.color;
-            c.a = 0f;
-            vignetteImage.color = c;
+            vignetteImage = GameObject.Find("DmgVignette")?.GetComponent<Image>();
+            if (vignetteImage != null)
+            {
+                Color c = vignetteImage.color;
+                c.a = 0f;
+                vignetteImage.color = c;
+            }
         }
     }
 
@@ -78,18 +91,24 @@ public class PlayerDamageEffects : MonoBehaviour
 
     private IEnumerator PulseHPBarColor()
     {
-        hpBarFiller.color = Color.red;
-        yield return new WaitForSeconds(0.15f);
+        if (hpBarFiller == null) yield break;
 
-        float t = 0f;
-        while (t < 1f)
+        Color flashColor;
+        if (ColorUtility.TryParseHtmlString("#FFB4B4", out flashColor))
         {
-            t += Time.deltaTime * 4f;
-            hpBarFiller.color = Color.Lerp(Color.red, hpBarOriginalColor, t);
-            yield return null;
+            flashColor.a = hpBarOriginalColor.a;
+            hpBarFiller.color = flashColor;
         }
+        else
+        {
+            Debug.LogWarning("Invalid hex color for HP bar flash.");
+            yield break;
+        }
+
+        yield return new WaitForSeconds(0.15f);
         hpBarFiller.color = hpBarOriginalColor;
     }
+
 
     private IEnumerator FlashVignette()
     {
@@ -122,7 +141,6 @@ public class PlayerDamageEffects : MonoBehaviour
             yield return null;
         }
 
-        // Reset to fully transparent
         c.a = 0f;
         vignetteImage.color = c;
     }

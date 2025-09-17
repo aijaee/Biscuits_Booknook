@@ -75,6 +75,11 @@ public class PlayerController : MonoBehaviour
             Die();
     }
 
+    public void SetInvincible(bool value)
+    {
+        isInvincible = value;
+    }
+
     private IEnumerator InvincibilityCoroutine()
     {
         isInvincible = true;
