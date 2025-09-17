@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 7380229578531379278}
   - component: {fileID: 1937070039975619912}
   - component: {fileID: 2481003847660621780}
+  - component: {fileID: 7391627800506657391}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -525,3 +526,21 @@ MonoBehaviour:
   currentHealth: 100
   deathScreen: {fileID: 0}
   hpBarFiller: {fileID: 0}
+  moveSpeed: 5
+  baseDamage: 1
+  invincibilityDuration: 1.5
+  damageEffects: {fileID: 7391627800506657391}
+--- !u!114 &7391627800506657391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8501497741749971469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19751bb4791c9f34f85027cd256f7be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8036332166393592639}
+  hpBarParent: {fileID: 0}

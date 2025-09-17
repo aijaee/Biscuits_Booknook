@@ -52,6 +52,13 @@ public class PlayerSpawner : MonoBehaviour
             {
                 playerController.hpBarFiller = hpBarFiller;
                 playerController.UpdateHPBar();
+
+                // 👉 Add this here:
+                var damageEffects = playerInstance.GetComponent<PlayerDamageEffects>();
+                if (damageEffects != null && hpBarFiller != null)
+                {
+                    damageEffects.hpBarRect = hpBarFiller.transform.parent.GetComponent<RectTransform>();
+                }
             }
         }
 
