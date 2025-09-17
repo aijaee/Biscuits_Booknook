@@ -68,17 +68,16 @@ public class RoomData
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
-// MINE
+
     [Header("Room Size Constraints")]
     [SerializeField] private int minCombatRoomWidth = 4, minCombatRoomHeight = 4;
     [SerializeField] private int minPuzzleRoomWidth = 6, minPuzzleRoomHeight = 6;
     [SerializeField] private int minBossRoomWidth = 8, minBossRoomHeight = 8;
-// MINE
-// YOURS
-    [SerializeField] private EnemySpawner enemySpawner; // Assign in Inspector
-    [SerializeField] private GridManager gridManager; // Assign in Inspector
-    [SerializeField] private LayerMask unwalkableMask; // Assign in Inspector
-// YOURS
+
+    [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private GridManager gridManager; 
+    [SerializeField] private LayerMask unwalkableMask; 
+
 
     [Header("Dungeon Settings")]
     [SerializeField] private int dungeonWidth = 20, dungeonHeight = 20;
@@ -86,6 +85,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private int wallBuffer = 1;
     [SerializeField] private bool randomWalkRooms = false;
     [SerializeField] private PlayerSpawner playerSpawner;
+    [SerializeField] private MinimapRenderer minimapRenderer; // assign in Inspector
 
     [SerializeField] private int objectBuffer = 1;
     [SerializeField] private int minDistanceBetweenPrefabs = 1;
@@ -189,6 +189,30 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         {
             Vector2Int spawnPos = FindClosestFloorTile(roomDataList[0].Center, floor);
             playerSpawner.SpawnPlayer(spawnPos);
+
+            // Minimap integration
+            if (minimapRenderer != null)
+            {
+                var roomTilesList = new List<HashSet<Vector2Int>>();
+                foreach (var room in roomDataList)
+                {
+                    var tiles = randomWalkRooms
+                        ? CreateRoomsRandomly(new List<RoomData> { room })
+                        : CreateSimpleRooms(new List<RoomData> { room });
+                    roomTilesList.Add(tiles);
+                }
+                minimapRenderer.SetAllRoomTiles(roomTilesList);
+                minimapRenderer.SetCurrentRoomTiles(roomTilesList[0]);
+                var puzzleCenters = roomDataList
+                    .Where(r => r.Type == RoomType.Puzzle)
+                    .Select(r => r.Center)
+                    .ToList();
+                minimapRenderer.SetPuzzleRoomCenters(puzzleCenters);
+                minimapRenderer.showPuzzleRoomIcons = true;
+
+                minimapRenderer.SetPlayerPosition(spawnPos);
+                minimapRenderer.DrawMinimap(floor, new Vector2Int(dungeonWidth, dungeonHeight));
+            }
         }
 
           if (notePrefab != null)
