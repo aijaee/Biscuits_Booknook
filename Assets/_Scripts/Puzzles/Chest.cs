@@ -1,4 +1,5 @@
 using UnityEngine;
+using UI;
 
 public class Chest : MonoBehaviour, IInteractable
 {
@@ -23,6 +24,9 @@ public class Chest : MonoBehaviour, IInteractable
         if (!playerInRange || hasBeenOpened) return;
         hasBeenOpened = true;
 
+        if (spriteRenderer != null)
+            spriteRenderer.sprite = openedCorrectChestSprite;
+
         var player = GameObject.FindGameObjectWithTag("Player");
         var playerController = player != null ? player.GetComponent<PlayerController>() : null;
 
@@ -33,9 +37,6 @@ public class Chest : MonoBehaviour, IInteractable
 
             if (reward != null)
             {
-                if (spriteRenderer)
-                    spriteRenderer.sprite = reward.chestSprite != null ? reward.chestSprite : openedCorrectChestSprite;
-
                 // apply reward effects
                 switch (reward.rewardType)
                 {
@@ -43,10 +44,13 @@ public class Chest : MonoBehaviour, IInteractable
                         if (playerController != null) playerController.Heal(reward.healAmount);
                         Debug.Log($"You healed for {reward.healAmount} health.");
                         break;
+
                     case ChestReward.RewardType.Speed:
-                        if (playerController != null) playerController.ApplySpeedBoost(reward.speedMultiplier, reward.speedDuration);
+                        if (playerController != null)
+                            playerController.ApplySpeedBoost(reward.speedMultiplier, reward.speedDuration);
                         Debug.Log($"Speed boosted x{reward.speedMultiplier} for {reward.speedDuration} seconds.");
                         break;
+
                     case ChestReward.RewardType.AdditionalDamage:
                         var meleeCtrl = player != null ? player.GetComponent<MeleeAttackController>() : null;
                         if (meleeCtrl != null) meleeCtrl.AddDamageBuff(reward.additionalDamageAmount);
@@ -56,10 +60,6 @@ public class Chest : MonoBehaviour, IInteractable
             }
             else
             {
-                // set opened chest sprite on paperclip reward
-                if (spriteRenderer)
-                    spriteRenderer.sprite = openedCorrectChestSprite;
-
                 Debug.Log($"Correct! You gained {rewardAmount} paperclips.");
             }
         }
