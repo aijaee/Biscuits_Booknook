@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: 244d14eaf8a31604084520ebef6a8ee8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1871937205172251022
+    second: Level_1_V4_0
+  - first:
+      213: 7173334888409298056
+    second: Level_1_V4_1
+  - first:
+      213: 336234246077419248
+    second: Level_1_V4_2
+  - first:
+      213: -8308841487267553122
+    second: Level_1_V4_3
+  - first:
+      213: 5630216582891882249
+    second: Level_1_V4_4
+  - first:
+      213: 6614719533420557842
+    second: Level_1_V4_5
+  - first:
+      213: 7656689123703854430
+    second: Level_1_V4_6
+  - first:
+      213: 6600983112860551440
+    second: Level_1_V4_7
+  - first:
+      213: -4758194625932344290
+    second: Level_1_V4_8
+  - first:
+      213: 178227367986191774
+    second: Level_1_V4_9
+  - first:
+      213: -8231326226369554731
+    second: Level_1_V4_10
+  - first:
+      213: 4883337300487959978
+    second: Level_1_V4_11
+  - first:
+      213: 8845814359497797905
+    second: Level_1_V4_12
+  - first:
+      213: -5450258509868697864
+    second: Level_1_V4_13
+  - first:
+      213: 4802357303556633961
+    second: Level_1_V4_14
+  - first:
+      213: 2440913034913413579
+    second: Level_1_V4_15
+  - first:
+      213: 6111508278255372899
+    second: Level_1_V4_16
+  - first:
+      213: 2979152849138097900
+    second: Level_1_V4_17
+  - first:
+      213: 5235884614768110149
+    second: Level_1_V4_18
+  - first:
+      213: -3166269123150218672
+    second: Level_1_V4_19
+  - first:
+      213: -4746827514037842248
+    second: Level_1_V4_20
+  - first:
+      213: 3499896867298669892
+    second: Level_1_V4_21
+  - first:
+      213: -4362135223850990656
+    second: Level_1_V4_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level_1_V5-Chests_12
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 873
+        width: 312
+        height: 252
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ea1d97677a34240b903fbed9436634
+      internalID: -1994807792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1_V5-Chests_13
+      rect:
+        serializedVersion: 2
+        x: 2155
+        y: 873
+        width: 290
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3cde943312c744bb2346a7c6b237af
+      internalID: 1378494035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1_V5-Chests_14
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 650
+        width: 469
+        height: 258
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08e619299297bc4fbaa13d3235eba16
+      internalID: 1939442811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1_V5-Chests_15
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 643
+        width: 482
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66cfc423c6fe1cc4bb2f179345625fa4
+      internalID: 585042873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1_V5-Chests_19
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 51
+        width: 430
+        height: 349
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ac11ab9f5349c4094663beb7eff946
+      internalID: -301669798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1_V5-Chests_20
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 26
+        width: 476
+        height: 458
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f374a6ca6eb44ba448e242b0c7a3b943
+      internalID: -2107647571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1_V5-Chests_21
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 90
+        width: 642
+        height: 598
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f57ffcd8fbb98443abf91ebdd6f228d
+      internalID: -629133667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_1_V5-Chests_22
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 63
+        width: 194
+        height: 670
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd6695472b548c44bd2dba42fded40e
+      internalID: -146759315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 42859abd47babb0468209106871f7fa3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Level_1_V5-Chests_0: 1439912481
+      Level_1_V5-Chests_1: -1359206413
+      Level_1_V5-Chests_10: 1631301721
+      Level_1_V5-Chests_11: -1462917163
+      Level_1_V5-Chests_12: -1994807792
+      Level_1_V5-Chests_13: 1378494035
+      Level_1_V5-Chests_14: 1939442811
+      Level_1_V5-Chests_15: 585042873
+      Level_1_V5-Chests_16: -1636542705
+      Level_1_V5-Chests_17: 557842802
+      Level_1_V5-Chests_18: 719542481
+      Level_1_V5-Chests_19: -301669798
+      Level_1_V5-Chests_2: 1768743676
+      Level_1_V5-Chests_20: -2107647571
+      Level_1_V5-Chests_21: -629133667
+      Level_1_V5-Chests_22: -146759315
+      Level_1_V5-Chests_3: 662585077
+      Level_1_V5-Chests_4: 1991665916
+      Level_1_V5-Chests_5: -2118828794
+      Level_1_V5-Chests_6: -2019955662
+      Level_1_V5-Chests_7: 1206230537
+      Level_1_V5-Chests_8: -1672506991
+      Level_1_V5-Chests_9: -1797781627
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

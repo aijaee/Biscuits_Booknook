@@ -451,9 +451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingPoint: {fileID: 106463083521763591}
-  swingRange: 0.96
+  swingRange: 0.85
   detectionRange: 10.8
-  attackDamage: 40
+  attackDamage: 20
   attackCooldown: 0.5
   enemyLayers:
     serializedVersion: 2
@@ -543,4 +543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8036332166393592639}
-  hpBarParent: {fileID: 0}
+  hpBarRect: {fileID: 0}
+  hpBarFiller: {fileID: 0}
+  vignetteImage: {fileID: 0}

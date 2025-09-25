@@ -81,10 +81,21 @@ public class PlayerDamageEffects : MonoBehaviour
     private IEnumerator ShakeHPBar()
     {
         Vector3 originalPos = hpBarRect.localPosition;
-        for (int i = 0; i < 6; i++)
+        float duration = 0.3f;
+        float magnitude = 40f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
         {
-            hpBarRect.localPosition = originalPos + (Vector3)Random.insideUnitCircle * 20f;
-            yield return new WaitForSeconds(0.05f);
+            Vector2 offset = Random.insideUnitCircle * magnitude;
+            hpBarRect.localPosition = Vector3.Lerp(
+                hpBarRect.localPosition,
+                originalPos + (Vector3)offset,
+                Time.deltaTime * 20f
+            );
+
+            elapsed += Time.deltaTime;
+            yield return null;
         }
         hpBarRect.localPosition = originalPos;
     }
@@ -94,7 +105,7 @@ public class PlayerDamageEffects : MonoBehaviour
         if (hpBarFiller == null) yield break;
 
         Color flashColor;
-        if (ColorUtility.TryParseHtmlString("#FFB4B4", out flashColor))
+        if (ColorUtility.TryParseHtmlString("#FFC7C7", out flashColor))
         {
             flashColor.a = hpBarOriginalColor.a;
             hpBarFiller.color = flashColor;

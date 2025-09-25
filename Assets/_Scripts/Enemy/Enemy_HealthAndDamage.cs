@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Enemy_HealthAndDamage : MonoBehaviour
 {
@@ -7,23 +8,25 @@ public class Enemy_HealthAndDamage : MonoBehaviour
     private int currentHealth;
 
     private EnemyController enemyController;
+    private EnemyDamageEffects damageEffects;
 
     private void Start()
     {
         currentHealth = maxHealth;
         enemyController = GetComponent<EnemyController>();
+        damageEffects = GetComponent<EnemyDamageEffects>();
     }
 
-    public void EnemyTakeDamage(int damage)
+    public void EnemyTakeDamage(int damage, Vector2 hitDirection)
     {
         currentHealth -= damage;
-        Debug.Log($"{gameObject.name} took {damage} damage. Remaining HP: {currentHealth}");
 
-        // Play damaged animation if available
-        if (enemyController != null)
+        if (damageEffects != null)
         {
-            enemyController.PlayDamagedAnimation();
+            damageEffects.PlayDamageEffects(hitDirection);
         }
+
+        Debug.Log($"{gameObject.name} took {damage} damage. Remaining HP: {currentHealth}");
 
         if (currentHealth <= 0)
         {
@@ -34,7 +37,35 @@ public class Enemy_HealthAndDamage : MonoBehaviour
     private void Die()
     {
         Debug.Log($"{gameObject.name} has died.");
-        // Death Anim
+        if (enemyController != null)
+        {
+            enemyController.isStunned = true;
+            enemyController.enabled = false;
+            Rigidbody2D rb = enemyController.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+        }
+        StartCoroutine(FadeAndDestroy());
+    }
+
+    private IEnumerator FadeAndDestroy()
+    {
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        if (sr == null)
+        {
+            Destroy(gameObject);
+            yield break;
+        }
+
+        Color orig = sr.color;
+        float dur = 0.8f;
+        float e = 0f;
+        while (e < dur)
+        {
+            float a = Mathf.Lerp(1f, 0f, e / dur);
+            sr.color = new Color(orig.r, orig.g, orig.b, a);
+            e += Time.deltaTime;
+            yield return null;
+        }
         Destroy(gameObject);
     }
 }
