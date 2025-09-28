@@ -185,22 +185,11 @@ public class EnemyController : MonoBehaviour
             Vector3 currentPosition = transform.position;
             currentPosition.z = 0;
 
-            Vector3 moveTo = Vector3.MoveTowards(currentPosition, nextPosition, moveSpeed * Time.deltaTime);
-
-            // Prevent moving through walls: check for collision at moveTo
-            Collider2D hit = Physics2D.OverlapCircle(moveTo, 0.2f, pathfinder.gridManager.unwalkableMask);
-            if (hit != null)
-            {
-                Debug.Log($"{gameObject.name}: Blocked by wall at {moveTo}");
-                path = null; // Stop path if blocked
-                return;
-            }
-
-           // Debug.Log($"{gameObject.name} moving from {currentPosition} towards {nextPosition} (moveTo: {moveTo})");
+            Vector3 direction = (nextPosition - currentPosition).normalized;
+            float distance = Vector3.Distance(currentPosition, nextPosition);
 
             if (rb != null)
             {
-                Vector2 direction = (nextPosition - currentPosition).normalized;
                 rb.linearVelocity = direction * moveSpeed;
             }
             else
@@ -208,16 +197,24 @@ public class EnemyController : MonoBehaviour
                 transform.position = Vector3.MoveTowards(currentPosition, nextPosition, moveSpeed * Time.deltaTime);
             }
 
-            if (Vector3.Distance(currentPosition, nextPosition) < 0.1f)
+            // If reached the waypoint
+            if (distance < 0.1f)
             {
                 path.RemoveAt(0);
                 Debug.Log($"{gameObject.name} reached waypoint, {path.Count} waypoints left.");
+            }
+
+            // If no more waypoints (at final destination), STOP
+            if (path.Count == 0)
+            {
+                if (rb != null)
+                    rb.linearVelocity = Vector2.zero;
             }
         }
         else
         {
             if (rb != null)
-            rb.linearVelocity = Vector2.zero;
+                rb.linearVelocity = Vector2.zero;
             Debug.Log($"{gameObject.name}: No path to follow or path is null.");
         }
     }

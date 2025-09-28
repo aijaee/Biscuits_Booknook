@@ -2999,7 +2999,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b26fc41dfe93ede4bb6d27d48e0fd238, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2806707d3f21f5e40ab3dd71c3b47ce6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5037,24 +5037,43 @@ MonoBehaviour:
   playerSpawner: {fileID: 412539304}
   minimapRenderer: {fileID: 956838993}
   objectBuffer: 1
-  minDistanceBetweenPrefabs: 1
   notePrefab: {fileID: 8188768632608287906, guid: 4429960cf4523754899a7700e86bc5ee, type: 3}
   noteOffset: {x: 0, y: 2}
   corridorWidth: 1
   combatRoomPrefabs:
-  - prefab: {fileID: 4481769733883249602, guid: 92249c7210f87b24d8f9890e7e165082, type: 3}
-    size: {x: 1, y: 1}
-  - prefab: {fileID: 2589290092252027362, guid: 6eaf071b9543cf54eb7e63a52317a621, type: 3}
-    size: {x: 1, y: 1}
-  - prefab: {fileID: 1277783653203246645, guid: 73b496029f16ec24982ddf17f9553ec6, type: 3}
-    size: {x: 2, y: 2}
-  - prefab: {fileID: 3502718632841905292, guid: e04439b8503e65e4284786be1f87668d, type: 3}
-    size: {x: 2, y: 2}
-  - prefab: {fileID: 4125861433930969444, guid: 3d7a78bb937b2f54db1980efca94299a, type: 3}
-    size: {x: 2, y: 2}
-  - prefab: {fileID: 2075649999216575010, guid: 29f7e2422c097f749aa33b59c9e8630a, type: 3}
-    size: {x: 3, y: 3}
-  maxPrefabsPerCombatRoom: 3
+  - prefab: {fileID: 4125861433930969444, guid: d65b415f936d87244833793a6d8593b5, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: d47de495598af094e9f4fb2a2af6be64, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 14d77643ccd022349b8860ddc16cfd48, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 6747bfaf5203c134eb282e1ffe12a7c5, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: c03d809c0763d7248ab2e33b72fa93af, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: 9a44d1171baf20e448e2094bc54a2747, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 7fb907e401dd06144ac475edbfc31d5d, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 1527d10f66b883b40a77ec830395a049, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 482d9f22cf8317344b150de03644c001, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: febd4c247f03dd14eb9ddc58e39ef930, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: 92e2cca3ba1b1d744bc1c1d678b7b4bf, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: b959a47c97a8e7c45ae30475d3f71378, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: a1b6d2e6a71af9d4dbd639ae2f963acd, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 927fafc70d356cc42879382f0e729b08, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: f261568908b255549805e9bcdd5f40c1, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 40fde07ba2f741447ab74c71fb200453, type: 3}
+    size: {x: 0, y: 0}
+  maxPrefabsPerCombatRoom: 5
   puzzleRoomPrefabs:
   - prefab: {fileID: 2258546063865880603, guid: 54a65bc718da63f44a9575d015fcb3dd, type: 3}
     size: {x: 0, y: 0}
@@ -5195,8 +5214,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Body
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bcc03cc8c67f7c24a9a1a1c19272f307, type: 2}
-  m_sharedMaterial: {fileID: -2945024645639892523, guid: bcc03cc8c67f7c24a9a1a1c19272f307, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f6503f983e3ca93488eaa5e8e95a2f83, type: 2}
+  m_sharedMaterial: {fileID: 4904941694865206783, guid: f6503f983e3ca93488eaa5e8e95a2f83, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -36259,8 +36278,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Title
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bcc03cc8c67f7c24a9a1a1c19272f307, type: 2}
-  m_sharedMaterial: {fileID: -2945024645639892523, guid: bcc03cc8c67f7c24a9a1a1c19272f307, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f6503f983e3ca93488eaa5e8e95a2f83, type: 2}
+  m_sharedMaterial: {fileID: 4904941694865206783, guid: f6503f983e3ca93488eaa5e8e95a2f83, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -36697,7 +36716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2583347721586350462, guid: 98cc2b6de4177ba4a8867971a33f1106, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: -0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 2990923727977591999, guid: 98cc2b6de4177ba4a8867971a33f1106, type: 3}
       propertyPath: m_Pivot.y
@@ -49638,7 +49657,7 @@ TilemapCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7ae920954e8b90146adbcc8a6c662702, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -51664,11 +51683,11 @@ PrefabInstance:
       objectReference: {fileID: 6227147373523842324}
     - target: {fileID: 5434500023417973129, guid: 12da7bc1f5bf24b469b2cdc74464a39c, type: 3}
       propertyPath: parallaxMultiplier.x
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5434500023417973129, guid: 12da7bc1f5bf24b469b2cdc74464a39c, type: 3}
       propertyPath: parallaxMultiplier.y
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5751119791738385166, guid: 12da7bc1f5bf24b469b2cdc74464a39c, type: 3}
       propertyPath: m_LocalPosition.x

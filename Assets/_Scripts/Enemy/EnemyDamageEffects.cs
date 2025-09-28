@@ -55,8 +55,9 @@ public class EnemyDamageEffects : MonoBehaviour
         }
 
         if (animator != null)
-            animator.speed = 0f;
+            animator.SetTrigger("Damaged"); // fire the one-shot
 
+        // Knockback
         Vector2 startPos = rb != null ? rb.position : (Vector2)transform.position;
         Vector2 targetPos = startPos + hitDir.normalized * knockbackDistance;
 
@@ -85,9 +86,7 @@ public class EnemyDamageEffects : MonoBehaviour
         else
             transform.position = targetPos;
 
-        if (animator != null)
-            animator.speed = animatorOriginalSpeed;
-
+        // Tilt reset
         elapsed = 0f;
         while (elapsed < tiltDuration)
         {
@@ -99,6 +98,7 @@ public class EnemyDamageEffects : MonoBehaviour
         }
         transform.localEulerAngles = originalLocalEuler;
 
+        // Shake
         Vector2 shakeBase = rb != null ? rb.position : (Vector2)transform.position;
         elapsed = 0f;
         while (elapsed < shakeDuration)

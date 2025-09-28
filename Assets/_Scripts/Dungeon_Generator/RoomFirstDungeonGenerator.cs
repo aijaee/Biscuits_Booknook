@@ -75,22 +75,22 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private int minBossRoomWidth = 8, minBossRoomHeight = 8;
 
     [SerializeField] private EnemySpawner enemySpawner;
-    [SerializeField] private GridManager gridManager; 
-    [SerializeField] private LayerMask unwalkableMask; 
+    [SerializeField] private GridManager gridManager;
+    [SerializeField] private LayerMask unwalkableMask;
 
 
     [Header("Dungeon Settings")]
     [SerializeField] private int dungeonWidth = 20, dungeonHeight = 20;
-    [SerializeField][Range(0, 10)] private int offset = 1;  
+    [SerializeField][Range(0, 10)] private int offset = 1;
     [SerializeField] private int wallBuffer = 1;
     [SerializeField] private bool randomWalkRooms = false;
     [SerializeField] private PlayerSpawner playerSpawner;
     [SerializeField] private MinimapRenderer minimapRenderer; // assign in Inspector
 
     [SerializeField] private int objectBuffer = 1;
-    [SerializeField] private int minDistanceBetweenPrefabs = 1;
+    // [SerializeField] private int minDistanceBetweenPrefabs = 1; // ----- Not used -----
     [SerializeField] private GameObject notePrefab;
-    [SerializeField] private Vector2Int noteOffset = new Vector2Int(0,2);
+    [SerializeField] private Vector2Int noteOffset = new Vector2Int(0, 2);
 
     [Header("Corridor Settings")]
     [SerializeField, Range(1, 5)] private int corridorWidth = 1;
@@ -215,7 +215,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             }
         }
 
-          if (notePrefab != null)
+        if (notePrefab != null)
         {
             Vector2Int playerTile = FindClosestFloorTile(roomDataList[0].Center, floor);
             Vector2Int spawnTile = playerTile + noteOffset;
@@ -297,29 +297,32 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
                 // Mark prefab index as used to prevent reuse
                 usedPrefabIndices.Add(randomIndex);
-        
+
                 MarkAreaOccupied(spawnPos, prefabSize, occupiedTiles);
                 Vector3 worldPos = new Vector3(spawnPos.x, spawnPos.y, 0);
                 GameObject roomInstance = Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
                 // Randomize chest positions
                 var chestTransforms = roomInstance.GetComponentsInChildren<Transform>()
                     .Where(t => t.CompareTag("Chest")).ToList();
-                List<Vector2> placedChestPositions = new List<Vector2>();
-                foreach (var chest in chestTransforms)
-                {
-                    Vector2 pos;
-                    int chestAttempts = 0;
-                    do
-                    {
-                        float localX = Random.Range(wallBuffer, prefabSize.x - wallBuffer);
-                        float localY = Random.Range(wallBuffer, prefabSize.y - wallBuffer);
-                        pos = new Vector2(localX, localY);
-                        chestAttempts++;
-                    } while (placedChestPositions.Any(p => Vector2.Distance(p, pos) < minDistanceBetweenPrefabs) && chestAttempts < 10);
-                    placedChestPositions.Add(pos);
-                    chest.localPosition = new Vector3(pos.x, pos.y, chest.localPosition.z);
-                }
 
+                if (chestTransforms.Count > 1)
+                {
+                    // Store the original local positions
+                    List<Vector3> chestPositions = chestTransforms.Select(c => c.localPosition).ToList();
+
+                    // Shuffle the positions
+                    for (int i = 0; i < chestPositions.Count; i++)
+                    {
+                        int swapIndex = Random.Range(i, chestPositions.Count); // renamed variable
+                        (chestPositions[i], chestPositions[swapIndex]) = (chestPositions[swapIndex], chestPositions[i]);
+                    }
+
+                    // Reassign shuffled positions
+                    for (int i = 0; i < chestTransforms.Count; i++)
+                    {
+                        chestTransforms[i].localPosition = chestPositions[i];
+                    }
+                }
                 placedCount++;
             }
         }
@@ -482,7 +485,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void PlacePrefabsInCombatRooms()
     {
-        HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
+        // use the class-level prefabOccupiedTiles so placements don't overlap across rooms
+        prefabOccupiedTiles.Clear();
 
         foreach (var room in roomDataList)
         {
@@ -498,26 +502,29 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 var prefabData = combatRoomPrefabs[Random.Range(0, combatRoomPrefabs.Count)];
                 Vector2Int prefabSize = prefabData.size;
 
-                int minX = room.Bounds.xMin + wallBuffer;
-                int maxX = room.Bounds.xMax - wallBuffer - prefabSize.x + 1;
-                int minY = room.Bounds.yMin + wallBuffer;
-                int maxY = room.Bounds.yMax - wallBuffer - prefabSize.y + 1;
+                // account for objectBuffer so prefabs don't touch room walls
+                int minX = room.Bounds.xMin + wallBuffer + objectBuffer;
+                int maxX = room.Bounds.xMax - wallBuffer - objectBuffer - prefabSize.x + 1;
+                int minY = room.Bounds.yMin + wallBuffer + objectBuffer;
+                int maxY = room.Bounds.yMax - wallBuffer - objectBuffer - prefabSize.y + 1;
 
                 if (maxX < minX || maxY < minY) break;
 
                 bool placed = false;
                 int placementAttempts = 0;
 
-                while (!placed && placementAttempts < 5)
+                while (!placed && placementAttempts < 10)
                 {
                     placementAttempts++;
                     int spawnX = Random.Range(minX, maxX + 1);
                     int spawnY = Random.Range(minY, maxY + 1);
                     Vector2Int spawnPos = new Vector2Int(spawnX, spawnY);
 
-                    if (!IsAreaOccupied(spawnPos, prefabSize, occupiedTiles))
+                    // check against prefabOccupiedTiles and include an object buffer to keep distance
+                    if (!IsAreaOccupiedWithBuffer(spawnPos, prefabSize, objectBuffer, prefabOccupiedTiles))
                     {
-                        MarkAreaOccupied(spawnPos, prefabSize, occupiedTiles);
+                        // mark with buffer so future placements keep distance
+                        MarkAreaOccupiedWithBuffer(spawnPos, prefabSize, objectBuffer, prefabOccupiedTiles);
                         Vector3 worldPos = new Vector3(spawnX, spawnY, 0);
                         Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
                         placedCount++;
@@ -552,5 +559,19 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 occupied.Add(new Vector2Int(startPos.x + x, startPos.y + y));
             }
         }
+    }
+    
+    private bool IsAreaOccupiedWithBuffer(Vector2Int startPos, Vector2Int size, int buffer, HashSet<Vector2Int> occupied)
+    {
+        Vector2Int start = new Vector2Int(startPos.x - buffer, startPos.y - buffer);
+        Vector2Int totalSize = new Vector2Int(size.x + buffer * 2, size.y + buffer * 2);
+        return IsAreaOccupied(start, totalSize, occupied);
+    }
+
+    private void MarkAreaOccupiedWithBuffer(Vector2Int startPos, Vector2Int size, int buffer, HashSet<Vector2Int> occupied)
+    {
+        Vector2Int start = new Vector2Int(startPos.x - buffer, startPos.y - buffer);
+        Vector2Int totalSize = new Vector2Int(size.x + buffer * 2, size.y + buffer * 2);
+        MarkAreaOccupied(start, totalSize, occupied);
     }
 }

@@ -435,9 +435,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -1.21}
-  m_Size: {x: 0.76, y: 0.76}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -1.27}
+  m_Size: {x: 1.18, y: 0.52}
+  m_Direction: 1
 --- !u!114 &1655707275376721718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingPoint: {fileID: 106463083521763591}
-  swingRange: 0.85
+  swingRange: 0.9
   detectionRange: 10.8
   attackDamage: 20
   attackCooldown: 0.5
