@@ -13,6 +13,12 @@ public enum RoomType
     Boss
 }
 
+public enum PuzzleType
+{
+    Implicit,
+    Explicit
+}
+
 [Serializable]
 public class RoomPrefab
 {
@@ -55,6 +61,7 @@ public class RoomData
 {
     public BoundsInt Bounds;
     public RoomType Type;
+    public PuzzleType PuzzleSubtype;
     public Vector2Int Center => (Vector2Int)Vector3Int.RoundToInt(Bounds.center);
 
     public RoomData(BoundsInt bounds)
@@ -68,6 +75,10 @@ public class RoomData
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
+
+    [Header("Room Spawn Settings")]
+    [SerializeField] private int minPuzzleRooms = 5;
+    [SerializeField] private int maxPuzzleRooms = 5;
 
     [Header("Room Size Constraints")]
     [SerializeField] private int minCombatRoomWidth = 4, minCombatRoomHeight = 4;
@@ -100,8 +111,12 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private int maxPrefabsPerCombatRoom = 3;
 
     [Header("Puzzle Room Prefabs")]
-    [SerializeField] private List<RoomPrefab> puzzleRoomPrefabs;
-    [SerializeField] private int maxPrefabsPerPuzzleRoom = 2;
+    [SerializeField] private int maxPrefabsPerPuzzleRoom = 1;
+    [Header("Puzzle Room Prefabs - Implicit")]
+    [SerializeField] private List<RoomPrefab> implicitPuzzleRoomPrefabs;
+
+    [Header("Puzzle Room Prefabs - Explicit")]
+    [SerializeField] private List<RoomPrefab> explicitPuzzleRoomPrefabs;
 
     private List<RoomData> roomDataList;
     private HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
@@ -110,7 +125,9 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void Start()
     {
-        foreach (var prefab in puzzleRoomPrefabs)
+        foreach (var prefab in implicitPuzzleRoomPrefabs)
+            prefab.InitializeSize();
+        foreach (var prefab in explicitPuzzleRoomPrefabs)
             prefab.InitializeSize();
         foreach (var prefab in combatRoomPrefabs)
             prefab.InitializeSize();
@@ -144,11 +161,34 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         roomDataList[0].Type = RoomType.Spawn;
         roomDataList[^1].Type = RoomType.Boss;
 
-        int puzzleCount = Mathf.Clamp(Random.Range(2, 2), 0, roomDataList.Count - 2);
+        int totalPuzzleRooms = Random.Range(minPuzzleRooms, maxPuzzleRooms + 1);
+
+        int implicitCount, explicitCount;
+        if (Random.value < 0.5f)
+        {
+            implicitCount = Mathf.Min(2, totalPuzzleRooms);
+            explicitCount = Mathf.Min(totalPuzzleRooms - implicitCount, 3);
+        }
+        else
+        {
+            explicitCount = Mathf.Min(2, totalPuzzleRooms);
+            implicitCount = Mathf.Min(totalPuzzleRooms - explicitCount, 3);
+        }
+
         var shuffleCandidates = roomDataList.GetRange(1, roomDataList.Count - 2);
         Shuffle(shuffleCandidates);
-        for (int i = 0; i < puzzleCount; i++)
+
+        for (int i = 0; i < implicitCount && i < shuffleCandidates.Count; i++)
+        {
             shuffleCandidates[i].Type = RoomType.Puzzle;
+            shuffleCandidates[i].PuzzleSubtype = PuzzleType.Implicit;
+        }
+
+        for (int i = implicitCount; i < implicitCount + explicitCount && i < shuffleCandidates.Count; i++)
+        {
+            shuffleCandidates[i].Type = RoomType.Puzzle;
+            shuffleCandidates[i].PuzzleSubtype = PuzzleType.Explicit;
+        }
 
         foreach (var room in roomDataList)
             EnsureRoomMinSize(room);
@@ -253,37 +293,45 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private void PlacePrefabsInPuzzleRooms()
     {
         HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
+        HashSet<int> usedImplicitPrefabs = new HashSet<int>();
+        HashSet<int> usedExplicitPrefabs = new HashSet<int>();
 
         foreach (var room in roomDataList)
         {
             if (room.Type != RoomType.Puzzle) continue;
 
+            List<RoomPrefab> prefabPool;
+            HashSet<int> usedPrefabIndices;
+
+            if (room.PuzzleSubtype == PuzzleType.Implicit)
+            {
+                prefabPool = implicitPuzzleRoomPrefabs;
+                usedPrefabIndices = usedImplicitPrefabs;
+            }
+            else
+            {
+                prefabPool = explicitPuzzleRoomPrefabs;
+                usedPrefabIndices = usedExplicitPrefabs;
+            }
+
             int placedCount = 0;
             int attempts = 0;
             int maxAttempts = 10 * maxPrefabsPerPuzzleRoom;
-
-            // Keep track of used puzzle prefab indices for this room or overall
-            HashSet<int> usedPrefabIndices = new HashSet<int>();
 
             while (placedCount < maxPrefabsPerPuzzleRoom && attempts < maxAttempts)
             {
                 attempts++;
 
-                // Get list of available prefabs (not used yet)
                 List<int> availableIndices = new List<int>();
-                for (int i = 0; i < puzzleRoomPrefabs.Count; i++)
+                for (int i = 0; i < prefabPool.Count; i++)
                 {
                     if (!usedPrefabIndices.Contains(i))
                         availableIndices.Add(i);
                 }
+                if (availableIndices.Count == 0) break;
 
-                // No more unique prefabs available
-                if (availableIndices.Count == 0)
-                    break;
-
-                // Pick a random available prefab index
                 int randomIndex = availableIndices[Random.Range(0, availableIndices.Count)];
-                var prefabData = puzzleRoomPrefabs[randomIndex];
+                var prefabData = prefabPool[randomIndex];
                 Vector2Int prefabSize = prefabData.size;
 
                 Vector2Int roomCenter = room.Center;
@@ -295,39 +343,33 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 if (!IsWithinRoomBounds(room, spawnPos, prefabSize) || IsAreaOccupied(spawnPos, prefabSize, occupiedTiles))
                     continue;
 
-                // Mark prefab index as used to prevent reuse
                 usedPrefabIndices.Add(randomIndex);
-
                 MarkAreaOccupied(spawnPos, prefabSize, occupiedTiles);
+
                 Vector3 worldPos = new Vector3(spawnPos.x, spawnPos.y, 0);
                 GameObject roomInstance = Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
-                // Randomize chest positions
+
                 var chestTransforms = roomInstance.GetComponentsInChildren<Transform>()
                     .Where(t => t.CompareTag("Chest")).ToList();
 
                 if (chestTransforms.Count > 1)
                 {
-                    // Store the original local positions
                     List<Vector3> chestPositions = chestTransforms.Select(c => c.localPosition).ToList();
-
-                    // Shuffle the positions
                     for (int i = 0; i < chestPositions.Count; i++)
                     {
-                        int swapIndex = Random.Range(i, chestPositions.Count); // renamed variable
+                        int swapIndex = Random.Range(i, chestPositions.Count);
                         (chestPositions[i], chestPositions[swapIndex]) = (chestPositions[swapIndex], chestPositions[i]);
                     }
-
-                    // Reassign shuffled positions
                     for (int i = 0; i < chestTransforms.Count; i++)
                     {
                         chestTransforms[i].localPosition = chestPositions[i];
                     }
                 }
+
                 placedCount++;
             }
         }
     }
-
 
     private void EnsureRoomMinSize(RoomData room)
     {

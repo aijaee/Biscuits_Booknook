@@ -1,18 +1,37 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class YSort : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    [Tooltip("Optional: Override the pivot (e.g. Shadow). If left empty, auto-detected or fallback to self.")]
+    public Transform pivot;
+
+    private SpriteRenderer sr;
 
     void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        // Auto-detect a pivot if none is assigned
+        if (pivot == null)
+        {
+            Transform shadow = transform.Find("Shadow");
+            if (shadow != null)
+                pivot = shadow; // Use shadow if available
+            else
+                pivot = transform; // Otherwise, use this object
+        }
+
+        // Try to find the renderer on this object
+        sr = GetComponent<SpriteRenderer>();
+
+        // If not found, look in children (covers cases like Fish → Body)
+        if (sr == null)
+            sr = GetComponentInChildren<SpriteRenderer>();
     }
 
     void LateUpdate()
     {
-        // Multiply by -100 so lower Y = higher sorting order
-        spriteRenderer.sortingOrder = -(int)(transform.position.y * 100);
+        if (sr != null && pivot != null)
+        {
+            sr.sortingOrder = -(int)(pivot.position.y * 100);
+        }
     }
 }

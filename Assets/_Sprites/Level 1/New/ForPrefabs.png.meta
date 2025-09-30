@@ -516,7 +516,7 @@ TextureImporter:
         x: 1299
         y: 265
         width: 215
-        height: 243
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,9 +536,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1557
-        y: 268
+        y: 301
         width: 215
-        height: 243
+        height: 200
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,7 +560,7 @@ TextureImporter:
         x: 1864
         y: 30
         width: 356
-        height: 453
+        height: 70
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,28 +664,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForPrefabs_30
-      rect:
-        serializedVersion: 2
-        x: 1304
-        y: 14
-        width: 215
-        height: 244
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb19e7549494a3e4486e3096b8bc7f81
-      internalID: -332845584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: ForPrefabs_31
       rect:
         serializedVersion: 2
@@ -725,6 +703,72 @@ TextureImporter:
       bones: []
       spriteID: c5dba922ec1ab9d4c9202d4e48551925
       internalID: 163613866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForPrefabs_2
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 297
+        width: 215
+        height: 205
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb14fa866f810545b72277c63982e96
+      internalID: -1216504626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForPrefabs_4
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 46
+        width: 215
+        height: 205
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f3193c4540a8e4b8d4a79561f8e119
+      internalID: -347722126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForPrefabs_8
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 100
+        width: 356
+        height: 387
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b5a9cb7c3d8e149911c942f8796b85
+      internalID: 903825180
       vertices: []
       indices: 
       edges: []

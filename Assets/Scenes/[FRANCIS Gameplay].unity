@@ -2869,8 +2869,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 896872469}
   - {fileID: 1122192806}
+  - {fileID: 896872469}
   - {fileID: 480120275}
   - {fileID: 164714587}
   - {fileID: 1776362741}
@@ -2965,7 +2965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &831618596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2999,7 +2999,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2806707d3f21f5e40ab3dd71c3b47ce6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e19a65e1acd7cb42a959c39f90b0e48, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3026,7 +3026,7 @@ RectTransform:
   m_GameObject: {fileID: 831618595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.78, y: 1.78, z: 1.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2140558957}
@@ -3677,7 +3677,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896872468}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3686,7 +3686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.00012207031, y: -0.00012207031}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896872470
@@ -5018,6 +5018,8 @@ MonoBehaviour:
   tilemapVisualizer: {fileID: 2072839850}
   startPosition: {x: 0, y: 0}
   randomWalkParameters: {fileID: 11400000, guid: d19a4dd1c4d2aa649a1882baf1b0deb8, type: 2}
+  minPuzzleRooms: 4
+  maxPuzzleRooms: 6
   minCombatRoomWidth: 10
   minCombatRoomHeight: 10
   minPuzzleRoomWidth: 15
@@ -5073,27 +5075,80 @@ MonoBehaviour:
     size: {x: 0, y: 0}
   - prefab: {fileID: 2589290092252027362, guid: 40fde07ba2f741447ab74c71fb200453, type: 3}
     size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: afc43f7537f7e734ba6ad1d754291328, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 1bd3381f328db0d468006782628cc1e6, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 7cc63a5188a1ad743bb9944d38a4b193, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 8d08575b7803b6b48ae1c3f032189512, type: 3}
+    size: {x: 0, y: 0}
   maxPrefabsPerCombatRoom: 5
-  puzzleRoomPrefabs:
-  - prefab: {fileID: 2258546063865880603, guid: 54a65bc718da63f44a9575d015fcb3dd, type: 3}
-    size: {x: 0, y: 0}
-  - prefab: {fileID: 2258546063865880603, guid: 1c0c67fb9f5405b4baa18e795bff68fd, type: 3}
-    size: {x: 0, y: 0}
-  - prefab: {fileID: 2258546063865880603, guid: 1a8d25a748549454b9eb013c8d987719, type: 3}
-    size: {x: 0, y: 0}
-  - prefab: {fileID: 2258546063865880603, guid: 8caa62fcfd706e24381477451c982ad2, type: 3}
-    size: {x: 0, y: 0}
-  - prefab: {fileID: 2258546063865880603, guid: 2d122e630abab2e4d92a7768aa08c69b, type: 3}
-    size: {x: 0, y: 0}
-  - prefab: {fileID: 2258546063865880603, guid: 25989dc10de66a649a7d8b4bfb4b2473, type: 3}
-    size: {x: 0, y: 0}
-  - prefab: {fileID: 2258546063865880603, guid: 1851baef4f12e81409a270633e7f8eb4, type: 3}
-    size: {x: 0, y: 0}
-  - prefab: {fileID: 2258546063865880603, guid: ee244ce13bd4224428921c27ba57bcca, type: 3}
-    size: {x: 0, y: 0}
-  - prefab: {fileID: 2258546063865880603, guid: b1e336418b10d894e96cd82844426ef1, type: 3}
-    size: {x: 0, y: 0}
   maxPrefabsPerPuzzleRoom: 1
+  implicitPuzzleRoomPrefabs:
+  - prefab: {fileID: 2258546063865880603, guid: be007f6118f9b644da3bfc4050c235ce, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: fb48fdef6e7d38b4eb35e329b16449e9, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: e58f6c5149dcc23468b7b2714c8c84b4, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 30b9d057ef502ad49bc97c42832b166d, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 6588db3abbdb3b240a784c8976d5f9bb, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: e4a4ea256e7cae64ca92809613e4f5b3, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 0672cc01a7d23254b98f8948000d6f28, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: a83e98283b07d594f8403dbfb3a559da, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 044c5cab856d05945a3255cb144b4739, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 368bfa89be844d343824eb4dd5b103d8, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 145d12aac3dbbeb44bfef215fdc73a79, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 8cc1ebe02fd47c0409b5bca996b17b9f, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 03089ad5a3bbb144eadd028581ab54a1, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 8a6a9da8b4b32244e8d2745bef415072, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 9f71b3655cd04fb46b445aa68f277dee, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 60354e2e6658bbd429610cf00028f665, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: e63ea34a14db7a0469d463e8953d79b0, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: bd7dd8a86cf90ed48b0fe3846ec7d802, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: ae120895fb3903649a43438b5fe416a1, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 3591c52c736c2a74fa0fce8b2461f283, type: 3}
+    size: {x: 0, y: 0}
+  explicitPuzzleRoomPrefabs:
+  - prefab: {fileID: 2258546063865880603, guid: 46850c2c67625f74e949f29a31b073ae, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 656ef5cbdd94e754a9cd53714ef41a47, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 6f49b6b37c38e0d41b5b11f112cafa1d, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 0240f8d215f2d094c9d48d50624cb323, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 27b6223924030b845964414310ba6942, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: f8967982af27bfb478e82af0ec1138dd, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: bae4eb0f0b5ee2d4d99cbcda2ac6ab16, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: b37dfc94cc612ce4c9245fed50c6cd6d, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 3c27d1762b88b3c488d1bc6d42f82d5c, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: f120e0f67781da646b4bf5021efe6b45, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 91dd2e94efe0f224a8b75e02bc51da08, type: 3}
+    size: {x: 0, y: 0}
 --- !u!4 &1208139128
 Transform:
   m_ObjectHideFlags: 0
@@ -36253,8 +36308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 107}
-  m_SizeDelta: {x: 1102.63, y: 520}
+  m_AnchoredPosition: {x: 0, y: 53.50002}
+  m_SizeDelta: {x: 1102.63, y: 413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503402860
 MonoBehaviour:
@@ -36311,7 +36366,7 @@ MonoBehaviour:
   m_fontSizeMax: 64
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -36341,7 +36396,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 89.116516, z: 0, w: 319.31906}
+  m_margin: {x: 0, y: 2.1974335, z: 0, w: 305.31744}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

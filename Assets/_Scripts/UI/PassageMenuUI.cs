@@ -51,6 +51,7 @@ public class PassageMenuUI : MonoBehaviour
 
         passageTitleUI.enableAutoSizing = true;
         passageBodyUI.enableAutoSizing = true;
+        passageTitleUI.fontStyle = FontStyles.Bold;
         passageTitleUI.fontSizeMax = 64f;
         passageBodyUI.fontSizeMax = 36f;
 
