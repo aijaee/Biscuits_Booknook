@@ -1,0 +1,483 @@
+fileFormatVersion: 2
+guid: 9738ea013e132174ea61e75497188b05
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3114296966237971001
+    second: Biscuit_DashFront_0
+  - first:
+      213: 8643161438465127000
+    second: Biscuit_DashFront_1
+  - first:
+      213: -4781390516694325937
+    second: Biscuit_DashFront_2
+  - first:
+      213: 5390938131911930446
+    second: Biscuit_DashFront_3
+  - first:
+      213: 4657597242899602124
+    second: Biscuit_DashFront_4
+  - first:
+      213: -5354192889154147832
+    second: Biscuit_DashFront_5
+  - first:
+      213: 5932305732860661587
+    second: Biscuit_DashFront_6
+  - first:
+      213: -4256191537783632605
+    second: Biscuit_DashFront_7
+  - first:
+      213: 8930861843902488766
+    second: Biscuit_DashFront_8
+  - first:
+      213: 4739958010549623782
+    second: Biscuit_DashFront_9
+  - first:
+      213: 5342467413716667983
+    second: Biscuit_DashFront_10
+  - first:
+      213: 8603801772356521430
+    second: Biscuit_DashFront_11
+  - first:
+      213: -6151918487186870063
+    second: Biscuit_DashFront_12
+  - first:
+      213: -6088867418031980440
+    second: Biscuit_DashFront_13
+  - first:
+      213: -7357074328920164147
+    second: Biscuit_DashFront_14
+  - first:
+      213: -6041820640280601430
+    second: Biscuit_DashFront_15
+  - first:
+      213: 2720107891631068014
+    second: Biscuit_DashFront_16
+  - first:
+      213: -944570024428154235
+    second: Biscuit_DashFront_17
+  - first:
+      213: -7570671475900139462
+    second: Biscuit_DashFront_18
+  - first:
+      213: -7025041442824522693
+    second: Biscuit_DashFront_19
+  - first:
+      213: -2508983334626240651
+    second: Biscuit_DashFront_20
+  - first:
+      213: 7825950021562462355
+    second: Biscuit_DashFront_21
+  - first:
+      213: -2851374777112575755
+    second: Biscuit_DashFront_22
+  - first:
+      213: 1407038447636210492
+    second: Biscuit_DashFront_23
+  - first:
+      213: -985135270519322185
+    second: Biscuit_DashFront_24
+  - first:
+      213: -9176045896960191872
+    second: Biscuit_DashFront_25
+  - first:
+      213: 8502108403374127345
+    second: Biscuit_DashFront_26
+  - first:
+      213: -8136288395493628483
+    second: Biscuit_DashFront_27
+  - first:
+      213: 5426273548735363482
+    second: Biscuit_DashFront_28
+  - first:
+      213: -8487662250152081212
+    second: Biscuit_DashFront_29
+  - first:
+      213: 694118535708683640
+    second: Biscuit_DashFront_30
+  - first:
+      213: -1871769358406639425
+    second: Biscuit_DashFront_31
+  - first:
+      213: 6918911510881055042
+    second: Biscuit_DashFront_32
+  - first:
+      213: -8385976813978147392
+    second: Biscuit_DashFront_33
+  - first:
+      213: 1594289613418505081
+    second: Biscuit_DashFront_34
+  - first:
+      213: -8618620565893702167
+    second: Biscuit_DashFront_35
+  - first:
+      213: 8308727370666204683
+    second: Biscuit_DashFront_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Biscuit_DashFront_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec74d620edf95ac4096bffade06e26e0
+      internalID: -785262026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a94279bb804874d98abb6f867692e3
+      internalID: -1824115485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b86781d0afb4d46a5f76cace2fd17c
+      internalID: -426987192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14267e3b73b10ce4f93c7f3917f52528
+      internalID: 404766648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 512
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e0fb6df7725bb4f9d8d781a2846371
+      internalID: -61580378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 512
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c589efda98d9b4badf1916e6ed1cb7
+      internalID: -1251753891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977d3c726ed7d944b9b267c4089492f1
+      internalID: -2042806068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86ac36bb50b22942bf2f597163e2837
+      internalID: 1951545247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970432d289095db4eaf2b73aa397cad8
+      internalID: -1396820367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_9
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7694a423480c5844cbcc5a8f2bf323e5
+      internalID: 44831729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Biscuit_DashFront_10
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f983ce1d3c95d244a337caa7a87d0eb
+      internalID: 1074518794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f373ad5f755c1b442bd44f59c0ec3a4b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Biscuit_DashFront_0: -785262026
+      Biscuit_DashFront_1: -1824115485
+      Biscuit_DashFront_10: 1074518794
+      Biscuit_DashFront_2: -426987192
+      Biscuit_DashFront_3: 404766648
+      Biscuit_DashFront_4: -61580378
+      Biscuit_DashFront_5: -1251753891
+      Biscuit_DashFront_6: -2042806068
+      Biscuit_DashFront_7: 1951545247
+      Biscuit_DashFront_8: -1396820367
+      Biscuit_DashFront_9: 44831729
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
