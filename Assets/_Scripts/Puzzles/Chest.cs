@@ -1,8 +1,10 @@
 using UnityEngine;
-using UI;
 
 public class Chest : MonoBehaviour, IInteractable
 {
+    [TextArea(2, 5)]
+    public string chestText;  
+
     public bool isCorrectAnswer = false;
     public int rewardAmount = 10;
     public GameObject explosionEffect;
@@ -13,10 +15,18 @@ public class Chest : MonoBehaviour, IInteractable
     private SpriteRenderer spriteRenderer;
     private bool hasBeenOpened = false;
     private bool playerInRange = false;
+    private TMP_Text chestTMP;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        chestTMP = GetComponentInChildren<TMP_Text>();
+
+        if (chestTMP != null)
+        {
+            // Handles both literal line breaks (from typing Enter) and "\n" written in Inspector
+            chestTMP.text = chestText.Replace("\\n", "\n");
+        }
     }
 
     public void TryInteract()
@@ -37,35 +47,38 @@ public class Chest : MonoBehaviour, IInteractable
 
             if (reward != null)
             {
+                if (spriteRenderer)
+                    spriteRenderer.sprite = reward.chestSprite != null ? reward.chestSprite : openedCorrectChestSprite;
+
                 // apply reward effects
                 switch (reward.rewardType)
                 {
                     case ChestReward.RewardType.Heal:
                         if (playerController != null) playerController.Heal(reward.healAmount);
-                        Debug.Log($"You healed for {reward.healAmount} health.");
                         break;
 
                     case ChestReward.RewardType.Speed:
-                        if (playerController != null)
-                            playerController.ApplySpeedBoost(reward.speedMultiplier, reward.speedDuration);
+                        if (playerController != null) playerController.ApplySpeedBoost(reward.speedMultiplier, reward.speedDuration);
                         Debug.Log($"Speed boosted x{reward.speedMultiplier} for {reward.speedDuration} seconds.");
                         break;
 
                     case ChestReward.RewardType.AdditionalDamage:
                         var meleeCtrl = player != null ? player.GetComponent<MeleeAttackController>() : null;
                         if (meleeCtrl != null) meleeCtrl.AddDamageBuff(reward.additionalDamageAmount);
-                        Debug.Log($"Damage increased by {reward.additionalDamageAmount}.");
                         break;
                 }
             }
             else
             {
+                // set opened chest sprite on paperclip reward
+                if (spriteRenderer)
+                    spriteRenderer.sprite = openedCorrectChestSprite;
+
                 Debug.Log($"Correct! You gained {rewardAmount} paperclips.");
             }
         }
         else
         {
-            // wrong answer explosion
             if (explosionEffect)
             {
                 GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);

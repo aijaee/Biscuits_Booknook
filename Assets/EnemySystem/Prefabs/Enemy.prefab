@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3030338319844839439}
   - component: {fileID: 3102893449711401429}
   - component: {fileID: -7994937655688911286}
+  - component: {fileID: 5908280256152387695}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -8317413853428517802, guid: 67002faea9b2104409ae2ec14667a9d5, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,13 +121,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7adf18a18b0a934dbad2f9a2377f4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 3
   visionRadius: 5
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 8
   attackDamage: 10
   attackCooldown: 1
+  isStunned: 0
+  pathfinder: {fileID: 0}
 --- !u!114 &8456635196695080473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +153,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7ae920954e8b90146adbcc8a6c662702, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -261,7 +264,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.5
+  m_Radius: 2.72
 --- !u!114 &-7994937655688911286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,3 +277,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8297733deebd20e4188ce54d18f70fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5908280256152387695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778905128114026574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f23f7412b75b1448fa16a3babf01bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackDistance: 0.9
+  knockbackDuration: 0.15
+  tiltAngle: 30
+  tiltDuration: 0.15
+  shakeAmount: 0
+  shakeDuration: 0
+  totalReactionTime: 0.15

@@ -21,10 +21,15 @@ public class PlayerController : MonoBehaviour
     [Header("Combat")]
     public int baseDamage = 1;
     private int currentDamage;
+    private bool isInvincible = false;
+    public float invincibilityDuration = 2f;
 
     private RectTransform hpBarRect; // Store the original rect for resizing
 
     private bool isDead = false;
+
+    // NEW: reference to the separate effects handler
+    public PlayerDamageEffects damageEffects;
 
     private void Awake()
     {
@@ -38,27 +43,48 @@ public class PlayerController : MonoBehaviour
 
         originalMoveSpeed = moveSpeed;
         currentDamage = baseDamage;
-    }
 
-    private void Start()
-    {
-        // Ensure the hpBarFiller is assigned by the spawner before updating
-        UpdateHPBar();
+        // AUTO-GET the PlayerDamageEffects if not assigned in Inspector
+        if (damageEffects == null)
+            damageEffects = GetComponent<PlayerDamageEffects>();
+
+        if (damageEffects == null)
+            Debug.LogWarning("PlayerController: no PlayerDamageEffects component found/assigned on the player.");
     }
 
     public void TakeDamage(int damage)
     {
-        if (isDead) return;
+        if (isDead || isInvincible) return;
+
         currentHealth -= damage;
         if (currentHealth < 0f) currentHealth = 0f;
-        Debug.Log($"{gameObject.name} took {damage} damage. Remaining HP: {currentHealth}");
+        Debug.Log("TakeDamage CALLED");
 
         UpdateHPBar();
 
-        if (currentHealth <= 0f && !isDead)
+        if (damageEffects != null)
         {
-            Die();
+            Debug.Log("Calling PlayDamageEffects");
+            damageEffects.PlayDamageEffects();
         }
+
+        // Start invincibility
+        StartCoroutine(InvincibilityCoroutine());
+
+        if (currentHealth <= 0f && !isDead)
+            Die();
+    }
+
+    public void SetInvincible(bool value)
+    {
+        isInvincible = value;
+    }
+
+    private IEnumerator InvincibilityCoroutine()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibilityDuration);
+        isInvincible = false;
     }
 
     private void Die()

@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.OnScreen;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerController))]
 public class DashController : MonoBehaviour
 {
     [Header("Dash Settings")]
@@ -11,7 +13,7 @@ public class DashController : MonoBehaviour
     public float dashCooldown = 1f;
 
     [Header("Input")]
-    [SerializeField] public OnScreenButton onScreenDashButton;
+    public OnScreenButton onScreenDashButton;
 
     [Header("References")]
     public Rigidbody2D rb;
@@ -22,14 +24,30 @@ public class DashController : MonoBehaviour
     private float lastDashTime = -Mathf.Infinity;
     private Vector2 dashDirection;
 
+    private PlayerController playerController;
+
+    private void Awake()
+    {
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+
+        if (playerController == null)
+            playerController = GetComponent<PlayerController>();
+
+        if (animator == null)
+            animator = GetComponent<Animator>();
+    }
+
     private void Update()
     {
+        // On-screen button
         if (onScreenDashButton != null &&
             (onScreenDashButton.control as ButtonControl)?.isPressed == true)
         {
             TryDash();
         }
 
+        // Keyboard input
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             TryDash();
@@ -54,11 +72,15 @@ public class DashController : MonoBehaviour
         isDashing = true;
         lastDashTime = Time.time;
 
+        // Apply invincibility during dash
+        if (playerController != null)
+            playerController.SetInvincible(true);
+
         if (movementScript != null)
             movementScript.isDashing = true;
 
         if (animator != null)
-            animator.SetBool("IsDashing", true); // Use bool for dash animation
+            animator.SetBool("IsDashing", true);
 
         float startTime = Time.time;
 
@@ -76,5 +98,9 @@ public class DashController : MonoBehaviour
 
         if (animator != null)
             animator.SetBool("IsDashing", false);
+
+        // Remove invincibility after dash ends
+        if (playerController != null)
+            playerController.SetInvincible(false);
     }
 }

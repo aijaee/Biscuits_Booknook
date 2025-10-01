@@ -143,7 +143,8 @@ public class MeleeAttackController : MonoBehaviour
         {
             if (enemy.TryGetComponent<Enemy_HealthAndDamage>(out var health))
             {
-                health.EnemyTakeDamage(attackDamage);
+                Vector2 hitDirection = (enemy.transform.position - transform.position).normalized;
+                health.EnemyTakeDamage(attackDamage, hitDirection);
             }
         }
     }

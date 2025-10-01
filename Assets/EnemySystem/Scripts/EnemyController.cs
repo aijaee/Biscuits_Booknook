@@ -10,9 +10,10 @@ public class EnemyController : MonoBehaviour
     [Header("Attack Settings")]
     public int attackDamage = 10;
     public float attackCooldown = 1.0f;
-
+    public bool isStunned = false;
+    private bool isKnockedBack = false;
     private Transform target;
-    private AStarPathfinder pathfinder;
+    [HideInInspector] public AStarPathfinder pathfinder;
     private List<Vector3> path;
     private Transform playerTransform;
     private Vector3? lastPlayerPosition = null;
@@ -59,6 +60,13 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        if (isStunned || isKnockedBack)
+        {
+            if (animator != null)
+                animator.SetFloat("Speed", 0f);
+            return;
+        }
+
         if (CanSeePlayer())
         {
             lostSightTimer = 0f;
@@ -67,7 +75,8 @@ public class EnemyController : MonoBehaviour
             if (playerTransform != null)
             {
                 lastPlayerPosition = playerTransform.position;
-                // Only recalculate path if player moved significantly and enemy is close to the next waypoint or path is empty
+
+                // Only recalculate path if player moved significantly
                 bool shouldRepath = false;
                 if (path == null || path.Count == 0)
                 {
@@ -84,6 +93,7 @@ public class EnemyController : MonoBehaviour
                         shouldRepath = true;
                     }
                 }
+
                 if (shouldRepath)
                 {
                     SetTarget(playerTransform);
@@ -96,9 +106,12 @@ public class EnemyController : MonoBehaviour
             lostSightTimer += Time.deltaTime;
 
             // If lost sight but have a last known position, keep moving there
-            if (!returningToOrigin && lastPlayerPosition != null && (target == null || (target != null && Vector3.Distance(transform.position, lastPlayerPosition.Value) > 0.1f)))
+            if (!returningToOrigin && lastPlayerPosition != null &&
+                (target == null || (target != null && Vector3.Distance(transform.position, lastPlayerPosition.Value) > 0.1f)))
             {
-                if (lastPathTargetPosition == null || Vector3.Distance(lastPathTargetPosition.Value, lastPlayerPosition.Value) > 0.5f || path == null || path.Count == 0)
+                if (lastPathTargetPosition == null ||
+                    Vector3.Distance(lastPathTargetPosition.Value, lastPlayerPosition.Value) > 0.5f ||
+                    path == null || path.Count == 0)
                 {
                     SetTarget(null); // Clear direct target
                     if (pathfinder != null)
@@ -109,7 +122,8 @@ public class EnemyController : MonoBehaviour
                 }
             }
             // If reached last known position, stop
-            else if (!returningToOrigin && lastPlayerPosition != null && Vector3.Distance(transform.position, lastPlayerPosition.Value) <= 0.1f)
+            else if (!returningToOrigin && lastPlayerPosition != null &&
+                    Vector3.Distance(transform.position, lastPlayerPosition.Value) <= 0.1f)
             {
                 lastPlayerPosition = null;
                 path = null;
@@ -129,18 +143,17 @@ public class EnemyController : MonoBehaviour
             }
         }
 
+        // Follow path if available
         if (path != null && path.Count > 0)
         {
             MoveTowardsTarget();
         }
 
-        // Animation: set Speed float based on movement
+        // Update animation speed (MODIFIED)
         if (animator != null)
         {
-            float speed = (path != null && path.Count > 0)
-                ? moveSpeed
-                : 0f;
-            animator.SetFloat("Speed", speed);
+            Vector3 velocity = rb != null ? rb.linearVelocity : Vector3.zero;
+            animator.SetFloat("Speed", velocity.magnitude);
         }
     }
 
@@ -172,32 +185,36 @@ public class EnemyController : MonoBehaviour
             Vector3 currentPosition = transform.position;
             currentPosition.z = 0;
 
-            Vector3 moveTo = Vector3.MoveTowards(currentPosition, nextPosition, moveSpeed * Time.deltaTime);
-
-            // Prevent moving through walls: check for collision at moveTo
-            Collider2D hit = Physics2D.OverlapCircle(moveTo, 0.2f, pathfinder.gridManager.unwalkableMask);
-            if (hit != null)
-            {
-                Debug.Log($"{gameObject.name}: Blocked by wall at {moveTo}");
-                path = null; // Stop path if blocked
-                return;
-            }
-
-           // Debug.Log($"{gameObject.name} moving from {currentPosition} towards {nextPosition} (moveTo: {moveTo})");
+            Vector3 direction = (nextPosition - currentPosition).normalized;
+            float distance = Vector3.Distance(currentPosition, nextPosition);
 
             if (rb != null)
-                rb.MovePosition(moveTo);
+            {
+                rb.linearVelocity = direction * moveSpeed;
+            }
             else
-                transform.position = moveTo;
+            {
+                transform.position = Vector3.MoveTowards(currentPosition, nextPosition, moveSpeed * Time.deltaTime);
+            }
 
-            if (Vector3.Distance(currentPosition, nextPosition) < 0.1f)
+            // If reached the waypoint
+            if (distance < 0.1f)
             {
                 path.RemoveAt(0);
                 Debug.Log($"{gameObject.name} reached waypoint, {path.Count} waypoints left.");
             }
+
+            // If no more waypoints (at final destination), STOP
+            if (path.Count == 0)
+            {
+                if (rb != null)
+                    rb.linearVelocity = Vector2.zero;
+            }
         }
         else
         {
+            if (rb != null)
+                rb.linearVelocity = Vector2.zero;
             Debug.Log($"{gameObject.name}: No path to follow or path is null.");
         }
     }
@@ -212,14 +229,20 @@ public class EnemyController : MonoBehaviour
     }
 
     // Call this from Enemy_HealthAndDamage when taking damage
-    public void PlayDamagedAnimation()
+    // public void PlayDamagedAnimation()
+    // {
+    //     if (animator != null)
+    //     {
+    //         animator.SetBool("Damaged", true);
+    //         StartCoroutine(ResetDamagedAfterDelay(0.5f));
+    //     }
+    // }
+
+    public void SetKnockbackState(bool state)
     {
-        if (animator != null)
-        {
-            animator.SetBool("Damaged", true);
-            // Start coroutine to reset after animation duration (e.g., 0.5 seconds)
-            StartCoroutine(ResetDamagedAfterDelay(0.5f));
-        }
+        isKnockedBack = state;
+        if (state && rb != null)
+            rb.linearVelocity = Vector2.zero;
     }
 
     private System.Collections.IEnumerator ResetDamagedAfterDelay(float delay)

@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 7380229578531379278}
   - component: {fileID: 1937070039975619912}
   - component: {fileID: 2481003847660621780}
+  - component: {fileID: 7391627800506657391}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -434,9 +435,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -1.21}
-  m_Size: {x: 0.76, y: 0.76}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -1.27}
+  m_Size: {x: 1.18, y: 0.52}
+  m_Direction: 1
 --- !u!114 &1655707275376721718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,9 +451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingPoint: {fileID: 106463083521763591}
-  swingRange: 0.96
+  swingRange: 0.9
   detectionRange: 10.8
-  attackDamage: 40
+  attackDamage: 20
   attackCooldown: 0.5
   enemyLayers:
     serializedVersion: 2
@@ -525,3 +526,23 @@ MonoBehaviour:
   currentHealth: 100
   deathScreen: {fileID: 0}
   hpBarFiller: {fileID: 0}
+  moveSpeed: 5
+  baseDamage: 1
+  invincibilityDuration: 1.5
+  damageEffects: {fileID: 7391627800506657391}
+--- !u!114 &7391627800506657391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8501497741749971469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19751bb4791c9f34f85027cd256f7be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8036332166393592639}
+  hpBarRect: {fileID: 0}
+  hpBarFiller: {fileID: 0}
+  vignetteImage: {fileID: 0}
