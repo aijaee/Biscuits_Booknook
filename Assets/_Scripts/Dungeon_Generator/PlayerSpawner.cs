@@ -1,12 +1,9 @@
 using UnityEngine;
-using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.UI;
 
 public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private OnScreenButton onScreenDashButton;
-    [SerializeField] private OnScreenButton onScreenAttackButton;
     [SerializeField] private GameObject deathScreen; 
     [SerializeField] private Image hpBarFiller;
 
@@ -68,17 +65,12 @@ public class PlayerSpawner : MonoBehaviour
         DashController dash = playerInstance.GetComponent<DashController>();
         if (dash != null)
         {
-            dash.onScreenDashButton = onScreenDashButton;
             dash.rb = rb;
             dash.animator = animator;
             dash.movementScript = movementScript;
         }
 
         MeleeAttackController melee = playerInstance.GetComponent<MeleeAttackController>();
-        if (melee != null)
-        {
-            melee.onScreenAttackButton = onScreenAttackButton;
-        }
 
         // Link camera follow to player
         if (cameraFollow != null)

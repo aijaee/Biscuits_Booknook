@@ -433,13 +433,19 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         foreach (var room in roomList)
         {
             var bounds = room.Bounds;
+            HashSet<Vector2Int> roomTiles = new HashSet<Vector2Int>();
             for (int x = offset; x < bounds.size.x - offset; x++)
             {
                 for (int y = offset; y < bounds.size.y - offset; y++)
                 {
-                    floor.Add((Vector2Int)bounds.min + new Vector2Int(x, y));
+                    roomTiles.Add((Vector2Int)bounds.min + new Vector2Int(x, y));
                 }
             }
+            if (roomTiles.Count == 0)
+            {
+                roomTiles.Add(room.Center);
+            }
+            floor.UnionWith(roomTiles);
         }
         return floor;
     }
