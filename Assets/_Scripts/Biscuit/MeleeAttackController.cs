@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.OnScreen;
 
 public class MeleeAttackController : MonoBehaviour
 {
@@ -14,7 +13,6 @@ public class MeleeAttackController : MonoBehaviour
     [Header("References")]
     public LayerMask enemyLayers;
     public GameObject meleeWeapon;
-    [SerializeField] public OnScreenButton onScreenAttackButton;
 
     [Header("Animation")]
     [SerializeField] private Animator animator;
@@ -25,15 +23,6 @@ public class MeleeAttackController : MonoBehaviour
     private Vector2 lastMoveDirection = Vector2.right;
     private bool useMouseAim = false;
     private Vector2 mouseDirection;
-
-    private void Start()
-    {
-        if (onScreenAttackButton == null)
-        {
-            Debug.LogError("Assign the OnScreenButton component in Inspector!", this);
-            return;
-        }
-    }
 
     private void Update()
     {
@@ -53,12 +42,6 @@ public class MeleeAttackController : MonoBehaviour
         }
 
         if (Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
-        {
-            useMouseAim = false;
-            OnAttackButtonPressed();
-        }
-
-        if (onScreenAttackButton != null && onScreenAttackButton.control.IsPressed())
         {
             useMouseAim = false;
             OnAttackButtonPressed();

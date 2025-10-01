@@ -203,12 +203,22 @@ public class EnemyController : MonoBehaviour
                 path.RemoveAt(0);
                 Debug.Log($"{gameObject.name} reached waypoint, {path.Count} waypoints left.");
             }
-
-            // If no more waypoints (at final destination), STOP
+            
             if (path.Count == 0)
             {
-                if (rb != null)
-                    rb.linearVelocity = Vector2.zero;
+                if (target != null)
+                {
+                    // continue moving directly toward target when path ends
+                    Vector3 dirToTarget = (target.position - transform.position).normalized;
+                    if (rb != null)
+                        rb.linearVelocity = dirToTarget * moveSpeed;
+                }
+                else
+                {
+                    if (rb != null)
+                        rb.linearVelocity = Vector2.zero;
+                }
+                return;
             }
         }
         else
@@ -287,5 +297,18 @@ public class EnemyController : MonoBehaviour
         }
         playerTransform = null;
         return false;
+    }
+
+    // add collision handlers to recalc path if stuck on walls
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall") && target != null)
+            SetTarget(target);
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall") && target != null)
+            SetTarget(target);
     }
 }

@@ -1079,8 +1079,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 8501497741749971469, guid: 207657d2c7ac0204f9e27eb65af6976e, type: 3}
-  onScreenDashButton: {fileID: 0}
-  onScreenAttackButton: {fileID: 1952616654}
   deathScreen: {fileID: 1398572833}
   hpBarFiller: {fileID: 408313342}
 --- !u!4 &412539305
@@ -48019,7 +48017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 778905128114026574, guid: 414085b716aa6ab459dc1c27b823e928, type: 3}
   enemyCount: 10
-  gridManager: {fileID: 0}
+  gridManager: {fileID: 709312583}
 --- !u!4 &2094200722
 Transform:
   m_ObjectHideFlags: 0

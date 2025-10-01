@@ -45,7 +45,9 @@ public class JoystickPlayerExample : MonoBehaviour
                 animator.SetFloat("Vertical", direction.y);
                 animator.SetFloat("Speed", direction.sqrMagnitude);
 
-                lastDirection = direction.normalized;
+                bool isMovingDiagonal = Mathf.Abs(direction.x) > Tolerance && Mathf.Abs(direction.y) > Tolerance;
+                if (isMovingDiagonal || Mathf.Abs(direction.y) > Tolerance)
+                    lastDirection = direction.normalized;
             }
             else
             {
