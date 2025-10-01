@@ -36,10 +36,16 @@ public class AStarPathfinder : MonoBehaviour
             Debug.LogWarning("AStarPathfinder: Start or Target node is null.");
             return null;
         }
-        if (!startNode.walkable || !targetNode.walkable)
+
+        if (!targetNode.walkable)
         {
-            Debug.LogWarning("AStarPathfinder: Start or Target node is not walkable.");
+            Debug.LogWarning("AStarPathfinder: Target node is not walkable.");
             return null;
+        }
+        if (!startNode.walkable)
+        {
+            Debug.LogWarning("AStarPathfinder: Start node is not walkable, overriding as walkable for pathfinding.");
+            startNode.walkable = true;
         }
 
         Debug.Log("AStarPathfinder: Passed walkable checks, starting pathfinding loop.");

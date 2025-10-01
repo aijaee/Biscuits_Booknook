@@ -45,7 +45,7 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < gridSize.y; y++)
             {
                 Vector3 worldPoint = worldBottomLeft + new Vector3(x * cellSize + cellSize / 2f, y * cellSize + cellSize / 2f, 0);
-                bool walkable = !Physics.CheckBox(worldPoint, Vector3.one * (cellSize / 2f * 0.9f), Quaternion.identity, unwalkableMask);
+                bool walkable = Physics2D.OverlapBox(worldPoint, new Vector2(cellSize * 0.9f, cellSize * 0.9f), 0f, unwalkableMask) == null;
                 grid[x, y] = new Node(walkable, worldPoint, x, y);
             }
         }
