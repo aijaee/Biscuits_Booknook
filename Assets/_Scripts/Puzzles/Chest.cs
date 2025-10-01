@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class Chest : MonoBehaviour, IInteractable
 {
@@ -35,6 +34,9 @@ public class Chest : MonoBehaviour, IInteractable
         if (!playerInRange || hasBeenOpened) return;
         hasBeenOpened = true;
 
+        if (spriteRenderer != null)
+            spriteRenderer.sprite = openedCorrectChestSprite;
+
         var player = GameObject.FindGameObjectWithTag("Player");
         var playerController = player != null ? player.GetComponent<PlayerController>() : null;
 
@@ -48,14 +50,18 @@ public class Chest : MonoBehaviour, IInteractable
                 if (spriteRenderer)
                     spriteRenderer.sprite = reward.chestSprite != null ? reward.chestSprite : openedCorrectChestSprite;
 
+                // apply reward effects
                 switch (reward.rewardType)
                 {
                     case ChestReward.RewardType.Heal:
                         if (playerController != null) playerController.Heal(reward.healAmount);
                         break;
+
                     case ChestReward.RewardType.Speed:
                         if (playerController != null) playerController.ApplySpeedBoost(reward.speedMultiplier, reward.speedDuration);
+                        Debug.Log($"Speed boosted x{reward.speedMultiplier} for {reward.speedDuration} seconds.");
                         break;
+
                     case ChestReward.RewardType.AdditionalDamage:
                         var meleeCtrl = player != null ? player.GetComponent<MeleeAttackController>() : null;
                         if (meleeCtrl != null) meleeCtrl.AddDamageBuff(reward.additionalDamageAmount);
@@ -64,8 +70,11 @@ public class Chest : MonoBehaviour, IInteractable
             }
             else
             {
+                // set opened chest sprite on paperclip reward
                 if (spriteRenderer)
                     spriteRenderer.sprite = openedCorrectChestSprite;
+
+                Debug.Log($"Correct! You gained {rewardAmount} paperclips.");
             }
         }
         else
