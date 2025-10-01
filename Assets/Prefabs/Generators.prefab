@@ -1,0 +1,372 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1893784325074156033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8822277291632929162}
+  - component: {fileID: 1711953448025430812}
+  m_Layer: 0
+  m_Name: SimpleRandomWalkDungeonGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8822277291632929162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893784325074156033}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1491.3611, y: -520.7248, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4389784896954743197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1711953448025430812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893784325074156033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824cf23c500f72b468a56b970c9bf896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapVisualizer: {fileID: 3373675879034672781}
+  startPosition: {x: 0, y: 0}
+  randomWalkParameters: {fileID: 11400000, guid: 9853dded8cd83af488e7322a804d3d77, type: 2}
+--- !u!1 &3714602836961701495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4389784896954743197}
+  m_Layer: 0
+  m_Name: Generators
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4389784896954743197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714602836961701495}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1491.3611, y: 520.7248, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6752097825469665096}
+  - {fileID: 8822277291632929162}
+  - {fileID: 5242982892415280214}
+  - {fileID: 4290670544636324841}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3818014089001890568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4290670544636324841}
+  - component: {fileID: 5445378835654150650}
+  m_Layer: 0
+  m_Name: RoomsFirstDungeonGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4290670544636324841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818014089001890568}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1474.6451, y: -493.79398, z: -1649.9796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4389784896954743197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5445378835654150650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818014089001890568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7349ff1a761c474b9fcaf52da55bf12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapVisualizer: {fileID: 3373675879034672781}
+  startPosition: {x: 0, y: 0}
+  randomWalkParameters: {fileID: 11400000, guid: d19a4dd1c4d2aa649a1882baf1b0deb8, type: 2}
+  minPuzzleRooms: 4
+  maxPuzzleRooms: 6
+  minCombatRoomWidth: 10
+  minCombatRoomHeight: 10
+  minPuzzleRoomWidth: 15
+  minPuzzleRoomHeight: 15
+  minBossRoomWidth: 10
+  minBossRoomHeight: 10
+  enemySpawner: {fileID: 0}
+  gridManager: {fileID: 0}
+  unwalkableMask:
+    serializedVersion: 2
+    m_Bits: 256
+  dungeonWidth: 90
+  dungeonHeight: 90
+  offset: 2
+  wallBuffer: 5
+  randomWalkRooms: 0
+  playerSpawner: {fileID: 0}
+  minimapRenderer: {fileID: 0}
+  objectBuffer: 1
+  notePrefab: {fileID: 8188768632608287906, guid: 4429960cf4523754899a7700e86bc5ee, type: 3}
+  noteOffset: {x: 0, y: 2}
+  corridorWidth: 1
+  combatRoomPrefabs:
+  - prefab: {fileID: 4125861433930969444, guid: d65b415f936d87244833793a6d8593b5, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: d47de495598af094e9f4fb2a2af6be64, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 14d77643ccd022349b8860ddc16cfd48, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 6747bfaf5203c134eb282e1ffe12a7c5, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: c03d809c0763d7248ab2e33b72fa93af, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: 9a44d1171baf20e448e2094bc54a2747, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 7fb907e401dd06144ac475edbfc31d5d, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 1527d10f66b883b40a77ec830395a049, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 482d9f22cf8317344b150de03644c001, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: febd4c247f03dd14eb9ddc58e39ef930, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: 92e2cca3ba1b1d744bc1c1d678b7b4bf, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: b959a47c97a8e7c45ae30475d3f71378, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 4125861433930969444, guid: a1b6d2e6a71af9d4dbd639ae2f963acd, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 927fafc70d356cc42879382f0e729b08, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: f261568908b255549805e9bcdd5f40c1, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 40fde07ba2f741447ab74c71fb200453, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: afc43f7537f7e734ba6ad1d754291328, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 1bd3381f328db0d468006782628cc1e6, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 7cc63a5188a1ad743bb9944d38a4b193, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2589290092252027362, guid: 8d08575b7803b6b48ae1c3f032189512, type: 3}
+    size: {x: 0, y: 0}
+  maxPrefabsPerCombatRoom: 5
+  maxPrefabsPerPuzzleRoom: 1
+  implicitPuzzleRoomPrefabs:
+  - prefab: {fileID: 2258546063865880603, guid: be007f6118f9b644da3bfc4050c235ce, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: fb48fdef6e7d38b4eb35e329b16449e9, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: e58f6c5149dcc23468b7b2714c8c84b4, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 30b9d057ef502ad49bc97c42832b166d, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 6588db3abbdb3b240a784c8976d5f9bb, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: e4a4ea256e7cae64ca92809613e4f5b3, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 0672cc01a7d23254b98f8948000d6f28, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: a83e98283b07d594f8403dbfb3a559da, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 044c5cab856d05945a3255cb144b4739, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 368bfa89be844d343824eb4dd5b103d8, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 145d12aac3dbbeb44bfef215fdc73a79, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 8cc1ebe02fd47c0409b5bca996b17b9f, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 03089ad5a3bbb144eadd028581ab54a1, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 8a6a9da8b4b32244e8d2745bef415072, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 9f71b3655cd04fb46b445aa68f277dee, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 60354e2e6658bbd429610cf00028f665, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: e63ea34a14db7a0469d463e8953d79b0, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: bd7dd8a86cf90ed48b0fe3846ec7d802, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: ae120895fb3903649a43438b5fe416a1, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 3591c52c736c2a74fa0fce8b2461f283, type: 3}
+    size: {x: 0, y: 0}
+  explicitPuzzleRoomPrefabs:
+  - prefab: {fileID: 2258546063865880603, guid: 46850c2c67625f74e949f29a31b073ae, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 656ef5cbdd94e754a9cd53714ef41a47, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 6f49b6b37c38e0d41b5b11f112cafa1d, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 0240f8d215f2d094c9d48d50624cb323, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 27b6223924030b845964414310ba6942, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: f8967982af27bfb478e82af0ec1138dd, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: bae4eb0f0b5ee2d4d99cbcda2ac6ab16, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: b37dfc94cc612ce4c9245fed50c6cd6d, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 3c27d1762b88b3c488d1bc6d42f82d5c, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: f120e0f67781da646b4bf5021efe6b45, type: 3}
+    size: {x: 0, y: 0}
+  - prefab: {fileID: 2258546063865880603, guid: 91dd2e94efe0f224a8b75e02bc51da08, type: 3}
+    size: {x: 0, y: 0}
+--- !u!1 &4022109738704769782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5242982892415280214}
+  - component: {fileID: 4434499227475349608}
+  m_Layer: 0
+  m_Name: CorridorFirstDungeonGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5242982892415280214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022109738704769782}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1491.3611, y: -520.7248, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4389784896954743197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4434499227475349608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022109738704769782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dce5958346abf5448d9764233a31bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapVisualizer: {fileID: 3373675879034672781}
+  startPosition: {x: 0, y: 0}
+  randomWalkParameters: {fileID: 11400000, guid: ed58e9b5cc90cfa4c8029a69a7f0f788, type: 2}
+  corridorLength: 20
+  corridorCount: 10
+  roomPercent: 0.5
+--- !u!1 &6582094198110877638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6752097825469665096}
+  - component: {fileID: 3373675879034672781}
+  m_Layer: 0
+  m_Name: TilemapVisualizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6752097825469665096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582094198110877638}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1491.3611, y: -520.7248, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4389784896954743197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3373675879034672781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582094198110877638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef1c210db2a15144b6c93da1d060da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorTilemap: {fileID: 0}
+  wallTilemap: {fileID: 0}
+  floorTile: {fileID: 11400000, guid: 471853985ed4b5242ad12af71ace0cf6, type: 2}
+  wallTop: {fileID: 11400000, guid: 22c9f328675568942a63b2770a6a63dc, type: 2}
+  wallSideRight: {fileID: 11400000, guid: 56a025a4f1e8ec14ebfa0c2300d95b8e, type: 2}
+  wallSiderLeft: {fileID: 11400000, guid: 0f895bfef3ebb4f4aacf3fac66196c1c, type: 2}
+  wallBottom: {fileID: 11400000, guid: 17de16fed6ed8cc4fa8aed5e072ee432, type: 2}
+  wallFull: {fileID: 11400000, guid: 9bd9b91a7e97483419306d5b0c9c37ec, type: 2}
+  wallInnerCornerDownLeft: {fileID: 11400000, guid: a4a8fd2caea494c45916e75fc21be5c2, type: 2}
+  wallInnerCornerDownRight: {fileID: 11400000, guid: 32fb4d0075b44bf43b045b03663afc2c, type: 2}
+  wallDiagonalCornerDownRight: {fileID: 11400000, guid: ece443381d8fc294f928c22650a87c24, type: 2}
+  wallDiagonalCornerDownLeft: {fileID: 11400000, guid: f0876383a0a9e9f4a8f543d8515e12c0, type: 2}
+  wallDiagonalCornerUpRight: {fileID: 11400000, guid: 809171e13e7908f40a916074c244f08c, type: 2}
+  wallDiagonalCornerUpLeft: {fileID: 11400000, guid: 990709a76d4f9124db8ca4026e79a932, type: 2}
+  wallInnerCornerUpLeft: {fileID: 11400000, guid: c0e7f9b055e6e2446adb7deb58984a46, type: 2}
+  wallInnerCornerUpRight: {fileID: 11400000, guid: 64956c1de13116943951064ca0e13c3b, type: 2}
