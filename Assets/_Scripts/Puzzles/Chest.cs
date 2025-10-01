@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Chest : MonoBehaviour, IInteractable
 {
