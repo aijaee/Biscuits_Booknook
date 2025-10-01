@@ -35,22 +35,18 @@ public class Chest : MonoBehaviour, IInteractable
         if (!playerInRange || hasBeenOpened) return;
         hasBeenOpened = true;
 
-        if (spriteRenderer != null)
-            spriteRenderer.sprite = openedCorrectChestSprite;
-
         var player = GameObject.FindGameObjectWithTag("Player");
         var playerController = player != null ? player.GetComponent<PlayerController>() : null;
 
         if (isCorrectAnswer)
         {
+            if (spriteRenderer != null)
+                spriteRenderer.sprite = openedCorrectChestSprite;
             var list = rewardDatabase != null ? rewardDatabase.rewards : null;
             var reward = (list != null && list.Count > 0) ? list[Random.Range(0, list.Count)] : null;
 
             if (reward != null)
             {
-                if (spriteRenderer)
-                    spriteRenderer.sprite = reward.chestSprite != null ? reward.chestSprite : openedCorrectChestSprite;
-
                 // apply reward effects
                 switch (reward.rewardType)
                 {
