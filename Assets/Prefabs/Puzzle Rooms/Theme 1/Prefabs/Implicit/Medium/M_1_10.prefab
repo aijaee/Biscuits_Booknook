@@ -213,8 +213,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: Young fishes grow in <u>nursery</u> grounds like mangrove habitats and
-        mudflats.
+      value: Young fishes grow in <b><color=#1e90ff>nursery</b></color> grounds like
+        mangrove habitats and mudflats.
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle

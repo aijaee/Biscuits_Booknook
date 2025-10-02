@@ -213,7 +213,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: The <u>fisheries</u> in our town are rich in fish and other marine resources.
+      value: The <b><color=#1e90ff>fisheries</b></color> in our town are rich in
+        fish and other marine resources.
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle

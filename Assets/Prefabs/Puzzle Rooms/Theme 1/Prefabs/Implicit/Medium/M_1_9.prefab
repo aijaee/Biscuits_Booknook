@@ -213,8 +213,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: <u>Semi-salty or brackish</u> water are not as salty as water in the
-        seas and ocean. They are usually found in mangrove areas or river bends.
+      value: <b><color=#1e90ff>Semi-salty or brackish</b></color> water are not as
+        salty as water in the seas and ocean. They are usually found in mangrove
+        areas or river bends.
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle

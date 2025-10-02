@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8297733deebd20e4188ce54d18f70fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pivot: {fileID: 0}
 --- !u!1 &7401377963442277116
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +262,7 @@ SpriteRenderer:
   m_SortingLayerID: 1661798873
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0c4bca7287e5e74ea89670dee7bdc4d, type: 3}
+  m_Sprite: {fileID: 1786809946, guid: 9df7bcecb55c58a40a12271c1ea2df4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -306,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8297733deebd20e4188ce54d18f70fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pivot: {fileID: 0}
 --- !u!1 &8501497741749971469
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +371,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 5
-  variableJoystick: {fileID: 0}
   rb: {fileID: 1619435905274678217}
   isDashing: 0
   animator: {fileID: 7773441646473829035}
@@ -459,7 +460,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   meleeWeapon: {fileID: 6439910626036983480}
-  onScreenAttackButton: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &7380229578531379278
 MonoBehaviour:
@@ -544,5 +544,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8036332166393592639}
   hpBarRect: {fileID: 0}
-  hpBarFiller: {fileID: 0}
-  vignetteImage: {fileID: 0}
