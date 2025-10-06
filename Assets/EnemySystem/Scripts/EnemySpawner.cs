@@ -32,14 +32,11 @@ public class EnemySpawner : MonoBehaviour
         validSpawnTiles = validTiles;
     }
 
-    public List<Vector2Int> GetRandomWalkableTiles(int count)
+    public List<Vector2Int> GetRandomWalkableTiles(int count, int wallBuffer = 1)
     {
         var tiles = new List<Vector2Int>();
         if (gridManager == null || gridManager.GetGrid() == null)
-        {
-            Debug.LogError("EnemySpawner: GridManager or grid is not initialized.");
             return tiles;
-        }
 
         var grid = gridManager.GetGrid();
         int width = gridManager.gridSize.x;
@@ -51,16 +48,29 @@ public class EnemySpawner : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 Vector2Int pos = new Vector2Int(x, y);
-                if (grid[x, y].walkable && validSpawnTiles != null && validSpawnTiles.Contains(pos))
+
+                if (!grid[x, y].walkable || (validSpawnTiles != null && !validSpawnTiles.Contains(pos)))
+                    continue;
+
+                bool safe = true;
+                for (int dx = -wallBuffer; dx <= wallBuffer && safe; dx++)
+                {
+                    for (int dy = -wallBuffer; dy <= wallBuffer && safe; dy++)
+                    {
+                        int nx = x + dx;
+                        int ny = y + dy;
+                        if (nx < 0 || nx >= width || ny < 0 || ny >= height || !grid[nx, ny].walkable)
+                            safe = false;
+                    }
+                }
+
+                if (safe)
                     walkableTiles.Add(pos);
             }
         }
 
         if (walkableTiles.Count == 0)
-        {
-            Debug.LogWarning("EnemySpawner: No walkable floor tiles found!");
             return tiles;
-        }
 
         for (int i = 0; i < count && walkableTiles.Count > 0; i++)
         {
@@ -68,6 +78,7 @@ public class EnemySpawner : MonoBehaviour
             tiles.Add(walkableTiles[idx]);
             walkableTiles.RemoveAt(idx);
         }
+
         return tiles;
     }
 

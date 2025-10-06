@@ -300,15 +300,15 @@ public class EnemyController : MonoBehaviour
     }
 
     // add collision handlers to recalc path if stuck on walls
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wall") && target != null)
-            SetTarget(target);
-    }
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Wall") && target != null)
+    //         SetTarget(target);
+    // }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wall") && target != null)
-            SetTarget(target);
-    }
+    // private void OnCollisionStay2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Wall") && target != null)
+    //         SetTarget(target);
+    // }
 }
