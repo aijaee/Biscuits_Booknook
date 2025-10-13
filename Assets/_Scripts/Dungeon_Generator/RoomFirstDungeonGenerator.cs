@@ -608,6 +608,18 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         }
     }
 
+    // allow BossRoomGenerator to place enemies/objects on a custom floor
+    public void PlaceObjectsInBossRoom(HashSet<Vector2Int> floorTiles)
+    {
+        if (enemySpawner != null)
+        {
+            enemySpawner.SetValidSpawnTiles(floorTiles);
+            var bossPositions = enemySpawner.GetRandomWalkableTiles(1);
+            enemySpawner.SpawnEnemies(bossPositions);
+        }
+        // ...you can add more boss‐specific props here…
+    }
+
     private bool IsAreaOccupied(Vector2Int startPos, Vector2Int size, HashSet<Vector2Int> occupied)
     {
         for (int x = 0; x < size.x; x++)

@@ -10,9 +10,15 @@ public class AStarPathfinder : MonoBehaviour
         // Auto-assign gridManager if not set and present on the same GameObject
         if (gridManager == null)
         {
+
             gridManager = GetComponent<GridManager>();
             if (gridManager == null)
-                Debug.LogWarning("AStarPathfinder: No GridManager found on this GameObject.");
+            {
+                // fallback: find any in the scene
+                gridManager = FindObjectOfType<GridManager>();
+                if (gridManager == null)
+                    Debug.LogWarning("AStarPathfinder: No GridManager found in scene.");
+            }
         }
     }
 
