@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1220587820351381428, guid: 198c4a8258bde83479822c33e23fc9df, type: 2}
+  - {fileID: 4904941694865206783, guid: f6503f983e3ca93488eaa5e8e95a2f83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,15 +104,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Wrong Chest
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 198c4a8258bde83479822c33e23fc9df, type: 2}
-  m_sharedMaterial: {fileID: 1220587820351381428, guid: 198c4a8258bde83479822c33e23fc9df, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f6503f983e3ca93488eaa5e8e95a2f83, type: 2}
+  m_sharedMaterial: {fileID: 4904941694865206783, guid: f6503f983e3ca93488eaa5e8e95a2f83, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281240290
-  m_fontColor: {r: 0.8867924, g: 0.54055846, b: 0.17986828, a: 1}
+    rgba: 4281495010
+  m_fontColor: {r: 0.8862745, g: 0.42745098, b: 0.19607843, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -257,7 +257,7 @@ SpriteRenderer:
   m_SortingLayerID: 1661798873
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1994807792, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
+  m_Sprite: {fileID: 1899423469, guid: fb19acae216554a48bc7fee9d20b79e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -284,9 +284,10 @@ MonoBehaviour:
   isCorrectAnswer: 0
   rewardAmount: 10
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
-  openedCorrectChestSprite: {fileID: 1378494035, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
+  openedCorrectChestSprite: {fileID: 1106843425, guid: fb19acae216554a48bc7fee9d20b79e5, type: 3}
   explosionDamage: 20
   rewardDatabase: {fileID: 11400000, guid: c1994d6e9f8db6440928bb88c9edf2bc, type: 2}
+  chestTMP: {fileID: 964254489684372143}
 --- !u!114 &5768496188066793951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,8 +338,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.2188823, y: 0.98437506}
+    pivot: {x: 0.5, y: 0.1}
+    oldSize: {x: 1.2774824, y: 1.0859375}
     newSize: {x: 1.2188823, y: 0.98437506}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

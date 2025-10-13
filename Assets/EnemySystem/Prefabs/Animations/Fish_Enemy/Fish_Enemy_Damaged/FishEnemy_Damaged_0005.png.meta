@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: dacd01d797802e242878b432111daaba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2373597427632427284
+    second: FishEnemy_Damaged_0005_0
+  - first:
+      213: 3531542276481637048
+    second: FishEnemy_Damaged_0005_1
+  - first:
+      213: 8316693819646868280
+    second: FishEnemy_Damaged_0005_2
+  - first:
+      213: 306766223712441362
+    second: FishEnemy_Damaged_0005_3
+  - first:
+      213: 1618353467270358418
+    second: FishEnemy_Damaged_0005_4
+  - first:
+      213: 7198285120899387084
+    second: FishEnemy_Damaged_0005_5
+  - first:
+      213: 7006742168452589823
+    second: FishEnemy_Damaged_0005_6
+  - first:
+      213: -3626261487937242364
+    second: FishEnemy_Damaged_0005_7
+  - first:
+      213: 3282671650710022099
+    second: FishEnemy_Damaged_0005_8
+  - first:
+      213: -5469693678029658711
+    second: FishEnemy_Damaged_0005_9
+  - first:
+      213: 911853668286989867
+    second: FishEnemy_Damaged_0005_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 347
+        width: 38
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 411dfc9d846b0f020800000000000000
+      internalID: 2373597427632427284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 435
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba56f25dfe820130800000000000000
+      internalID: 3531542276481637048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 11
+        width: 367
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83bfcb917f4da6370800000000000000
+      internalID: 8316693819646868280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_3
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 362
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214d771514ad14400800000000000000
+      internalID: 306766223712441362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_4
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 309
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 295eba177eb857610800000000000000
+      internalID: 1618353467270358418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_5
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 233
+        width: 22
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cce0037ed2275e360800000000000000
+      internalID: 7198285120899387084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_6
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 139
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8ed5ff0e2fc3160800000000000000
+      internalID: 7006742168452589823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_7
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 70
+        width: 58
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b32d4b36eecadc0800000000000000
+      internalID: -3626261487937242364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_8
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 154
+        width: 14
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d7e0d659746e8d20800000000000000
+      internalID: 3282671650710022099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 33
+        width: 40
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5a7da549eb714b0800000000000000
+      internalID: -5469693678029658711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishEnemy_Damaged_0005_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 75
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b260261841e87ac00800000000000000
+      internalID: 911853668286989867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FishEnemy_Damaged_0005_0: 2373597427632427284
+      FishEnemy_Damaged_0005_1: 3531542276481637048
+      FishEnemy_Damaged_0005_10: 911853668286989867
+      FishEnemy_Damaged_0005_2: 8316693819646868280
+      FishEnemy_Damaged_0005_3: 306766223712441362
+      FishEnemy_Damaged_0005_4: 1618353467270358418
+      FishEnemy_Damaged_0005_5: 7198285120899387084
+      FishEnemy_Damaged_0005_6: 7006742168452589823
+      FishEnemy_Damaged_0005_7: -3626261487937242364
+      FishEnemy_Damaged_0005_8: 3282671650710022099
+      FishEnemy_Damaged_0005_9: -5469693678029658711
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

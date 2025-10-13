@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Chest : MonoBehaviour, IInteractable
 {
@@ -40,6 +41,8 @@ public class Chest : MonoBehaviour, IInteractable
 
         if (isCorrectAnswer)
         {
+            hasBeenOpened = true;
+
             if (spriteRenderer != null)
                 spriteRenderer.sprite = openedCorrectChestSprite;
             var list = rewardDatabase != null ? rewardDatabase.rewards : null;
@@ -65,9 +68,15 @@ public class Chest : MonoBehaviour, IInteractable
                         break;
                 }
             }
+
+            if (chestTMP != null)
+            {
+                Color c;
+                if (ColorUtility.TryParseHtmlString("#50E970", out c))
+                chestTMP.color = c;
+            }
             else
             {
-                // set opened chest sprite on paperclip reward
                 if (spriteRenderer)
                     spriteRenderer.sprite = openedCorrectChestSprite;
 
@@ -78,7 +87,7 @@ public class Chest : MonoBehaviour, IInteractable
         {
             if (explosionEffect)
             {
-                GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                GameObject explosion = Instantiate(explosionEffect, transform.position + new Vector3(0, 0.25f, 0), Quaternion.identity);
                 var sr = explosion.GetComponent<SpriteRenderer>();
                 if (sr != null)
                 {
@@ -86,8 +95,26 @@ public class Chest : MonoBehaviour, IInteractable
                     sr.sortingOrder = 100;
                 }
             }
-            if (playerController != null) playerController.TakeDamage(explosionDamage);
-            Destroy(gameObject);
+
+            if (playerController != null)
+                playerController.TakeChestDamage(explosionDamage);
+
+            if (spriteRenderer != null)
+                spriteRenderer.enabled = false;
+            
+            Collider2D[] colliders = GetComponents<Collider2D>();
+            foreach (Collider2D col in colliders)
+            {
+                col.enabled = false;
+            }
+
+            if (chestTMP != null)
+            {
+                chestTMP.color = Color.red;
+                StartCoroutine(FadeTMP(chestTMP, 3f));
+            }
+
+            Destroy(gameObject, 3f);
         }
 
         InteractUI.Instance.ShowButton(false);
@@ -95,7 +122,7 @@ public class Chest : MonoBehaviour, IInteractable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !hasBeenOpened)
         {
             playerInRange = true;
             InteractUI.Instance.SetCurrentInteractable(this);
@@ -111,5 +138,26 @@ public class Chest : MonoBehaviour, IInteractable
             InteractUI.Instance.SetCurrentInteractable(null);
             InteractUI.Instance.ShowButton(false);
         }
+    }
+
+    private IEnumerator FadeTMP(TMP_Text tmp, float duration)
+    {
+        Color original = tmp.color;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(original.a, 0, elapsed / duration);
+            tmp.color = new Color(original.r, original.g, original.b, alpha);
+            yield return null;
+        }
+
+        tmp.color = new Color(original.r, original.g, original.b, 0);
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 }

@@ -1936,7 +1936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: -0.00012207031}
+  m_AnchoredPosition: {x: -0.00024414062, y: -0.00012207031}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896872470
@@ -46631,6 +46631,38 @@ PrefabInstance:
       propertyPath: maxRoomHeightGeneral
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: explicitPuzzleRoomPrefabs.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 2258546063865880603, guid: 27b6223924030b845964414310ba6942, type: 3}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: explicitPuzzleRoomPrefabs.Array.data[4].prefab
+      value: 
+      objectReference: {fileID: 2258546063865880603, guid: bae4eb0f0b5ee2d4d99cbcda2ac6ab16, type: 3}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: explicitPuzzleRoomPrefabs.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 2258546063865880603, guid: b37dfc94cc612ce4c9245fed50c6cd6d, type: 3}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: explicitPuzzleRoomPrefabs.Array.data[6].prefab
+      value: 
+      objectReference: {fileID: 2258546063865880603, guid: 3c27d1762b88b3c488d1bc6d42f82d5c, type: 3}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: explicitPuzzleRoomPrefabs.Array.data[7].prefab
+      value: 
+      objectReference: {fileID: 2258546063865880603, guid: f120e0f67781da646b4bf5021efe6b45, type: 3}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: explicitPuzzleRoomPrefabs.Array.data[8].prefab
+      value: 
+      objectReference: {fileID: 2258546063865880603, guid: 91dd2e94efe0f224a8b75e02bc51da08, type: 3}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: explicitPuzzleRoomPrefabs.Array.data[9].prefab
+      value: 
+      objectReference: {fileID: 2258546063865880603, guid: 427aa6867a892ad418264f203e44a982, type: 3}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: explicitPuzzleRoomPrefabs.Array.data[10].prefab
+      value: 
+      objectReference: {fileID: 2258546063865880603, guid: dcb045d9ef671ca43b62587ba56e7f2c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46760,6 +46792,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 831278871}
     m_Modifications:
+    - target: {fileID: 2966698462166001726, guid: 64d35df0849edf846be047bda042b7c8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 262c9cc7b7bd9d54eb1601d26718e4c4, type: 2}
+    - target: {fileID: 2966698462166001726, guid: 64d35df0849edf846be047bda042b7c8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4904941694865206783, guid: 262c9cc7b7bd9d54eb1601d26718e4c4, type: 2}
+    - target: {fileID: 2966698462166001726, guid: 64d35df0849edf846be047bda042b7c8, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127531586158986105, guid: 64d35df0849edf846be047bda042b7c8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 262c9cc7b7bd9d54eb1601d26718e4c4, type: 2}
+    - target: {fileID: 5127531586158986105, guid: 64d35df0849edf846be047bda042b7c8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4904941694865206783, guid: 262c9cc7b7bd9d54eb1601d26718e4c4, type: 2}
+    - target: {fileID: 5127531586158986105, guid: 64d35df0849edf846be047bda042b7c8, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7979157621590902505, guid: 64d35df0849edf846be047bda042b7c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -47133,6 +47189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawners
       objectReference: {fileID: 0}
+    - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 778905128114026574, guid: 18b456f68c97a0a4a841041c0240c3bf, type: 3}
     - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
       propertyPath: gridManager
       value: 
