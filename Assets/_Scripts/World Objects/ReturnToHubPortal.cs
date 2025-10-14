@@ -1,47 +1,39 @@
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(Collider2D))]
-public class HubPortal : MonoBehaviour, IInteractable
+public class ReturnToHubPortal : MonoBehaviour, IInteractable
 {
-    public CanvasGroup portalCanvasGroup;
-    public TMP_Text portalText;
-    public string defaultText = "You need to solve all puzzles first!";
-    public string readyText = "Enter the Hub?";
+    [Header("Hub Settings")]
+    [Tooltip("Scene index of your Hub World")]
+    public int hubSceneIndex = 0;
 
-    private void Start()
+    private bool playerInRange = false;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        UpdatePortalState();
+        if (!other.CompareTag("Player")) return;
+
+        playerInRange = true;
+        InteractUI.Instance.SetCurrentInteractable(this);
+        InteractUI.Instance.ShowButton(true);
     }
 
-    private void UpdatePortalState()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (PuzzleManager.Instance.AllPuzzlesCompleted())
-        {
-            portalCanvasGroup.alpha = 1f;
-            portalText.text = readyText;
-            GetComponent<Collider2D>().enabled = true;
-        }
-        else
-        {
-            portalCanvasGroup.alpha = 0.75f;
-            portalText.text = defaultText;
-            GetComponent<Collider2D>().enabled = false;
-        }
+        if (!other.CompareTag("Player")) return;
+
+        playerInRange = false;
+        InteractUI.Instance.SetCurrentInteractable(null);
+        InteractUI.Instance.ShowButton(false);
     }
 
     public void TryInteract()
     {
-        if (!PuzzleManager.Instance.AllPuzzlesCompleted())
-            return;
+        if (!playerInRange) return;
 
         if (LevelTransition.Instance != null)
-            LevelTransition.Instance.TransitionToScene(0);
-    }
-
-    private void Update()
-    {
-        UpdatePortalState();
+            LevelTransition.Instance.TransitionToScene(hubSceneIndex);
+        else
+            Debug.LogWarning("No LevelTransition instance found in the scene!");
     }
 }
