@@ -1,0 +1,359 @@
+fileFormatVersion: 2
+guid: 68573d792b3a4e64296e76175f0431b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9177177803092190191
+    second: Sir B. Cheese_0
+  - first:
+      213: -4782529119386913097
+    second: Sir B. Cheese_1
+  - first:
+      213: -5537071593465186373
+    second: Sir B. Cheese_2
+  - first:
+      213: -4890656671484184016
+    second: Sir B. Cheese_3
+  - first:
+      213: 7016409315498790972
+    second: Sir B. Cheese_4
+  - first:
+      213: -5739399089109313241
+    second: Sir B. Cheese_5
+  - first:
+      213: -5121760558554260434
+    second: Sir B. Cheese_6
+  - first:
+      213: 5937665460406707643
+    second: Sir B. Cheese_7
+  - first:
+      213: 7243019277844734481
+    second: Sir B. Cheese_8
+  - first:
+      213: 3730200173499791568
+    second: Sir B. Cheese_9
+  - first:
+      213: 6120466905595425072
+    second: Sir B. Cheese_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sir B. Cheese_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125
+        width: 512
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11c171e296d14a080800000000000000
+      internalID: -9177177803092190191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir B. Cheese_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 125
+        width: 512
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b63bf6da1b01adb0800000000000000
+      internalID: -4782529119386913097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir B. Cheese_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 125
+        width: 512
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7f99fe8be5823b0800000000000000
+      internalID: -5537071593465186373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir B. Cheese_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 125
+        width: 512
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a7ac94ba5e02cb0800000000000000
+      internalID: -4890656671484184016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir B. Cheese_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 125
+        width: 512
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c301c01191b4f5160800000000000000
+      internalID: 7016409315498790972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir B. Cheese_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 125
+        width: 512
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7295075efee8950b0800000000000000
+      internalID: -5739399089109313241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir B. Cheese_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 125
+        width: 512
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c54c288e9dbe8b0800000000000000
+      internalID: -5121760558554260434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir B. Cheese_7
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 125
+        width: 512
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb5e5a2f643d66250800000000000000
+      internalID: 5937665460406707643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir B. Cheese_8
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 125
+        width: 512
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112ed3578af548460800000000000000
+      internalID: 7243019277844734481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ba02137b71a52e34b9f839b4250fb488
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":387.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Sir B. Cheese_0: -9177177803092190191
+      Sir B. Cheese_1: -4782529119386913097
+      Sir B. Cheese_2: -5537071593465186373
+      Sir B. Cheese_3: -4890656671484184016
+      Sir B. Cheese_4: 7016409315498790972
+      Sir B. Cheese_5: -5739399089109313241
+      Sir B. Cheese_6: -5121760558554260434
+      Sir B. Cheese_7: 5937665460406707643
+      Sir B. Cheese_8: 7243019277844734481
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
