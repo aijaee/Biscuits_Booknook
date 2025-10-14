@@ -26,7 +26,6 @@ public class Chest : MonoBehaviour, IInteractable
 
         if (chestTMP != null)
         {
-            // Handles both literal line breaks (from typing Enter) and "\n" written in Inspector
             chestTMP.text = chestText.Replace("\\n", "\n");
         }
     }

@@ -126,6 +126,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
     private HashSet<Vector2Int> prefabOccupiedTiles = new HashSet<Vector2Int>();
     private HashSet<Vector2Int> dungeonCorridors;
+    [Header("Boss Room Prefabs")]
+    [SerializeField] private List<RoomPrefab> bossRoomPrefabs;
+    [SerializeField] private int maxPrefabsPerBossRoom = 1;
+
 
     private void Start()
     {
@@ -260,6 +264,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         PlacePrefabsInCombatRooms();
         PlacePrefabsInPuzzleRooms();
+        PlacePrefabsInBossRooms();
 
         // Spawn player
         Vector2Int spawnPos = FindClosestFloorTile(roomDataList[0].Center, floor);
@@ -599,6 +604,46 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 if (IsAreaOccupiedWithBuffer(spawnPos, prefabSize, objectBuffer, prefabOccupiedTiles)) continue;
 
                 MarkAreaOccupiedWithBuffer(spawnPos, prefabSize, objectBuffer, prefabOccupiedTiles);
+
+                Vector3 worldPos = new Vector3(spawnPos.x, spawnPos.y, 0);
+                Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
+
+                placedCount++;
+            }
+        }
+    }
+
+    private void PlacePrefabsInBossRooms()
+    {
+        HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
+
+        foreach (var room in roomDataList)
+        {
+            if (room.Type != RoomType.Boss) continue;
+
+            int placedCount = 0;
+            int attempts = 0;
+            int maxAttempts = 10 * maxPrefabsPerBossRoom;
+
+            while (placedCount < maxPrefabsPerBossRoom && attempts < maxAttempts)
+            {
+                attempts++;
+                var prefabData = bossRoomPrefabs[Random.Range(0, bossRoomPrefabs.Count)];
+                Vector2Int prefabSize = prefabData.size;
+
+                Vector2Int roomCenter = room.Center;
+                Vector2Int spawnPos = new Vector2Int(
+                    roomCenter.x - prefabSize.x / 2,
+                    roomCenter.y - prefabSize.y / 2
+                );
+
+                if (!IsWithinRoomBounds(room, spawnPos, prefabSize, objectBuffer) || 
+                    IsAreaOccupied(spawnPos, prefabSize, occupiedTiles))
+                    continue;
+
+                MarkAreaOccupied(spawnPos - new Vector2Int(objectBuffer, objectBuffer),
+                                prefabSize + new Vector2Int(objectBuffer * 2, objectBuffer * 2),
+                                occupiedTiles);
 
                 Vector3 worldPos = new Vector3(spawnPos.x, spawnPos.y, 0);
                 Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
