@@ -50,11 +50,17 @@ TagManager:
   - name: World
     uniqueID: 1661798873
     locked: 0
+  - name: Items on Top
+    uniqueID: 135225685
+    locked: 0
   - name: Foreground
     uniqueID: 3020829117
     locked: 0
   - name: UI
     uniqueID: 2657559745
+    locked: 0
+  - name: Walls (In front)
+    uniqueID: 3948174441
     locked: 0
   m_RenderingLayers:
   - Default

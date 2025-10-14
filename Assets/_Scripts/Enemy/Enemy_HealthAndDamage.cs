@@ -9,42 +9,63 @@ public class Enemy_HealthAndDamage : MonoBehaviour
 
     private EnemyController enemyController;
     private EnemyDamageEffects damageEffects;
+    private Animator animator;
 
     private void Start()
     {
         currentHealth = maxHealth;
         enemyController = GetComponent<EnemyController>();
         damageEffects = GetComponent<EnemyDamageEffects>();
+        animator = GetComponent<Animator>();
     }
 
     public void EnemyTakeDamage(int damage, Vector2 hitDirection)
     {
+        if (enemyController != null && enemyController.isDead) return;
+
         currentHealth -= damage;
-
-        if (damageEffects != null)
-        {
-            damageEffects.PlayDamageEffects(hitDirection);
-        }
-
-        Debug.Log($"{gameObject.name} took {damage} damage. Remaining HP: {currentHealth}");
 
         if (currentHealth <= 0)
         {
             Die();
+            return;
         }
+
+        if (damageEffects != null)
+            damageEffects.PlayDamageEffects(hitDirection);
     }
 
     private void Die()
     {
+        if (enemyController != null && enemyController.isDead) return;
+
+        if (enemyController != null)
+            enemyController.isDead = true;
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
         Debug.Log($"{gameObject.name} has died.");
+
+        if (animator != null)
+            animator.SetTrigger("Death");
+
         if (enemyController != null)
         {
             enemyController.isStunned = true;
             enemyController.enabled = false;
+
             Rigidbody2D rb = enemyController.GetComponent<Rigidbody2D>();
             if (rb != null) rb.linearVelocity = Vector2.zero;
         }
-        StartCoroutine(FadeAndDestroy());
+
+        StartCoroutine(DeathSequence());
+    }
+
+    private IEnumerator DeathSequence()
+    {
+        yield return new WaitForSeconds(0.6f);
+        yield return StartCoroutine(FadeAndDestroy());
     }
 
     private IEnumerator FadeAndDestroy()

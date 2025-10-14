@@ -11,7 +11,8 @@ public class EnemyController : MonoBehaviour
     public int attackDamage = 10;
     public float attackCooldown = 1.0f;
     public bool isStunned = false;
-    private bool isKnockedBack = false;
+    public bool isKnockedBack = false;
+    public bool isDead = false;
     private Transform target;
     [HideInInspector] public AStarPathfinder pathfinder;
     private List<Vector3> path;
@@ -28,12 +29,14 @@ public class EnemyController : MonoBehaviour
 
     private float lastAttackTime = -Mathf.Infinity;
     private PlayerController playerController;
+    private Enemy_HealthAndDamage healthScript;
 
     private void Awake()
     {
         pathfinder = GetComponent<AStarPathfinder>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        healthScript = GetComponent<Enemy_HealthAndDamage>();
 
         // Store original spawn position
         originalPosition = transform.position;
@@ -231,6 +234,8 @@ public class EnemyController : MonoBehaviour
 
     public void Attack()
     {
+        if (isDead || isStunned) return;
+
         if (playerController != null && Time.time - lastAttackTime >= attackCooldown)
         {
             playerController.TakeDamage(attackDamage);
@@ -266,6 +271,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isDead) return;
         if (collision.CompareTag("Player"))
         {
             if (playerController == null)
@@ -276,6 +282,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (isDead) return;
         if (collision.CompareTag("Player"))
         {
             if (playerController == null)
@@ -300,15 +307,15 @@ public class EnemyController : MonoBehaviour
     }
 
     // add collision handlers to recalc path if stuck on walls
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wall") && target != null)
-            SetTarget(target);
-    }
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Wall") && target != null)
+    //         SetTarget(target);
+    // }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wall") && target != null)
-            SetTarget(target);
-    }
+    // private void OnCollisionStay2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Wall") && target != null)
+    //         SetTarget(target);
+    // }
 }

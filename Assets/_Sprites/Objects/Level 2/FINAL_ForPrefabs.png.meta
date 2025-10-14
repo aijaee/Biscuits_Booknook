@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 624070bbbd53e114bbe35231bda1d97c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2660057127647987261
+    second: Level2_tilemap_edited_0
+  - first:
+      213: 4712978802712075985
+    second: Level2_tilemap_edited_1
+  - first:
+      213: -9183952383996753328
+    second: Level2_tilemap_edited_2
+  - first:
+      213: -632292419503656352
+    second: Level2_tilemap_edited_3
+  - first:
+      213: -3902898335178738393
+    second: Level2_tilemap_edited_4
+  - first:
+      213: 1049010768137792582
+    second: Level2_tilemap_edited_5
+  - first:
+      213: -8067381571625575479
+    second: Level2_tilemap_edited_6
+  - first:
+      213: 7304629122887780670
+    second: Level2_tilemap_edited_7
+  - first:
+      213: 7506196179376452687
+    second: Level2_tilemap_edited_8
+  - first:
+      213: 617022917864149748
+    second: Level2_tilemap_edited_9
+  - first:
+      213: 480597642845261176
+    second: Level2_tilemap_edited_10
+  - first:
+      213: -9035206655095845156
+    second: Level2_tilemap_edited_11
+  - first:
+      213: 6458521393654186291
+    second: Level2_tilemap_edited_12
+  - first:
+      213: 4649135175145865267
+    second: Level2_tilemap_edited_13
+  - first:
+      213: 2377106602768133908
+    second: Level2_tilemap_edited_14
+  - first:
+      213: 3247134700642977185
+    second: Level2_tilemap_edited_15
+  - first:
+      213: -4051813558846517199
+    second: Level2_tilemap_edited_16
+  - first:
+      213: 3613403453691332787
+    second: Level2_tilemap_edited_17
+  - first:
+      213: 1018784647276860599
+    second: Level2_tilemap_edited_18
+  - first:
+      213: 992882932401265780
+    second: Level2_tilemap_edited_19
+  - first:
+      213: -5315186275045255816
+    second: Level2_tilemap_edited_20
+  - first:
+      213: -6746294099122508150
+    second: Level2_tilemap_edited_21
+  - first:
+      213: -4535619054347498647
+    second: Level2_tilemap_edited_22
+  - first:
+      213: -7256549786791046329
+    second: Level2_tilemap_edited_23
+  - first:
+      213: 4353388635405225790
+    second: Level2_tilemap_edited_24
+  - first:
+      213: -3814713427615402927
+    second: Level2_tilemap_edited_25
+  - first:
+      213: -7319633458143962093
+    second: Level2_tilemap_edited_26
+  - first:
+      213: -1284241049033740379
+    second: Level2_tilemap_edited_27
+  - first:
+      213: 5725283743996712449
+    second: Level2_tilemap_edited_28
+  - first:
+      213: -7643005871152706197
+    second: Level2_tilemap_edited_29
+  - first:
+      213: -5910654539161283520
+    second: Level2_tilemap_edited_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_6
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 550
+        width: 609
+        height: 628
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3328d276cf0fb46a7204f15cca6985
+      internalID: 1910517652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_11
+      rect:
+        serializedVersion: 2
+        x: 2321
+        y: 1035
+        width: 207
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.18}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f2ea8b2d021bc4b984f2d2f8b41ece
+      internalID: 952990966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_13
+      rect:
+        serializedVersion: 2
+        x: 2564
+        y: 1032
+        width: 242
+        height: 208
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde2420c1536e5b4ead90f5715075c66
+      internalID: 1283836585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_17
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 360
+        width: 289
+        height: 292
+      alignment: 9
+      pivot: {x: 0.5, y: 0.18}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f76d6c4c70c0044ade4d8446c30330
+      internalID: 723499707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_18
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 289
+        width: 193
+        height: 422
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68edd6afae047404a9f6bab217542be1
+      internalID: -1323010425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_19
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 533
+        width: 244
+        height: 165
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e859e02aac226904283f480a2bf49eeb
+      internalID: 468182340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_20
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 382
+        width: 480
+        height: 260
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca0931942c1c4d4dba8a3aab59b5ac0
+      internalID: 182717203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_21
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 367
+        width: 429
+        height: 302
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c68bad789478e469c0ca86412f63fb
+      internalID: 677952519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_22
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 122
+        width: 616
+        height: 264
+      alignment: 9
+      pivot: {x: 0.5, y: 0.18}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d9bea63c96c2a49992df9e5e42797f
+      internalID: -1168478692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_23
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 282
+        width: 206
+        height: 165
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05236c2b768f0044a1167f7beb4e237
+      internalID: 954121437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_24
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 63
+        width: 458
+        height: 143
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6b034922ff0304ba4c41187f455c75
+      internalID: -391016295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FINAL_ForPrefabs_27
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 43
+        width: 486
+        height: 155
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027ddac5852e22b4c80508901a7273cf
+      internalID: 374700709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8305fdab0e3c0154fbaa2dfca4442308
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      FINAL_ForPrefabs_0: -1100785896
+      FINAL_ForPrefabs_1: -1143219
+      FINAL_ForPrefabs_10: -1689618483
+      FINAL_ForPrefabs_11: 952990966
+      FINAL_ForPrefabs_12: -344921764
+      FINAL_ForPrefabs_13: 1283836585
+      FINAL_ForPrefabs_14: 774325382
+      FINAL_ForPrefabs_15: 24054378
+      FINAL_ForPrefabs_16: 1380211781
+      FINAL_ForPrefabs_17: 723499707
+      FINAL_ForPrefabs_18: -1323010425
+      FINAL_ForPrefabs_19: 468182340
+      FINAL_ForPrefabs_2: 1317005997
+      FINAL_ForPrefabs_20: 182717203
+      FINAL_ForPrefabs_21: 677952519
+      FINAL_ForPrefabs_22: -1168478692
+      FINAL_ForPrefabs_23: 954121437
+      FINAL_ForPrefabs_24: -391016295
+      FINAL_ForPrefabs_25: -1296781208
+      FINAL_ForPrefabs_26: 71874931
+      FINAL_ForPrefabs_27: 374700709
+      FINAL_ForPrefabs_28: -936857732
+      FINAL_ForPrefabs_29: -880277933
+      FINAL_ForPrefabs_3: -1364407196
+      FINAL_ForPrefabs_30: 854436256
+      FINAL_ForPrefabs_4: 476806901
+      FINAL_ForPrefabs_5: 875766274
+      FINAL_ForPrefabs_6: 1910517652
+      FINAL_ForPrefabs_7: -1726689888
+      FINAL_ForPrefabs_8: -2109162381
+      FINAL_ForPrefabs_9: 792191932
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

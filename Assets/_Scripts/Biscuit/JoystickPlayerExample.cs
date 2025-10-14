@@ -67,14 +67,9 @@ public class JoystickPlayerExample : MonoBehaviour
                 spriteRenderer.flipX = (lastDirection.x < -0.45f);
         }
 
-        // Pass direction to melee controller
         if (meleeAttackController != null)
         {
             meleeAttackController.UpdateMovementDirection(lastDirection);
-        }
-        else
-        {
-            Debug.LogWarning("MeleeAttackController reference is null!");
         }
     }
 
