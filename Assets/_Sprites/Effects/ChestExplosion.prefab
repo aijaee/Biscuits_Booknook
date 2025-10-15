@@ -83,7 +83,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.7833333, y: 1.5833334}
+  m_Size: {x: 4.8, y: 4.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -123,6 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cdcfe0b0bd8e64883d1420af33789f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestText: 
   isCorrectAnswer: 1
   rewardAmount: 10
   explosionEffect: {fileID: 0}
+  openedCorrectChestSprite: {fileID: 0}
+  explosionDamage: 20
+  rewardDatabase: {fileID: 0}
