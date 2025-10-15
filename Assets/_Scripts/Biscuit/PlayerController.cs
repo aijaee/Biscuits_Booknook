@@ -47,6 +47,13 @@ public class PlayerController : MonoBehaviour
 
         if (damageEffects == null)
             Debug.LogWarning("PlayerController: no PlayerDamageEffects component found/assigned on the player.");
+
+        // ensure Player and Boss layers don’t collide
+        Physics2D.IgnoreLayerCollision(
+            LayerMask.NameToLayer("Player"),
+            LayerMask.NameToLayer("Boss"),
+            true
+        );
     }
 
     public void TakeDamage(int damage)

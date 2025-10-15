@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Chest
   - Wall
+  - Boss
+  - PlayerAttack
+  - MeleeWeapon
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - Enemy
   - Floor
   - Wall
-  - 
+  - Boss
   - 
   - 
   - 

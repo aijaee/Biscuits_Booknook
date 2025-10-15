@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Biscuits_Booknook.sln"
+    "dotnet.defaultSolution": "Biscuits_Booknook.sln",
+    "discord.enabled": true
 }
