@@ -270,6 +270,14 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         Vector2Int spawnPos = FindClosestFloorTile(roomDataList[0].Center, floor);
         playerSpawner.SpawnPlayer(spawnPos);
 
+        // Starting note
+        if (notePrefab != null)
+        {
+            Vector2Int notePos = roomDataList[0].Center + noteOffset;
+            Vector3 worldPos = new Vector3(notePos.x, notePos.y, 0);
+            Instantiate(notePrefab, worldPos, Quaternion.identity, this.transform);
+        }
+
         // Minimap
         if (minimapRenderer != null)
         {
