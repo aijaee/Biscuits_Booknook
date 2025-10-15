@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Tilemaps;
 
 public class GridManager : MonoBehaviour
 {
@@ -17,14 +16,6 @@ public class GridManager : MonoBehaviour
         this.gridSize = size;
         this.cellSize = cellSize;
         this.unwalkableMask = unwalkableMask;
-
-        // Try to mirror the dungeon's floor tilemap
-        if (BuildGridFromTilemap())
-        {
-            Debug.Log($"GridManager: Built grid from floor Tilemap ({gridSize.x}×{gridSize.y}).");
-            return;
-        }
-
         if (unityGrid != null)
         {
             this.cellSize = unityGrid.cellSize.x;
@@ -35,38 +26,6 @@ public class GridManager : MonoBehaviour
             Debug.Log($"GridManager: Using manual cell size ({this.cellSize}) and origin ({transform.position})");
         }
         CreateGrid();
-    }
-
-    public void Initialize(Vector2Int size, float cellSize, LayerMask unwalkableMask, Vector3 origin)
-    {
-        transform.position = origin;
-        Initialize(size, cellSize, unwalkableMask);
-    }
-
-    // Attempt to build grid based on the floor tiles painted by the dungeon generator
-    private bool BuildGridFromTilemap()
-    {
-        Tilemap floor = GameObject.FindObjectOfType<Tilemap>();
-        if (floor == null) return false;
-
-        Vector3 origin = unityGrid != null
-            ? unityGrid.transform.position
-            : transform.position;
-        grid = new Node[gridSize.x, gridSize.y];
-        for (int x = 0; x < gridSize.x; x++)
-        {
-            for (int y = 0; y < gridSize.y; y++)
-            {
-                var tilePos = new Vector3Int(x, y, 0);
-                bool walkable = floor.HasTile(tilePos);
-                Vector3 worldPoint = origin + new Vector3(
-                    x * cellSize + cellSize * 0.5f,
-                    y * cellSize + cellSize * 0.5f,
-                    0f);
-                grid[x, y] = new Node(walkable, worldPoint, x, y);
-            }
-        }
-        return true;
     }
 
     public void CreateGrid()
@@ -175,7 +134,8 @@ public class GridManager : MonoBehaviour
             }
         }
     }
-    
+
+    // Example: Make all nodes walkable (for testing only)
     public void MakeAllNodesWalkable()
     {
         if (grid == null) return;
