@@ -2305,7 +2305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5915190835729234192, guid: d65b415f936d87244833793a6d8593b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.46
+      value: 4.8169556
       objectReference: {fileID: 0}
     - target: {fileID: 5915190835729234192, guid: d65b415f936d87244833793a6d8593b5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2639,10 +2639,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 709312580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 553d34a87fd46554b95a0587f1c7ac4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 237d0ab2d74acc649ad9aa2c8678cb10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirrorHorizontally: 0
+  gridSize: {x: 90, y: 90}
+  cellSize: 1
+  unwalkableMask:
+    serializedVersion: 2
+    m_Bits: 256
+  unityGrid: {fileID: 709312582}
 --- !u!1001 &816305672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3790,7 +3795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5915190835729234192, guid: d65b415f936d87244833793a6d8593b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.12
+      value: 0.07987738
       objectReference: {fileID: 0}
     - target: {fileID: 5915190835729234192, guid: d65b415f936d87244833793a6d8593b5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34678,7 +34683,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ae85d5302beeefe4098ec0bc0d4ada3a, type: 2}
+  - {fileID: 2100000, guid: c28a644003a5304409c48dfe2305b78f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -50891,7 +50896,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -50974,7 +50979,7 @@ PrefabInstance:
     - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
       propertyPath: gridManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 709312583}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2223579238073736734, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}

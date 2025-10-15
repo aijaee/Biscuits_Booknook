@@ -32,11 +32,6 @@ public class BossRoomGenerator : AbstractDungeonGenerator
 
     private void SpawnBossRoomContents(HashSet<Vector2Int> floor, Vector2Int bottomLeft)
     {
-        // Create and set up the boss’s grid manager
-        var gridGO = new GameObject("BossGridManager");
-        var gridManager = gridGO.AddComponent<BossGridManager>();
-        gridManager.Initialize(floor, bottomLeft, roomSize);
-
         if (bossSpawner != null)
             bossSpawner.SpawnBoss(startPosition, bottomLeft, roomSize);
             

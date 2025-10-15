@@ -9,6 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: e3fb8da8a280e7a4dbe2104a71ada409
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Hub/Hub.unity
     guid: 82a16d7516d1a8341bc8ff10fa74e860
   - enabled: 1
@@ -20,6 +21,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 2/Level_2.unity
     guid: e1e9c66e50dbb3a46b23e0ec624bdf5f
+=======
+    path: Assets/Scenes/[FRANCIS Gameplay].unity
+    guid: 83d3ec360ec6582439ec17dc68672785
+>>>>>>> parent of 0a3c5ba (FEAT: Boss Room Level 1)
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 0c3b5650c5f447c4c9f761e017588382, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: ea0a49d91f33c704389169f55260ec82, type: 2}
