@@ -623,6 +623,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             enemySpawner.SpawnEnemies(bossPositions);
         }
         // ...you can add more boss‐specific props here…
+    }
     private void PlacePrefabsInBossRooms()
     {
         HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
