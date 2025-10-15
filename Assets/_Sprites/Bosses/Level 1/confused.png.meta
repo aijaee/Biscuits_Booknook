@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: 21a183e8152cf93499c28f73ffb38797
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -254131194606244618
+    second: confused_0
+  - first:
+      213: -7997237010527309065
+    second: confused_1
+  - first:
+      213: -7224498954094028555
+    second: confused_2
+  - first:
+      213: 689695752447444416
+    second: confused_3
+  - first:
+      213: 2510853535910595835
+    second: confused_4
+  - first:
+      213: -6324621249117207797
+    second: confused_5
+  - first:
+      213: -2317346393029455399
+    second: confused_6
+  - first:
+      213: -4035737905559056196
+    second: confused_7
+  - first:
+      213: 8656176997286785149
+    second: confused_8
+  - first:
+      213: 3662002267123014874
+    second: confused_9
+  - first:
+      213: 6194080919339705378
+    second: confused_10
+  - first:
+      213: 3326412004706958454
+    second: confused_11
+  - first:
+      213: -2506446767042886478
+    second: confused_12
+  - first:
+      213: -3787440111126708240
+    second: confused_13
+  - first:
+      213: 4570513575687554001
+    second: confused_14
+  - first:
+      213: 263949739464815386
+    second: confused_15
+  - first:
+      213: -3145889093998219836
+    second: confused_16
+  - first:
+      213: -2066184401108680672
+    second: confused_17
+  - first:
+      213: -4529186255566687596
+    second: confused_18
+  - first:
+      213: -6996600790030275383
+    second: confused_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: confused_1
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 0
+        width: 690
+        height: 1250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2b9e26f4b140190800000000000000
+      internalID: -7997237010527309065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confused_3
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 0
+        width: 657
+        height: 1250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c5c9b7f1aa429900800000000000000
+      internalID: 689695752447444416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confused_4
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 0
+        width: 657
+        height: 1250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc0cf2ecf758d220800000000000000
+      internalID: 2510853535910595835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confused_5
+      rect:
+        serializedVersion: 2
+        x: 3233
+        y: 0
+        width: 758
+        height: 1250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b034b73bb7e6a38a0800000000000000
+      internalID: -6324621249117207797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confused_6
+      rect:
+        serializedVersion: 2
+        x: 4088
+        y: 0
+        width: 712
+        height: 1250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d152fdbbb127dfd0800000000000000
+      internalID: -2317346393029455399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confused_7
+      rect:
+        serializedVersion: 2
+        x: 4852
+        y: 0
+        width: 707
+        height: 1249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0d294d1cd2ef7c0800000000000000
+      internalID: -4035737905559056196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confused_8
+      rect:
+        serializedVersion: 2
+        x: 3742
+        y: 1142
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70bf2cdd1be02870800000000000000
+      internalID: 8656176997286785149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confused_9
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 657
+        height: 1250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adcda8ae8ab02d230800000000000000
+      internalID: 3662002267123014874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: confused_10
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 404
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224a44b47cbc5f550800000000000000
+      internalID: 6194080919339705378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      confused_0: -254131194606244618
+      confused_1: -7997237010527309065
+      confused_10: 6194080919339705378
+      confused_11: 3326412004706958454
+      confused_12: -2506446767042886478
+      confused_13: -3787440111126708240
+      confused_14: 4570513575687554001
+      confused_15: 263949739464815386
+      confused_16: -3145889093998219836
+      confused_17: -2066184401108680672
+      confused_18: -4529186255566687596
+      confused_19: -6996600790030275383
+      confused_2: -7224498954094028555
+      confused_20: -912335787
+      confused_3: 689695752447444416
+      confused_4: 2510853535910595835
+      confused_5: -6324621249117207797
+      confused_6: -2317346393029455399
+      confused_7: -4035737905559056196
+      confused_8: 8656176997286785149
+      confused_9: 3662002267123014874
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

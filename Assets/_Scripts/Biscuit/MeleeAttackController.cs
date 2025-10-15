@@ -24,6 +24,11 @@ public class MeleeAttackController : MonoBehaviour
     private bool useMouseAim = false;
     private Vector2 mouseDirection;
 
+    private void Awake()
+    {
+        enemyLayers |= LayerMask.GetMask("Boss");
+    }
+
     private void Update()
     {
         if (Mouse.current != null)
@@ -128,6 +133,13 @@ public class MeleeAttackController : MonoBehaviour
             {
                 Vector2 hitDirection = (enemy.transform.position - transform.position).normalized;
                 health.EnemyTakeDamage(attackDamage, hitDirection);
+            }
+            else if (enemy.TryGetComponent<BossStatsMovement>(out var bossStats))
+            {
+                if (bossStats.IsMeleeVulnerable)
+                {
+                    bossStats.TakeDamage(attackDamage);
+                }
             }
         }
     }
