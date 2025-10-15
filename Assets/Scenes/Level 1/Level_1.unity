@@ -46666,7 +46666,7 @@ PrefabInstance:
     - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
       propertyPath: explicitPuzzleRoomPrefabs.Array.data[3].prefab
       value: 
-      objectReference: {fileID: 2258546063865880603, guid: 27b6223924030b845964414310ba6942, type: 3}
+      objectReference: {fileID: 2258546063865880603, guid: 0240f8d215f2d094c9d48d50624cb323, type: 3}
     - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
       propertyPath: explicitPuzzleRoomPrefabs.Array.data[4].prefab
       value: 
