@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: fb19acae216554a48bc7fee9d20b79e5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 452471052854578187
+    second: Level1_tilemap_0
+  - first:
+      213: -6018463055639048414
+    second: Level1_tilemap_1
+  - first:
+      213: 4448132334175235133
+    second: Level1_tilemap_2
+  - first:
+      213: 628259645227753060
+    second: Level1_tilemap_3
+  - first:
+      213: -3858878945536196792
+    second: Level1_tilemap_4
+  - first:
+      213: -1538947052516355649
+    second: Level1_tilemap_5
+  - first:
+      213: -6126129763318957151
+    second: Level1_tilemap_6
+  - first:
+      213: -6122548373547129427
+    second: Level1_tilemap_7
+  - first:
+      213: 5380123488386075653
+    second: Level1_tilemap_8
+  - first:
+      213: -7841996517872962053
+    second: Level1_tilemap_9
+  - first:
+      213: 1228804559973989921
+    second: Level1_tilemap_10
+  - first:
+      213: 734941997396823347
+    second: Level1_tilemap_11
+  - first:
+      213: -456081277486999040
+    second: Level1_tilemap_12
+  - first:
+      213: 6224578625303219937
+    second: Level1_tilemap_13
+  - first:
+      213: -5096856174783252354
+    second: Level1_tilemap_14
+  - first:
+      213: -4686660636666920906
+    second: Level1_tilemap_15
+  - first:
+      213: 5738742093467493725
+    second: Level1_tilemap_16
+  - first:
+      213: -539081093740609583
+    second: Level1_tilemap_17
+  - first:
+      213: -7304462385484262232
+    second: Level1_tilemap_18
+  - first:
+      213: -8679818681890125415
+    second: Level1_tilemap_19
+  - first:
+      213: 4325666536108017356
+    second: Level1_tilemap_20
+  - first:
+      213: -7886416240826809671
+    second: Level1_tilemap_21
+  - first:
+      213: -6858588471162157521
+    second: Level1_tilemap_22
+  - first:
+      213: 2438069665472142761
+    second: Level1_tilemap_23
+  - first:
+      213: 9036396746493864933
+    second: Level1_tilemap_24
+  - first:
+      213: 4791170427823051909
+    second: Level1_tilemap_25
+  - first:
+      213: -7027032349535966131
+    second: Level1_tilemap_26
+  - first:
+      213: 4074069794049432256
+    second: Level1_tilemap_27
+  - first:
+      213: 8094403650121782000
+    second: Level1_tilemap_28
+  - first:
+      213: 7436290124865451882
+    second: Level1_tilemap_29
+  - first:
+      213: 50531069014783143
+    second: Level1_tilemap_30
+  - first:
+      213: -9057161482396744999
+    second: Level1_tilemap_31
+  - first:
+      213: 3635607440186986003
+    second: Level1_tilemap_32
+  - first:
+      213: -4263901031905341582
+    second: Level1_tilemap_33
+  - first:
+      213: 2576901021925109474
+    second: Level1_tilemap_34
+  - first:
+      213: -7415481550042410682
+    second: Level1_tilemap_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ForChests_10
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 873
+        width: 327
+        height: 278
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e4940eef1dca445976242f28779b8e
+      internalID: 1899423469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForChests_11
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 873
+        width: 327
+        height: 273
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87eba3ad36ee2d844b44e3dbe261bd45
+      internalID: 1106843425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 297f945bc1a1b314b9b30157c8be64b5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2560.0,"y":1.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ForChests_0: 1504243550
+      ForChests_1: -1951359159
+      ForChests_10: 1899423469
+      ForChests_11: 1106843425
+      ForChests_12: 256476552
+      ForChests_13: 191954618
+      ForChests_14: -1060267423
+      ForChests_15: -2090362678
+      ForChests_16: -1450423064
+      ForChests_17: 1838398466
+      ForChests_18: -978712398
+      ForChests_19: -910113564
+      ForChests_2: -66313146
+      ForChests_20: 1640058415
+      ForChests_21: 1824023838
+      ForChests_22: 1617506547
+      ForChests_23: -1985809737
+      ForChests_24: 1145720550
+      ForChests_25: -1082094800
+      ForChests_26: -42620302
+      ForChests_27: 397878071
+      ForChests_28: -1065091877
+      ForChests_29: -1157144645
+      ForChests_3: -827355145
+      ForChests_30: -356617657
+      ForChests_31: 961660379
+      ForChests_32: -1991918539
+      ForChests_33: 708416012
+      ForChests_34: -655605857
+      ForChests_35: -2110260881
+      ForChests_4: 209914954
+      ForChests_5: -455639298
+      ForChests_6: -1066597711
+      ForChests_7: 1904828472
+      ForChests_8: 251345052
+      ForChests_9: 1549116407
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

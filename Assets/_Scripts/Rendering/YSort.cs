@@ -31,6 +31,8 @@ public class YSort : MonoBehaviour
     {
         if (sr != null && pivot != null)
         {
+            Transform target = transform.parent != null ? transform.parent : pivot;
+            int offset = 0;
             sr.sortingOrder = -(int)(pivot.position.y * 100);
         }
     }

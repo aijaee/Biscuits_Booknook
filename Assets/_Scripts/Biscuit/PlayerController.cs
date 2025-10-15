@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     public float currentHealth = 100f;
 
     [Header("UI")]
-    public GameObject deathScreen; // Now public for spawner assignment
-    public Image hpBarFiller; // Assign the Image component using filler.png
+    public GameObject deathScreen;
+    public Image hpBarFiller;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -24,11 +24,10 @@ public class PlayerController : MonoBehaviour
     private bool isInvincible = false;
     public float invincibilityDuration = 2f;
 
-    private RectTransform hpBarRect; // Store the original rect for resizing
+    private RectTransform hpBarRect;
 
     private bool isDead = false;
 
-    // NEW: reference to the separate effects handler
     public PlayerDamageEffects damageEffects;
 
     private void Awake()
@@ -37,14 +36,12 @@ public class PlayerController : MonoBehaviour
         if (deathScreen != null)
             deathScreen.SetActive(false);
 
-        // Cache the RectTransform if using resize mode
         if (hpBarFiller != null)
             hpBarRect = hpBarFiller.GetComponent<RectTransform>();
 
         originalMoveSpeed = moveSpeed;
         currentDamage = baseDamage;
 
-        // AUTO-GET the PlayerDamageEffects if not assigned in Inspector
         if (damageEffects == null)
             damageEffects = GetComponent<PlayerDamageEffects>();
 
@@ -75,8 +72,23 @@ public class PlayerController : MonoBehaviour
             damageEffects.PlayDamageEffects();
         }
 
-        // Start invincibility
         StartCoroutine(InvincibilityCoroutine());
+
+        if (currentHealth <= 0f && !isDead)
+            Die();
+    }
+
+    public void TakeChestDamage(int damage)
+    {
+        if (isDead) return;
+
+        currentHealth -= damage;
+        if (currentHealth < 0f) currentHealth = 0f;
+
+        UpdateHPBar();
+
+        if (damageEffects != null)
+            damageEffects.PlayDamageEffects();
 
         if (currentHealth <= 0f && !isDead)
             Die();
@@ -117,7 +129,6 @@ public class PlayerController : MonoBehaviour
     {
         if (hpBarFiller != null)
         {
-            // Only set these once, not every frame, but safe here for runtime assignment
             if (hpBarFiller.type != Image.Type.Filled)
                 hpBarFiller.type = Image.Type.Filled;
             if (hpBarFiller.fillMethod != Image.FillMethod.Horizontal)
@@ -136,13 +147,11 @@ public class PlayerController : MonoBehaviour
     public void Dash()
     {
         Debug.Log("Player dashes!");
-        // Your dash logic here
     }
 
     public void PerformAttack()
     {
         Debug.Log("Player attacks!");
-        // Your attack logic here
     }
 
     public void Heal(int amount)
