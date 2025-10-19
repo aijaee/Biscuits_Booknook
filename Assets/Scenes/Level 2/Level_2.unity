@@ -34059,6 +34059,10 @@ PrefabInstance:
       value: Spawners
       objectReference: {fileID: 0}
     - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
+      propertyPath: enemyCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
       propertyPath: gridManager
       value: 
       objectReference: {fileID: 709312583}

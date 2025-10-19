@@ -46663,6 +46663,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2094200721}
     - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: corridorWidth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
       propertyPath: dungeonHeight
       value: 80
       objectReference: {fileID: 0}
@@ -47288,6 +47292,10 @@ PrefabInstance:
       value: Spawners
       objectReference: {fileID: 0}
     - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
+      propertyPath: enemyCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 778905128114026574, guid: 18b456f68c97a0a4a841041c0240c3bf, type: 3}
@@ -47295,6 +47303,14 @@ PrefabInstance:
       propertyPath: gridManager
       value: 
       objectReference: {fileID: 709312583}
+    - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
+      propertyPath: allowSpawnRoomEnemies
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
+      propertyPath: allowPuzzleRoomEnemies
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -31,10 +31,10 @@ public static class WallGenerator
             tilemapVisualizer.PaintSingleCornerWall(position, neighboursBinaryType);
 
             // 🟡 Debug: if nothing was placed, log what pattern we had
-            if (!tilemapVisualizer.HasTileAt(position))
-            {
-                Debug.LogWarning($"⚠ Missing corner wall at {position} | pattern: {neighboursBinaryType}");
-            }
+        if (!tilemapVisualizer.HasTileAt(position))
+        {
+            tilemapVisualizer.PaintSingleCornerWall(position, neighboursBinaryType);
+        }
         }
     }
 
