@@ -287,9 +287,8 @@ MonoBehaviour:
   rewardAmount: 10
   explosionEffect: {fileID: 4703677448900117056, guid: 6e62dd203d13fef4cbf9ade8e15596f8, type: 3}
   openedCorrectChestSprite: {fileID: 1106843425, guid: fb19acae216554a48bc7fee9d20b79e5, type: 3}
-  explosionDamage: 20
+  explosionDamage: 30
   rewardDatabase: {fileID: 11400000, guid: c1994d6e9f8db6440928bb88c9edf2bc, type: 2}
-  chestTMP: {fileID: 2458640659763349757}
 --- !u!114 &9183596406078319501
 MonoBehaviour:
   m_ObjectHideFlags: 0

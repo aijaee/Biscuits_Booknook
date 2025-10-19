@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle
-      value: 'Choose the correct meaning of the underlined words:'
+      value: 'Choose the correct meaning of the word/s written in a different color:'
       objectReference: {fileID: 0}
     - target: {fileID: 8856905469235115552, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: m_LocalPosition.x

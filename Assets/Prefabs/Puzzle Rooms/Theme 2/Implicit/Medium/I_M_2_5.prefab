@@ -143,7 +143,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 768422973578343593, guid: dfcec9a28128cdc4fad504c5517f0251, type: 3}
       propertyPath: chestText
-      value: Medium Chest Medium Chest
+      value: Happy, because she helped the boy
       objectReference: {fileID: 0}
     - target: {fileID: 973032638916191079, guid: dfcec9a28128cdc4fad504c5517f0251, type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040562754642717044, guid: d50ae0b508dd4ad45908ea39612d9134, type: 3}
       propertyPath: chestText
-      value: Happy, because she helped the boy
+      value: ' Angry, because the boy left quickly'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
