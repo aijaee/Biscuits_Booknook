@@ -13,4 +13,6 @@ public class ChestReward : ScriptableObject
     public Sprite chestSprite;
     public Sprite speedBuffIcon;
     public Sprite additionalDamageBuffIcon;
+    public Sprite healBuffIcon;
+    public float healBuffDuration = 1f;
 }

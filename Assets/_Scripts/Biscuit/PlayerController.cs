@@ -33,8 +33,11 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
-        if (deathScreen != null)
-            deathScreen.SetActive(false);
+        // load from BuffManager if available
+        if (RuntimeData.Instance.PersistentHealth >= 0f)
+            currentHealth = RuntimeData.Instance.PersistentHealth;
+        else
+            RuntimeData.Instance.SetPersistentHealth(currentHealth);
 
         if (hpBarFiller != null)
             hpBarRect = hpBarFiller.GetComponent<RectTransform>();
@@ -54,17 +57,18 @@ public class PlayerController : MonoBehaviour
             LayerMask.NameToLayer("Boss"),
             true
         );
+        UpdateHPBar();
     }
 
     public void TakeDamage(int damage)
     {
         if (isDead || isInvincible) return;
-
         currentHealth -= damage;
         if (currentHealth < 0f) currentHealth = 0f;
         Debug.Log("TakeDamage CALLED");
 
         UpdateHPBar();
+        RuntimeData.Instance.SetPersistentHealth(currentHealth);
 
         if (damageEffects != null)
         {
@@ -81,11 +85,11 @@ public class PlayerController : MonoBehaviour
     public void TakeChestDamage(int damage)
     {
         if (isDead) return;
-
         currentHealth -= damage;
         if (currentHealth < 0f) currentHealth = 0f;
 
         UpdateHPBar();
+        RuntimeData.Instance.SetPersistentHealth(currentHealth);
 
         if (damageEffects != null)
             damageEffects.PlayDamageEffects();
@@ -159,6 +163,7 @@ public class PlayerController : MonoBehaviour
         if (isDead) return;
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
         UpdateHPBar();
+        RuntimeData.Instance.SetPersistentHealth(currentHealth);
         Debug.Log($"{gameObject.name} healed {amount} HP. Current HP: {currentHealth}");
     }
 
