@@ -12849,6 +12849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossDefeatedPortalSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4447408860615457207, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4957399397642474579, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
       propertyPath: portalPrefab
       value: 

@@ -188,9 +188,10 @@ GameObject:
   - component: {fileID: 3765101327785015011}
   - component: {fileID: 2342651115556905780}
   - component: {fileID: 8679966718189261118}
+  - component: {fileID: 3479969235560147468}
   m_Layer: 0
   m_Name: BossDefeatedPortalLevel1
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,3 +327,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hubSceneIndex: 1
   newStoryStage: 2
+--- !u!114 &3479969235560147468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8188768632608287906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1844764c320b510479a065f38c6f435b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 0}
+  portalSpawner: {fileID: 0}
+  playerController: {fileID: 0}
+  playerRb: {fileID: 0}
+  mainCamera: {fileID: 0}
+  waitForPortalTimeout: 5
+  cameraPanDuration: 0.5
+  pauseDuration: 0.5
+  triggerOnEnable: 1

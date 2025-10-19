@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - PlayerAttack
   - MeleeWeapon
+  - Portal
   layers:
   - Default
   - TransparentFX
