@@ -623,7 +623,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         }
     }
 
-    // allow BossRoomGenerator to place enemies/objects on a custom floor
     public void PlaceObjectsInBossRoom(HashSet<Vector2Int> floorTiles)
     {
         if (enemySpawner != null)
@@ -632,7 +631,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             var bossPositions = enemySpawner.GetRandomWalkableTiles(1);
             enemySpawner.SpawnEnemies(bossPositions);
         }
-        // ...you can add more boss‐specific props here…
+
     }
     private void PlacePrefabsInBossRooms()
     {
