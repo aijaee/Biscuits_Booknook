@@ -13207,7 +13207,7 @@ PrefabInstance:
     - target: {fileID: 4957399397642474579, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
       propertyPath: portalPrefab
       value: 
-      objectReference: {fileID: 8188768632608287906, guid: 95c052c657a3f1040a1e7171d9cf4176, type: 3}
+      objectReference: {fileID: 8188768632608287906, guid: 3cadf9679f13dcf4d801305e3ebf95f8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
