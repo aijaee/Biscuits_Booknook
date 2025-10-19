@@ -12797,6 +12797,67 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2431055384770970498}
   m_Enabled: 1
+--- !u!1001 &3374668097951584547
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.60971
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.72733
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048182602807732190, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447408860615457207, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: m_Name
+      value: BossDefeatedPortalSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957399397642474579, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
+      propertyPath: portalPrefab
+      value: 
+      objectReference: {fileID: 8188768632608287906, guid: 95c052c657a3f1040a1e7171d9cf4176, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9860995fd029b634e8c6b98f1bc4776c, type: 3}
 --- !u!1001 &4531428966949396236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13223,3 +13284,4 @@ SceneRoots:
   - {fileID: 4531428966949396236}
   - {fileID: 6066567017823207024}
   - {fileID: 6468772769075909309}
+  - {fileID: 3374668097951584547}

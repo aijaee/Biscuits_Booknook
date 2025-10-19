@@ -258,7 +258,6 @@ public class BossStatsMovement : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
-
         // ensure fully transparent
         foreach (var sr in renderers)
         {
@@ -266,6 +265,10 @@ public class BossStatsMovement : MonoBehaviour
             c.a = 0f;
             sr.color = c;
         }
+
+        var spawner = FindObjectOfType<BossDefeatedPortalSpawner>();
+        if (spawner != null)
+            spawner.SpawnPortal();
 
         Destroy(gameObject);
     }
