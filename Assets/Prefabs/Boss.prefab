@@ -372,6 +372,9 @@ MonoBehaviour:
   aoeRadius: 0.8
   aoeDamagePerSecond: 30
   aoeSlowFactor: 0.5
+  indicatorLag: 2
+  flashTime: 0.8
+  flashSpeed: 15
 --- !u!114 &851464528074134013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkWallPrefab: {fileID: 1329139819931742876, guid: 587cb6d9b82395c46aca86fa492bc36a, type: 3}
-  wallDuration: 8
+  wallDuration: 4
   maxWalls: 2
   wallAnimatorController: {fileID: 9100000, guid: 1708d500de502eb4f9c862c1b9e82644, type: 2}
   riseState: Rise

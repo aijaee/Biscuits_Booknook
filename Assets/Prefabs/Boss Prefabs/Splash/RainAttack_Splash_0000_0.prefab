@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 9113824169085984868}
   - component: {fileID: 4379061865480204466}
   - component: {fileID: 8352297649599511565}
-  - component: {fileID: 4421461533798784053}
   m_Layer: 0
   m_Name: RainAttack_Splash_0000_0
   m_TagString: Untagged
@@ -111,16 +110,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4421461533798784053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2491334276578838524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8297733deebd20e4188ce54d18f70fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pivot: {fileID: 0}
