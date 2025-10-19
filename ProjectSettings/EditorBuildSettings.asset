@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 2/Level_2.unity
     guid: e1e9c66e50dbb3a46b23e0ec624bdf5f
+  - enabled: 1
+    path: Assets/Scenes/Level 2/Level_2_Boss.unity
+    guid: ef60ffb4d389a794aad81be18e50ef67
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 0c3b5650c5f447c4c9f761e017588382, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: ea0a49d91f33c704389169f55260ec82, type: 2}
