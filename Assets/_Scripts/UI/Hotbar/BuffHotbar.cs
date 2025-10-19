@@ -69,12 +69,10 @@ public class BuffHotbar : MonoBehaviour
         if (activeBuffs.Count >= maxSlots)
             RemoveBuff(activeBuffs[0]);
 
-        // spawn new slot
         GameObject go2 = Instantiate(buffIconPrefab, slotContainer);
         Image img2 = go2.GetComponent<Image>();
         img2.sprite = icon;
 
-        // hide any nested CountText for non‐stacking buffs
         foreach (var tf in go2.GetComponentsInChildren<Transform>(true))
         {
             if (tf.name == "CountText")

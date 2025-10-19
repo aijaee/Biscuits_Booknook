@@ -12,7 +12,7 @@ public class BossPhase1RainAttack : MonoBehaviour
     public float aoeDuration = 4f;
     public float aoeRadius = 2.5f;
     public float aoeDamagePerSecond = 10f;
-    public float aoeSlowFactor = 0.5f;    // new: slow multiplier applied inside AOE
+    public float aoeSlowFactor = 0.5f;   
 
     float aoeTimer;
     private List<GameObject> activeAreas = new List<GameObject>();  
@@ -30,11 +30,11 @@ public class BossPhase1RainAttack : MonoBehaviour
 
     IEnumerator RainAOE()
     {
-        // get player transform
+
         Transform player = GameObject.FindWithTag("Player").transform;
         GameObject ind = null;
 
-        // spawn indicator once
+
         if (aoeIndicatorPrefab)
         {
             ind = Instantiate(aoeIndicatorPrefab, player.position, Quaternion.identity);
@@ -52,7 +52,6 @@ public class BossPhase1RainAttack : MonoBehaviour
             }
         }
 
-        // follow player for the warning duration
         float elapsed = 0f;
         while (elapsed < aoeWarningTime)
         {
@@ -62,11 +61,10 @@ public class BossPhase1RainAttack : MonoBehaviour
             yield return null;
         }
 
-        // determine final target & clean up indicator
+
         Vector3 finalPos = ind != null ? ind.transform.position : player.position;
         if (ind != null) Destroy(ind);
 
-        // spawn the actual AOE zone
         GameObject zone = aoePrefab != null
             ? Instantiate(aoePrefab, finalPos, Quaternion.identity)
             : new GameObject("RainAOE");
@@ -108,7 +106,6 @@ public class BossPhase1RainAttack : MonoBehaviour
             StartCoroutine(PlayAndFadeAnimation());
 
 
-            // if player already inside, trigger entry logic
             foreach (var other in Physics2D.OverlapCircleAll(pos, radius))
                 if (other.CompareTag("Player"))
                     OnTriggerEnter2D(other);
@@ -141,7 +138,6 @@ public class BossPhase1RainAttack : MonoBehaviour
 
         IEnumerator DamageLoop(PlayerController pc)
         {
-            // first tick after one full second
             yield return new WaitForSeconds(1f);
             float elapsed = 1f;
 
@@ -169,14 +165,12 @@ public class BossPhase1RainAttack : MonoBehaviour
             float animPlayTime = clip.length - frameTime;
             yield return new WaitForSeconds(Mathf.Min(animPlayTime, duration));
 
-            // freeze on penultimate frame
             animator.speed = 0f;
 
             float remaining = duration - Mathf.Min(animPlayTime, duration);
             if (remaining > 0f)
                 yield return new WaitForSeconds(remaining);
 
-            // fade out
             float fadeDuration = 1f;
             float elapsed = 0f;
             Color original = sr.color;

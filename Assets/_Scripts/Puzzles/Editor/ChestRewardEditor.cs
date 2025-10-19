@@ -22,7 +22,6 @@ public class ChestRewardEditor : Editor
         additionalDamageAmountProp = serializedObject.FindProperty("additionalDamageAmount");
         chestSpriteProp = serializedObject.FindProperty("chestSprite");
 
-        // find the new icon fields
         speedBuffIconProp = serializedObject.FindProperty("speedBuffIcon");
         additionalDamageBuffIconProp = serializedObject.FindProperty("additionalDamageBuffIcon");
     }
@@ -41,13 +40,11 @@ public class ChestRewardEditor : Editor
             case ChestReward.RewardType.Speed:
                 EditorGUILayout.PropertyField(speedMultiplierProp, new GUIContent("Speed Multiplier"));
                 EditorGUILayout.PropertyField(speedDurationProp, new GUIContent("Speed Duration"));
-                // draw speed icon
                 EditorGUILayout.PropertyField(speedBuffIconProp, new GUIContent("Speed Buff Icon"));
                 break;
 
             case ChestReward.RewardType.AdditionalDamage:
                 EditorGUILayout.PropertyField(additionalDamageAmountProp, new GUIContent("Additional Damage Amount"));
-                // draw damage icon
                 EditorGUILayout.PropertyField(additionalDamageBuffIconProp, new GUIContent("Damage Buff Icon"));
                 break;
         }

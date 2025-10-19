@@ -289,11 +289,11 @@ public class BossStatsMovement : MonoBehaviour
 
         yield return new WaitForSeconds(panHoldDuration);   
 
-        // play entrance animation
+
         if (animator != null)
             animator.SetTrigger("Enter");
 
-        // wait for the animation to finish
+
         yield return new WaitForSeconds(animationWaitTime);
 
         if (animator != null)
@@ -302,11 +302,11 @@ public class BossStatsMovement : MonoBehaviour
             animator.CrossFade("Idle", 0f);
         }
 
-        // return camera back
+
         if (cam != null)
             cam.transform.position = originalCamPos;
 
-        // re-enable player
+
         var playerRe = GameObject.FindGameObjectWithTag("Player");
         if (playerRe != null)
         {
@@ -327,7 +327,7 @@ public class BossStatsMovement : MonoBehaviour
         ChangeState(BossState.Flying);
     }
 
-    // For debugging
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

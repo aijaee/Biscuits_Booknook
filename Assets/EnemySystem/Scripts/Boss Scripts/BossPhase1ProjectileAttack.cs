@@ -19,7 +19,7 @@ public class BossPhase1ProjectileAttack : MonoBehaviour
 
     public void PerformAttack()
     {
-        // debug: verify this method is invoked
+
         Debug.Log($"[{name}] PerformAttack called. Timer={timer:F2}");
 
         if (projectilePrefab == null)
