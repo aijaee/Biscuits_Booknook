@@ -91,11 +91,11 @@ public class ProjectileBehaviour : MonoBehaviour
             return;
         }
 
-        // return to boss
         if (returning && other.transform == bossTransform)
         {
-            bossTransform.GetComponent<BossStatsMovement>()?
-                         .TakeDamage(damage);
+            bossTransform
+               .GetComponent<BossStatsMovement>()
+               ?.TakeDamage(damage, false);
             Destroy(gameObject);
             return;
         }

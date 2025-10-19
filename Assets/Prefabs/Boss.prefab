@@ -303,8 +303,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.1880492, y: -0.1327405}
-  m_Radius: 1.6172341
+  m_Offset: {x: 0.18804881, y: -0.64997447}
+  m_Radius: 0.98646116
 --- !u!114 &3330507944464176015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,10 +320,10 @@ MonoBehaviour:
   state: 0
   phase: 0
   maxHealth: 250
-  currentHealth: 60
+  currentHealth: 0
   moveSpeed: 0
   visionRange: 10
-  stunDuration: 5
+  stunDuration: 2
   projectileAttack: {fileID: 4243520893339020794}
   rainAttack: {fileID: 1634389739960638606}
   inkWallAttack: {fileID: 8324716410075227827}
@@ -347,10 +347,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1203436361101738709, guid: 23e8d9d79eb63ba428e8f1f3f0077b39, type: 3}
   firePoint: {fileID: 562828149774859447}
-  shootInterval: 0.3
+  shootInterval: 0.8
   projectileSpeed: 5
   returnSpeed: 8
-  damage: 20
+  damage: 12
   maxProjectileDistance: 20
 --- !u!114 &1634389739960638606
 MonoBehaviour:
@@ -366,11 +366,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aoeIndicatorPrefab: {fileID: 4405123329811788704, guid: 6c892110311eaa04294d755d2f8c07bc, type: 3}
   aoePrefab: {fileID: 2491334276578838524, guid: 821486de02c20be41a509871134c1aeb, type: 3}
-  aoeInterval: 5
+  aoeInterval: 2.5
   aoeWarningTime: 1.5
   aoeDuration: 4
   aoeRadius: 0.8
   aoeDamagePerSecond: 30
+  aoeSlowFactor: 0.5
 --- !u!114 &851464528074134013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,7 +390,7 @@ MonoBehaviour:
   objectsContainer: {fileID: 0}
   wallLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   maxWallHits: 3
   playerKnockbackForce: 5
   dashHitRadius: 2

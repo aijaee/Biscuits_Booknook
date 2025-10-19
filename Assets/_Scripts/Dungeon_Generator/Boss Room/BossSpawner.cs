@@ -13,17 +13,16 @@ public class BossSpawner : MonoBehaviour
     {
         Vector3 bossPos;
         if (useManualBossPosition)
-            // manualBossPosition interpreted as world‐space tile coords
             bossPos = new Vector3(manualBossPosition.x + 0.5f,
                                   manualBossPosition.y + 0.5f,
                                   -1f);
         else
-            // default to dungeon start position (center of room)
+
             bossPos = new Vector3(startPosition.x + 0.5f,
                                   startPosition.y + 0.5f,
                                   -1f);
 
-        // clamp inside the rectangular room
+
         float minX = bottomLeft.x + 0.5f;
         float maxX = bottomLeft.x + roomSize.x - 0.5f;
         float minY = bottomLeft.y + 0.5f;
