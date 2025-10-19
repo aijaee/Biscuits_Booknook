@@ -33391,7 +33391,7 @@ PrefabInstance:
     - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
       propertyPath: bossRoomPrefabs.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 8188768632608287906, guid: 0f4fbd4b8e31f6848b903ff6100c1939, type: 3}
+      objectReference: {fileID: 8188768632608287906, guid: e22339e41926a6f46bff71c8c69b19d1, type: 3}
     - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
       propertyPath: explicitPuzzleRoomPrefabs.Array.size
       value: 6

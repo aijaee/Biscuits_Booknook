@@ -12,41 +12,35 @@ public class InteractableBook : MonoBehaviour, IInteractable
     public Color highlightColor = Color.white;
 
     [Header("Story Progress")]
-    public int storyStage = 0;
+    public int requiredStage = 0;
+    public int setToStage = 0;
 
-    private SpriteRenderer sr;
-    private Color originalColor;
-    private bool playerInRange = false;
-    private bool hasBeenRead = false;
+    SpriteRenderer sr;
+    Color originalColor;
+    bool playerInRange;
+    bool hasBeenRead;
 
-    private void Awake()
+    void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
 
         int progress = PlayerPrefs.GetInt("StoryProgress", 0);
-
-        if (progress != storyStage)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
+        if (progress != requiredStage) gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player") || hasBeenRead) return;
-
         playerInRange = true;
         sr.color = highlightColor;
         InteractUI.Instance.SetCurrentInteractable(this);
         InteractUI.Instance.ShowButton(true);
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-
         playerInRange = false;
         sr.color = originalColor;
         InteractUI.Instance.SetCurrentInteractable(null);
@@ -57,7 +51,7 @@ public class InteractableBook : MonoBehaviour, IInteractable
     {
         if (!playerInRange || hasBeenRead) return;
         if (dialogueController == null || dialogueData == null) return;
-        if (PlayerPrefs.GetInt("StoryProgress", 0) != storyStage) return;
+        if (PlayerPrefs.GetInt("StoryProgress", 0) != requiredStage) return;
 
         hasBeenRead = true;
         InteractUI.Instance.ShowButton(false);
@@ -68,8 +62,11 @@ public class InteractableBook : MonoBehaviour, IInteractable
                 targetBookshelf.Unlock();
 
             int currentProgress = PlayerPrefs.GetInt("StoryProgress", 0);
-            PlayerPrefs.SetInt("StoryProgress", currentProgress + 1);
-            PlayerPrefs.Save();
+            if (currentProgress < setToStage)
+            {
+                PlayerPrefs.SetInt("StoryProgress", setToStage);
+                PlayerPrefs.Save();
+            }
         };
 
         dialogueController.StartDialogue(dialogueData);

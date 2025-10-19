@@ -6851,7 +6851,7 @@ PrefabInstance:
       objectReference: {fileID: 946848659}
     - target: {fileID: 2785588682412104074, guid: 8638f803f64539a41a506430ecaf3564, type: 3}
       propertyPath: requiredStoryStage
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4125861433930969444, guid: 8638f803f64539a41a506430ecaf3564, type: 3}
       propertyPath: m_Name
@@ -8156,8 +8156,16 @@ PrefabInstance:
       value: Book_PostLevel2
       objectReference: {fileID: 0}
     - target: {fileID: 8018720442601715385, guid: 865f9675dcfbb824d9db16f46f82c805, type: 3}
+      propertyPath: setToStage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018720442601715385, guid: 865f9675dcfbb824d9db16f46f82c805, type: 3}
       propertyPath: storyStage
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018720442601715385, guid: 865f9675dcfbb824d9db16f46f82c805, type: 3}
+      propertyPath: requiredStage
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8018720442601715385, guid: 865f9675dcfbb824d9db16f46f82c805, type: 3}
       propertyPath: dialogueController
@@ -8296,6 +8304,10 @@ PrefabInstance:
       propertyPath: pivot
       value: 
       objectReference: {fileID: 688774859}
+    - target: {fileID: 5959880655928243948, guid: aa096185cc658c4478b4c5a548968be8, type: 3}
+      propertyPath: setToStage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5959880655928243948, guid: aa096185cc658c4478b4c5a548968be8, type: 3}
       propertyPath: targetBookshelf
       value: 
@@ -8512,6 +8524,14 @@ PrefabInstance:
     - target: {fileID: 3512728769624621767, guid: 49427ac52fb2bfd41af409d90aae1f0a, type: 3}
       propertyPath: m_Name
       value: Book_PostLevel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663041313907396412, guid: 49427ac52fb2bfd41af409d90aae1f0a, type: 3}
+      propertyPath: setToStage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663041313907396412, guid: 49427ac52fb2bfd41af409d90aae1f0a, type: 3}
+      propertyPath: requiredStage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3663041313907396412, guid: 49427ac52fb2bfd41af409d90aae1f0a, type: 3}
       propertyPath: targetBookshelf

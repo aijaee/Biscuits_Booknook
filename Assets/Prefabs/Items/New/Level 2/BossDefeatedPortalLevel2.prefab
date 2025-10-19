@@ -187,9 +187,9 @@ GameObject:
   - component: {fileID: 3747198518263678916}
   - component: {fileID: 3765101327785015011}
   - component: {fileID: 2342651115556905780}
-  - component: {fileID: 8264120482116517581}
+  - component: {fileID: 8679966718189261118}
   m_Layer: 0
-  m_Name: HubPortal
+  m_Name: BossDefeatedPortalLevel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +312,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8264120482116517581
+--- !u!114 &8679966718189261118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,7 +321,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8188768632608287906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 370478f39cd1dc5449a9839667a3d997, type: 3}
+  m_Script: {fileID: 11500000, guid: 645735dd38389a04ca846014d2b318cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hubSceneIndex: 1
+  newStoryStage: 4
