@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-#if CINEMACHINE_PRESENT
-using Cinemachine;                          // new: optional Cinemachine support
-#endif
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class BossStatsMovement : MonoBehaviour
@@ -184,7 +181,7 @@ public class BossStatsMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero;      
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, bool applyStun = true)
     {
         currentHealth -= amount;
         if (currentHealth <= 0f)
@@ -194,7 +191,8 @@ public class BossStatsMovement : MonoBehaviour
         }
         else
         {
-            ChangeState(BossState.Stunned);
+            if (applyStun)
+                ChangeState(BossState.Stunned);
             CheckPhase();       
         }
     }
@@ -212,9 +210,14 @@ public class BossStatsMovement : MonoBehaviour
 
     private void OnPhase2()
     {
-        // ...phase 2 logic...
-        moveSpeed = 4f;          
-        ChangeState(BossState.Grounded);   
+        ChangeState(BossState.Grounded);
+        moveSpeed = 4f;
+
+        projectileAttack?.StopAllCoroutines();
+        rainAttack?.StopAllCoroutines();
+
+        projectileAttack?.ClearAllProjectiles();
+        rainAttack?.ClearAllProjectiles();
     }
 
     private void Die()
@@ -286,11 +289,11 @@ public class BossStatsMovement : MonoBehaviour
 
         yield return new WaitForSeconds(panHoldDuration);   
 
-        // play entrance animation
+
         if (animator != null)
             animator.SetTrigger("Enter");
 
-        // wait for the animation to finish
+
         yield return new WaitForSeconds(animationWaitTime);
 
         if (animator != null)
@@ -299,11 +302,11 @@ public class BossStatsMovement : MonoBehaviour
             animator.CrossFade("Idle", 0f);
         }
 
-        // return camera back
+
         if (cam != null)
             cam.transform.position = originalCamPos;
 
-        // re-enable player
+
         var playerRe = GameObject.FindGameObjectWithTag("Player");
         if (playerRe != null)
         {
@@ -316,12 +319,15 @@ public class BossStatsMovement : MonoBehaviour
                 rbRe.constraints = originalPlayerConstraints;       // new
         }
 
+        var hpBar = FindObjectOfType<BossHPBar>();
+        if (hpBar != null)
+            yield return StartCoroutine(hpBar.ShowBar());
 
         phase = BossPhase.Phase1;
         ChangeState(BossState.Flying);
     }
 
-    // For debugging
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -332,4 +338,7 @@ public class BossStatsMovement : MonoBehaviour
     {
         get { return phase == BossPhase.Phase2 && state == BossState.Stunned; }
     }
+
+    public BossState CurrentState => state;
+    public BossPhase CurrentPhase => phase;
 }

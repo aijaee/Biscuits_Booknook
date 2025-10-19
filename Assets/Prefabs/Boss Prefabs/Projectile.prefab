@@ -91,6 +91,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outgoingColor: {r: 1, g: 1, b: 1, a: 1}
   returningColor: {r: 1, g: 0, b: 0, a: 1}
+  wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!58 &-8887842141371751722
 CircleCollider2D:
   m_ObjectHideFlags: 0

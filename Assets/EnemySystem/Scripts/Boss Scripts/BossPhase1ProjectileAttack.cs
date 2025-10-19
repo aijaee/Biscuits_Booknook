@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;  
 
 public class BossPhase1ProjectileAttack : MonoBehaviour
 {
@@ -14,13 +15,13 @@ public class BossPhase1ProjectileAttack : MonoBehaviour
     public float maxProjectileDistance = 20f;
 
     float timer;
+    private List<GameObject> activeProjectiles = new List<GameObject>(); 
 
     public void PerformAttack()
     {
-        // debug: verify this method is invoked
+
         Debug.Log($"[{name}] PerformAttack called. Timer={timer:F2}");
 
-        // guard against missing assignments
         if (projectilePrefab == null)
         {
             Debug.LogError($"[{name}] projectilePrefab is not assigned.");
@@ -41,7 +42,7 @@ public class BossPhase1ProjectileAttack : MonoBehaviour
         var player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (player == null) return;
 
-        // Calculate direction and rotation so projectile faces the player
+
         Vector2 dir = (player.position - firePoint.position).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         var proj = Instantiate(
@@ -58,6 +59,14 @@ public class BossPhase1ProjectileAttack : MonoBehaviour
             maxDistance: maxProjectileDistance
         );
 
+        activeProjectiles.Add(proj.gameObject); 
         timer = shootInterval;
+    }
+
+    public void ClearAllProjectiles()
+    {
+        foreach (var go in activeProjectiles)
+            if (go != null) Destroy(go);
+        activeProjectiles.Clear();
     }
 }

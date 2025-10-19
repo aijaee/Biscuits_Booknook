@@ -8,25 +8,22 @@ public class BossPhase2InkWallAttack : MonoBehaviour
     [SerializeField] private float wallDuration = 5f;
     [SerializeField] private int maxWalls = 2;
 
-    // new: assign your AnimatorController here, and set trigger names to match your clips
     [SerializeField] private RuntimeAnimatorController wallAnimatorController;
-    [SerializeField] private string riseState = "Rise";      // your rise clip state name
+    [SerializeField] private string riseState = "Rise";      
     [SerializeField] private float fadeDuration = 0.5f;
 
-    // new: how long the rise clip is, so we can pause on its last frame
     [SerializeField] private float riseDuration = 0.5f;
 
-    // new: trigger name and duration for fall animation
-    [SerializeField] private string fallState = "Fall";      // your fall clip state name
+    [SerializeField] private string fallState = "Fall";    
     [SerializeField] private float fallDuration = 1f;
 
-    // new: parameters to form a continuous line of wall segments
+
     [SerializeField] private int wallSegments = 10;
-    [SerializeField] private float segmentSpacing = 0.2f; // extra gap between prefabs
+    [SerializeField] private float segmentSpacing = 0.2f; 
     [SerializeField] private Vector2 lineDirection = Vector2.right;
-    // new: clamp wall to map bounds
+
     [SerializeField] private BossGridManager gridManager;
-    [SerializeField] private Transform playerTransform;  // new: reference to player
+    [SerializeField] private Transform playerTransform; 
 
     private List<GameObject> activeWalls = new List<GameObject>();
 
@@ -61,16 +58,16 @@ public class BossPhase2InkWallAttack : MonoBehaviour
     {
         EnsureReferences();
 
-        // new: decide spawn count
+
         int mode = Random.Range(0, 3);
         int segmentsToSpawn = mode == 1 ? 2 : (mode == 2 ? wallSegments : 1);
 
-        // existing: compute direction for segments
+
         Vector3 segDir = new Vector3(lineDirection.x, lineDirection.y, 0f).normalized;
-        // new: line runs perpendicular through the player
+
         Vector3 lineVec = new Vector3(-segDir.y, segDir.x, 0f);
 
-        // existing: compute prefab spacing
+
         float prefabSize = 1f;
         var sr = inkWallPrefab.GetComponent<SpriteRenderer>();
         if (sr != null)
@@ -78,7 +75,6 @@ public class BossPhase2InkWallAttack : MonoBehaviour
         float spacing = prefabSize + segmentSpacing;
 
 
-        // new: center the line on the player
         float startOffset = - (segmentsToSpawn - 1) / 2f * spacing;
 
         for (int i = 0; i < segmentsToSpawn; i++)
@@ -86,7 +82,6 @@ public class BossPhase2InkWallAttack : MonoBehaviour
             Vector3 pos = (playerTransform != null ? playerTransform.position : transform.position)
                           + lineVec * (startOffset + i * spacing);
 
-            // skip out-of-bounds
             if (gridManager != null)
             {
                 var cell = new Vector3Int(

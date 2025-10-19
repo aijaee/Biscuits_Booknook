@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
+using UI;
 
 public class Chest : MonoBehaviour, IInteractable
 {
@@ -57,13 +59,24 @@ public class Chest : MonoBehaviour, IInteractable
                         break;
 
                     case ChestReward.RewardType.Speed:
-                        if (playerController != null) playerController.ApplySpeedBoost(reward.speedMultiplier, reward.speedDuration);
+                        if (playerController != null)
+                            playerController.ApplySpeedBoost(reward.speedMultiplier, reward.speedDuration);
+                        BuffHotbar.Instance.AddBuff(
+                            BuffType.Speed,
+                            reward.speedBuffIcon,
+                            reward.speedDuration
+                        );
                         Debug.Log($"Speed boosted x{reward.speedMultiplier} for {reward.speedDuration} seconds.");
                         break;
 
                     case ChestReward.RewardType.AdditionalDamage:
                         var meleeCtrl = player != null ? player.GetComponent<MeleeAttackController>() : null;
                         if (meleeCtrl != null) meleeCtrl.AddDamageBuff(reward.additionalDamageAmount);
+                        BuffHotbar.Instance.AddBuff(
+                            BuffType.AdditionalDamage,
+                            reward.additionalDamageBuffIcon,
+                            0f
+                        );
                         break;
                 }
             }

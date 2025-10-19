@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; 
 
 public class BossPhase1RainAttack : MonoBehaviour
 {
@@ -11,8 +12,10 @@ public class BossPhase1RainAttack : MonoBehaviour
     public float aoeDuration = 4f;
     public float aoeRadius = 2.5f;
     public float aoeDamagePerSecond = 10f;
+    public float aoeSlowFactor = 0.5f;   
 
     float aoeTimer;
+    private List<GameObject> activeAreas = new List<GameObject>();  
 
     public void PerformAttack()
     {
@@ -27,14 +30,15 @@ public class BossPhase1RainAttack : MonoBehaviour
 
     IEnumerator RainAOE()
     {
-        // get player transform
+
         Transform player = GameObject.FindWithTag("Player").transform;
         GameObject ind = null;
 
-        // spawn indicator once
+
         if (aoeIndicatorPrefab)
         {
             ind = Instantiate(aoeIndicatorPrefab, player.position, Quaternion.identity);
+            activeAreas.Add(ind); 
             var sr = ind.GetComponent<SpriteRenderer>();
             if (sr != null)
             {
@@ -48,7 +52,6 @@ public class BossPhase1RainAttack : MonoBehaviour
             }
         }
 
-        // follow player for the warning duration
         float elapsed = 0f;
         while (elapsed < aoeWarningTime)
         {
@@ -58,18 +61,31 @@ public class BossPhase1RainAttack : MonoBehaviour
             yield return null;
         }
 
-        // determine final target & clean up indicator
+
         Vector3 finalPos = ind != null ? ind.transform.position : player.position;
         if (ind != null) Destroy(ind);
 
-        // spawn the actual AOE zone
         GameObject zone = aoePrefab != null
             ? Instantiate(aoePrefab, finalPos, Quaternion.identity)
             : new GameObject("RainAOE");
-        zone.AddComponent<AOEBehaviour>().Init(finalPos, aoeRadius, aoeDuration, aoeDamagePerSecond);
+
+        var beh = zone.AddComponent<AOEBehaviour>();
+        beh.Init(finalPos, aoeRadius, aoeDuration, aoeDamagePerSecond);
+
+        var slow = zone.AddComponent<SlowZone>();   
+        slow.slowFactor = aoeSlowFactor;
+
+        activeAreas.Add(zone);  
     }
 
-    // Inner class handles the damage zone
+    public void ClearAllProjectiles()
+    {
+        foreach (var go in activeAreas)
+            if (go != null) Destroy(go);
+        activeAreas.Clear();
+    }
+
+
     private class AOEBehaviour : MonoBehaviour
     {
         float duration;
@@ -86,10 +102,10 @@ public class BossPhase1RainAttack : MonoBehaviour
             col.isTrigger = true;
             col.radius = radius;
 
-            // start lifetime countdown
             StartCoroutine(Life());
+            StartCoroutine(PlayAndFadeAnimation());
 
-            // if player already inside, trigger entry logic
+
             foreach (var other in Physics2D.OverlapCircleAll(pos, radius))
                 if (other.CompareTag("Player"))
                     OnTriggerEnter2D(other);
@@ -103,7 +119,6 @@ public class BossPhase1RainAttack : MonoBehaviour
                 t += Time.deltaTime;
                 yield return null;
             }
-            Destroy(gameObject);
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -123,7 +138,6 @@ public class BossPhase1RainAttack : MonoBehaviour
 
         IEnumerator DamageLoop(PlayerController pc)
         {
-            // first tick after one full second
             yield return new WaitForSeconds(1f);
             float elapsed = 1f;
 
@@ -133,6 +147,42 @@ public class BossPhase1RainAttack : MonoBehaviour
                 yield return new WaitForSeconds(1f);
                 elapsed += 1f;
             }
+        }
+
+        IEnumerator PlayAndFadeAnimation()
+        {
+            var animator = GetComponent<Animator>();
+            var sr = GetComponent<SpriteRenderer>();
+            if (animator == null || sr == null || animator.runtimeAnimatorController == null)
+                yield break;
+
+            var clips = animator.runtimeAnimatorController.animationClips;
+            if (clips.Length == 0)
+                yield break;
+            var clip = clips[0];
+
+            float frameTime = 1f / clip.frameRate;
+            float animPlayTime = clip.length - frameTime;
+            yield return new WaitForSeconds(Mathf.Min(animPlayTime, duration));
+
+            animator.speed = 0f;
+
+            float remaining = duration - Mathf.Min(animPlayTime, duration);
+            if (remaining > 0f)
+                yield return new WaitForSeconds(remaining);
+
+            float fadeDuration = 1f;
+            float elapsed = 0f;
+            Color original = sr.color;
+            while (elapsed < fadeDuration)
+            {
+                elapsed += Time.deltaTime;
+                float alpha = Mathf.Lerp(original.a, 0f, elapsed / fadeDuration);
+                sr.color = new Color(original.r, original.g, original.b, alpha);
+                yield return null;
+            }
+
+            Destroy(gameObject);
         }
     }
 }

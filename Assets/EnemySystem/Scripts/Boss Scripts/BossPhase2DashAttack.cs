@@ -4,15 +4,15 @@ public class BossPhase2DashAttack : MonoBehaviour
 {
     [SerializeField] private float dashSpeed = 10f;
     [SerializeField] private float dashDuration = 3f;
-    [SerializeField] private float dashDamage = 10f;  // damage dealt on hit
+    [SerializeField] private float dashDamage = 10f;  
     [SerializeField] private Transform objectsContainer;  
-    [SerializeField] private LayerMask wallLayerMask;    // new: which layers count as walls
+    [SerializeField] private LayerMask wallLayerMask;   
     [SerializeField] private int maxWallHits = 3;     
-    [SerializeField] private float playerKnockbackForce = 5f;  // force applied on player hit
-    [SerializeField] private float dashHitRadius = 1f;         // detection radius for dash hit
+    [SerializeField] private float playerKnockbackForce = 5f;  
+    [SerializeField] private float dashHitRadius = 1f;    
     [SerializeField] private LayerMask playerLayerMask;       
     [SerializeField] private Animator animator;            
-    [SerializeField] private SpriteRenderer spriteRenderer;   // new: for horizontal flip
+    [SerializeField] private SpriteRenderer spriteRenderer;  
 
     private Rigidbody2D rb;
     private BossStatsMovement bossStats;
