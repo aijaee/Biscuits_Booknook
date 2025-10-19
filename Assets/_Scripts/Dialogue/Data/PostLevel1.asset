@@ -25,7 +25,7 @@ MonoBehaviour:
     animatorController: {fileID: 9100000, guid: 0bd5f34aaa2626549b7961cd5c29373b, type: 2}
     nameImage: {fileID: 21300000, guid: d5deadc078a914a448fb88bc4334fa60, type: 3}
     text: "Wow! The words are back! I can finally read \u2018<i>Exploring Your Favorite
-      Seafoods and Where to Find Them.</i>\u2019"
+      Seafoods and Where They Live.</i>\u2019"
     walkIn: 0
     walkOut: 0
   - speakerName: Biscuit
