@@ -310,6 +310,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         if (enemySpawner != null)
         {
             enemySpawner.SetValidSpawnTiles(floor);
+            enemySpawner.SetFloorToRoomMapping(floorToRoom);
             if (floor.Count > 0)
             {
                 int enemyCount = enemySpawner.EnemyCount;
