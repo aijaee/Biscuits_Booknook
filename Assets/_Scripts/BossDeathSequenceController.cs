@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BossDeathSequenceController : MonoBehaviour
 {
-    private static BossDeathSequenceController instance;   // new singleton guard
+    private static BossDeathSequenceController instance;  
 
     [Header("References")]
     public BossStatsMovement boss;                   
@@ -20,13 +20,13 @@ public class BossDeathSequenceController : MonoBehaviour
     [Header("Options")]
     [SerializeField] private bool triggerOnEnable = false;  
 
-    [Header("Pan Settings")]            // new
-    public float panSmoothSpeed = 5f;    // new: smoothing speed for pan
+    [Header("Pan Settings")]    
+    public float panSmoothSpeed = 5f;  
 
     private bool sequenceStarted = false;
-    private bool sequenceCompleted = false;   // new: prevent re-running after completion
-    private RigidbodyConstraints2D originalPlayerConstraints;   // new: store original constraints
-    private CameraFollow cameraFollow;   // new: reference to follow logic
+    private bool sequenceCompleted = false;  
+    private RigidbodyConstraints2D originalPlayerConstraints;  
+    private CameraFollow cameraFollow;  
 
     void Awake()
     {
@@ -40,7 +40,7 @@ public class BossDeathSequenceController : MonoBehaviour
 
         if (boss == null)
             boss = FindObjectOfType<BossStatsMovement>();
-        // auto‐find spawner
+
         if (portalSpawner == null)
             portalSpawner = FindObjectOfType<BossDefeatedPortalSpawner>();
         var player = GameObject.FindWithTag("Player");
@@ -63,7 +63,7 @@ public class BossDeathSequenceController : MonoBehaviour
 
     private void OnEnable()
     {
-        // only the original singleton should kick off the sequence
+   
         if (this == instance && triggerOnEnable)
             TriggerSequence();
     }
@@ -74,7 +74,6 @@ public class BossDeathSequenceController : MonoBehaviour
         if (sequenceStarted) return;
         if (triggerOnEnable) return;                     
 
-        // boss == null if destroyed, or health ≤ 0
         if (boss == null || boss.currentHealth <= 0f)
         {
             sequenceStarted = true;
@@ -84,25 +83,24 @@ public class BossDeathSequenceController : MonoBehaviour
 
     public void TriggerSequence()
     {
-        if (this != instance || sequenceStarted || sequenceCompleted) return;  // new: check completion
+        if (this != instance || sequenceStarted || sequenceCompleted) return; 
         sequenceStarted = true;
         StartCoroutine(HandleDeathSequence());
     }
 
     private IEnumerator HandleDeathSequence()
     {
-        if (sequenceCompleted)                // new: bail if already completed
+        if (sequenceCompleted)   
             yield break;
 
-        // freeze player
         if (playerController != null)
             playerController.enabled = false;
         if (playerRb != null)
             playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        if (cameraFollow != null)                                 // new
+        if (cameraFollow != null)                       
             cameraFollow.enabled = false;
 
-        // wait for portal
+
         GameObject portal = null;
         float timer = 0f;
         while (portal == null && timer < waitForPortalTimeout)
@@ -150,7 +148,7 @@ public class BossDeathSequenceController : MonoBehaviour
             playerController.enabled = true;
         if (playerRb != null)
             playerRb.constraints = originalPlayerConstraints;
-        if (cameraFollow != null)                                 // new
+        if (cameraFollow != null)                                 
             cameraFollow.enabled = true;
     }
 }
