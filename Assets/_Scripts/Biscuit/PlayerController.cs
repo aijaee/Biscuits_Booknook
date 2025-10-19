@@ -169,10 +169,16 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator SpeedBoostCoroutine(float multiplier, float duration)
     {
-        moveSpeed = originalMoveSpeed * multiplier;
+        var joystick = GetComponent<JoystickPlayerExample>();
+        if (joystick != null)
+            joystick.ModifySpeed(multiplier);
+
         Debug.Log($"Speed boost applied: x{multiplier} for {duration} seconds.");
         yield return new WaitForSeconds(duration);
-        moveSpeed = originalMoveSpeed;
+
+        if (joystick != null)
+            joystick.ResetSpeed();
+
         Debug.Log("Speed boost ended.");
     }
 }

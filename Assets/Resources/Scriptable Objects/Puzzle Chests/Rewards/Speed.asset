@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewardType: 1
   healAmount: 0
-  speedMultiplier: 500
-  speedDuration: 5
+  speedMultiplier: 2.2
+  speedDuration: 8
   additionalDamageAmount: 0
   chestSprite: {fileID: -1994807792, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
+  speedBuffIcon: {fileID: -2550367408467485359, guid: d90dab8afa51e5f47a28b0953d9590d2, type: 3}
+  additionalDamageBuffIcon: {fileID: 0}
