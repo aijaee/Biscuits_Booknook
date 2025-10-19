@@ -13,6 +13,9 @@ public class BossPhase1RainAttack : MonoBehaviour
     public float aoeRadius = 2.5f;
     public float aoeDamagePerSecond = 10f;
     public float aoeSlowFactor = 0.5f;   
+    public float indicatorLag = 5f; 
+    public float flashTime = 0.5f; 
+    public float flashSpeed = 8f;
 
     float aoeTimer;
     private List<GameObject> activeAreas = new List<GameObject>();  
@@ -30,16 +33,15 @@ public class BossPhase1RainAttack : MonoBehaviour
 
     IEnumerator RainAOE()
     {
-
         Transform player = GameObject.FindWithTag("Player").transform;
         GameObject ind = null;
-
+        SpriteRenderer sr = null;
 
         if (aoeIndicatorPrefab)
         {
             ind = Instantiate(aoeIndicatorPrefab, player.position, Quaternion.identity);
             activeAreas.Add(ind); 
-            var sr = ind.GetComponent<SpriteRenderer>();
+            sr = ind.GetComponent<SpriteRenderer>();
             if (sr != null)
             {
                 float spriteDiameter = sr.sprite.bounds.size.x;
@@ -55,12 +57,26 @@ public class BossPhase1RainAttack : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < aoeWarningTime)
         {
-            if (ind != null)
-                ind.transform.position = player.position;
+            if (ind != null && player != null)
+            {
+                ind.transform.position = Vector3.Lerp(
+                    ind.transform.position,
+                    player.position,
+                    Time.deltaTime * indicatorLag
+                );
+            }
+
+            if (sr != null && elapsed > aoeWarningTime - flashTime)
+            {
+                float flash = Mathf.PingPong(Time.time * flashSpeed, 1f);
+                Color c = sr.color;
+                c.a = Mathf.Lerp(0.3f, 1f, flash);
+                sr.color = c;
+            }
+
             elapsed += Time.deltaTime;
             yield return null;
         }
-
 
         Vector3 finalPos = ind != null ? ind.transform.position : player.position;
         if (ind != null) Destroy(ind);
@@ -85,7 +101,6 @@ public class BossPhase1RainAttack : MonoBehaviour
         activeAreas.Clear();
     }
 
-
     private class AOEBehaviour : MonoBehaviour
     {
         float duration;
@@ -104,7 +119,6 @@ public class BossPhase1RainAttack : MonoBehaviour
 
             StartCoroutine(Life());
             StartCoroutine(PlayAndFadeAnimation());
-
 
             foreach (var other in Physics2D.OverlapCircleAll(pos, radius))
                 if (other.CompareTag("Player"))
