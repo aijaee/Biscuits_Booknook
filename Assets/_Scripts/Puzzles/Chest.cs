@@ -51,11 +51,11 @@ public class Chest : MonoBehaviour, IInteractable
 
             if (reward != null)
             {
-                // apply reward effects
                 switch (reward.rewardType)
                 {
                     case ChestReward.RewardType.Heal:
                         if (playerController != null) playerController.Heal(reward.healAmount);
+                        BuffHotbar.Instance.AddBuff(BuffType.Heal, reward.healBuffIcon, reward.healBuffDuration);
                         break;
 
                     case ChestReward.RewardType.Speed:
@@ -72,11 +72,13 @@ public class Chest : MonoBehaviour, IInteractable
                     case ChestReward.RewardType.AdditionalDamage:
                         var meleeCtrl = player != null ? player.GetComponent<MeleeAttackController>() : null;
                         if (meleeCtrl != null) meleeCtrl.AddDamageBuff(reward.additionalDamageAmount);
+
                         BuffHotbar.Instance.AddBuff(
                             BuffType.AdditionalDamage,
                             reward.additionalDamageBuffIcon,
                             0f
                         );
+                        RuntimeData.Instance.AddAdditionalDamageBuff(reward.additionalDamageBuffIcon);
                         break;
                 }
             }

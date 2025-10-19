@@ -18,3 +18,7 @@ MonoBehaviour:
   speedDuration: 0
   additionalDamageAmount: 0
   chestSprite: {fileID: -1994807792, guid: 244d14eaf8a31604084520ebef6a8ee8, type: 3}
+  speedBuffIcon: {fileID: 0}
+  additionalDamageBuffIcon: {fileID: 0}
+  healBuffIcon: {fileID: 4150977044470223077, guid: c0a8948cb6c0eca448aaa3b473f607c5, type: 3}
+  healBuffDuration: 1

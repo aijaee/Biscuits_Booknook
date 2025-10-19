@@ -4,7 +4,11 @@ using TMPro;                      // add this
 using System.Collections;
 using System.Collections.Generic;
 
-public enum BuffType { Speed, AdditionalDamage }
+public enum BuffType { 
+    Heal,              
+    Speed, 
+    AdditionalDamage 
+}
 
 public class BuffHotbar : MonoBehaviour
 {
@@ -28,6 +32,15 @@ public class BuffHotbar : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        // repopulate persistent additional-damage buffs
+        var rd = RuntimeData.Instance;
+        int cnt = rd.PersistentAdditionalDamageCount;
+        if (cnt > 0 && rd.PersistentAdditionalDamageIcon != null)
+        {
+            for (int i = 0; i < cnt; i++)
+                AddBuff(BuffType.AdditionalDamage, rd.PersistentAdditionalDamageIcon, 0f);
+        }
     }
 
     public void AddBuff(BuffType type, Sprite icon, float duration)
