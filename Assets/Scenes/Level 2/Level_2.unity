@@ -33337,6 +33337,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2094200721}
     - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: corridorWidth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
       propertyPath: dungeonHeight
       value: 80
       objectReference: {fileID: 0}
@@ -34057,6 +34061,10 @@ PrefabInstance:
     - target: {fileID: 4346099975910718415, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
       propertyPath: m_Name
       value: Spawners
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
+      propertyPath: enemyCount
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4410467071296534713, guid: 305bf00edbc6e6c4c9db07277714f90a, type: 3}
       propertyPath: gridManager
