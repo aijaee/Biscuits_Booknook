@@ -33,7 +33,6 @@ public class JoystickPlayerExample : MonoBehaviour
 
         if (!isDashing)
         {
-            // Normalize direction to avoid diagonal speed boost
             rb.linearVelocity = direction.normalized * currentSpeed;
 
             if (spriteRenderer != null)
@@ -45,9 +44,8 @@ public class JoystickPlayerExample : MonoBehaviour
                 animator.SetFloat("Vertical", direction.y);
                 animator.SetFloat("Speed", direction.sqrMagnitude);
 
-                bool isMovingDiagonal = Mathf.Abs(direction.x) > Tolerance && Mathf.Abs(direction.y) > Tolerance;
-                if (isMovingDiagonal || Mathf.Abs(direction.y) > Tolerance)
-                    lastDirection = direction.normalized;
+                // Always update lastDirection when moving
+                lastDirection = direction.normalized;
             }
             else
             {

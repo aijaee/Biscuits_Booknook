@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkWallPrefab: {fileID: 1329139819931742876, guid: 587cb6d9b82395c46aca86fa492bc36a, type: 3}
-  wallDuration: 4
+  wallDuration: 2
   maxWalls: 2
   wallAnimatorController: {fileID: 9100000, guid: 1708d500de502eb4f9c862c1b9e82644, type: 2}
   riseState: Rise
