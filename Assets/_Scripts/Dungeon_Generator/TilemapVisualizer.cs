@@ -50,11 +50,15 @@ public class TilemapVisualizer : MonoBehaviour
         if (tile == null && HasDiagonalFloor(binaryType))
             tile = wallFull;
 
-        if (tile != null)
+        // if still null, fallback and warn
+        if (tile == null)
         {
-            PaintSingleTileWithLog(wallTilemap, tile, position);
-            paintedWalls[position] = tile; // record what’s here
+            Debug.LogWarning($"Unrecognized basic wall pattern '{binaryType}' at {position}, defaulting to wallFull.");
+            tile = wallFull;
         }
+
+        PaintSingleTileWithLog(wallTilemap, tile, position);
+        paintedWalls[position] = tile;
     }
 
     private bool HasDiagonalFloor(string binaryType)
