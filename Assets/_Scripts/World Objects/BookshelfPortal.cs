@@ -9,13 +9,57 @@ public class BookshelfPortal : MonoBehaviour
     [Header("Fade settings")]
     public float fadeDuration = 0.5f;
     public SpriteRenderer sr;
+
+    [Header("Story Progress Requirement")]
+    public int requiredStoryStage = 0;
+
     private bool isUnlocked = false;
+
+    private string PlayerPrefKey => $"BookshelfUnlocked_{gameObject.name}";
+
+    private void Awake()
+    {
+        int progress = PlayerPrefs.GetInt("StoryProgress", 0);
+        if (progress < requiredStoryStage)
+        {
+            PlayerPrefs.SetInt(PlayerPrefKey, 0);
+            PlayerPrefs.Save();
+        }
+
+        if (progress >= requiredStoryStage || PlayerPrefs.GetInt(PlayerPrefKey, 0) == 1)
+        {
+            UnlockInstant();
+        }
+    }
+
 
     public void Unlock()
     {
         if (isUnlocked || unlockedPrefab == null) return;
         isUnlocked = true;
+
+        PlayerPrefs.SetInt(PlayerPrefKey, 1);
+        PlayerPrefs.Save();
+
         StartCoroutine(FadeAndSwap());
+    }
+
+    private void UnlockInstant()
+    {
+        if (isUnlocked) return;
+        isUnlocked = true;
+
+        if (unlockedPrefab != null)
+        {
+            Instantiate(
+                unlockedPrefab,
+                transform.position,
+                transform.rotation,
+                transform.parent
+            );
+        }
+
+        Destroy(gameObject);
     }
 
     private IEnumerator FadeAndSwap()
@@ -30,12 +74,15 @@ public class BookshelfPortal : MonoBehaviour
             yield return null;
         }
 
-        GameObject newBookshelf = Instantiate(
-            unlockedPrefab,
-            transform.position,
-            transform.rotation,
-            transform.parent
-        );
+        if (unlockedPrefab != null)
+        {
+            Instantiate(
+                unlockedPrefab,
+                transform.position,
+                transform.rotation,
+                transform.parent
+            );
+        }
 
         Destroy(gameObject);
     }

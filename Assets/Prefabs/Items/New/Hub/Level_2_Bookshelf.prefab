@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 838516906906438}
   - component: {fileID: 1516003934172456819}
   - component: {fileID: 8799638776308988485}
+  - component: {fileID: -5518992757689694530}
   m_Layer: 0
   m_Name: Level_2_Bookshelf
   m_TagString: Untagged
@@ -269,5 +270,18 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.6, y: 1.43}
+  m_Size: {x: 0.15, y: 2.2}
   m_EdgeRadius: 0
+--- !u!114 &-5518992757689694530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125861433930969444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4caf1f6c684e8994996aa1a4c88d170f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneIndex: 4

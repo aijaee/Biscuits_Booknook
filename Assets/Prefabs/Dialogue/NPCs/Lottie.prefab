@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2651134683115701105}
   - component: {fileID: 7869618212603315553}
   m_Layer: 0
-  m_Name: NPC1Image
+  m_Name: Lottie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

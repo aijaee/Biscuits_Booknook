@@ -3,24 +3,39 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class InteractableBook : MonoBehaviour, IInteractable
 {
-    public DialogueSequenceController dialogueController;
+    [Header("Dialogue Settings")]
+    public DialogueController dialogueController;
+    public DialogueData dialogueData;
     public BookshelfPortal targetBookshelf;
+
+    [Header("Visuals")]
     public Color highlightColor = Color.white;
 
-    private bool playerInRange = false;
+    [Header("Story Progress")]
+    public int storyStage = 0;
+
     private SpriteRenderer sr;
     private Color originalColor;
+    private bool playerInRange = false;
     private bool hasBeenRead = false;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
+
+        int progress = PlayerPrefs.GetInt("StoryProgress", 0);
+
+        if (progress != storyStage)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (hasBeenRead || !other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") || hasBeenRead) return;
 
         playerInRange = true;
         sr.color = highlightColor;
@@ -40,24 +55,23 @@ public class InteractableBook : MonoBehaviour, IInteractable
 
     public void TryInteract()
     {
-        if (hasBeenRead || !playerInRange || dialogueController == null) return;
-        if (dialogueController.IsRunning) return;
+        if (!playerInRange || hasBeenRead) return;
+        if (dialogueController == null || dialogueData == null) return;
+        if (PlayerPrefs.GetInt("StoryProgress", 0) != storyStage) return;
 
         hasBeenRead = true;
         InteractUI.Instance.ShowButton(false);
 
-        // Subscribe to unlock bookshelf after dialogue completes
-        if (targetBookshelf != null)
+        dialogueController.OnDialogueComplete += () =>
         {
-            System.Action unlockAction = null;
-            unlockAction = () =>
-            {
+            if (targetBookshelf != null)
                 targetBookshelf.Unlock();
-                dialogueController.OnDialogueComplete -= unlockAction; // unsubscribe
-            };
-            dialogueController.OnDialogueComplete += unlockAction;
-        }
 
-        dialogueController.StartSequence();
+            int currentProgress = PlayerPrefs.GetInt("StoryProgress", 0);
+            PlayerPrefs.SetInt("StoryProgress", currentProgress + 1);
+            PlayerPrefs.Save();
+        };
+
+        dialogueController.StartDialogue(dialogueData);
     }
 }

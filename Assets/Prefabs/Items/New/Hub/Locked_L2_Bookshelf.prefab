@@ -162,3 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockedPrefab: {fileID: 4125861433930969444, guid: b010576c0fe89e94a86da7007745748a, type: 3}
+  fadeDuration: 0.5
+  sr: {fileID: 0}
+  requiredStoryStage: 3

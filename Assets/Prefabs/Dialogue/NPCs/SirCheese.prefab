@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6506192531878036331}
   - component: {fileID: 7791686767168014368}
   m_Layer: 0
-  m_Name: NPC2Image
+  m_Name: SirCheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
