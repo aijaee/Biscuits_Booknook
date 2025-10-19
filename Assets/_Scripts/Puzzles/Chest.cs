@@ -46,8 +46,23 @@ public class Chest : MonoBehaviour, IInteractable
 
             if (spriteRenderer != null)
                 spriteRenderer.sprite = openedCorrectChestSprite;
-            var list = rewardDatabase != null ? rewardDatabase.rewards : null;
-            var reward = (list != null && list.Count > 0) ? list[Random.Range(0, list.Count)] : null;
+            var entries = rewardDatabase != null ? rewardDatabase.rewardEntries : null;
+            ChestReward reward = null;
+            if (entries != null && entries.Count > 0)
+            {
+                int totalRate = 0;
+                foreach (var e in entries) totalRate += e.dropRatePercentage;
+                int roll = Random.Range(0, totalRate);
+                foreach (var e in entries)
+                {
+                    if (roll <= e.dropRatePercentage)
+                    {
+                        reward = e.reward;
+                        break;
+                    }
+                    roll -= e.dropRatePercentage;
+                }
+            }
 
             if (reward != null)
             {
