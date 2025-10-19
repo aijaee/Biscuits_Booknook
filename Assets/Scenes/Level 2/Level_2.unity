@@ -33337,6 +33337,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2094200721}
     - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: corridorWidth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
       propertyPath: dungeonHeight
       value: 80
       objectReference: {fileID: 0}
