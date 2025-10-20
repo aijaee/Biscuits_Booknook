@@ -29,8 +29,22 @@ public class RuntimeData : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    private void ResetRuntimeData()
+    {
+        persistentHealth = -1f;
+        additionalDamageCount = 0;
+        additionalDamageIcon = null;
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // when the first scene (buildIndex 0) loads, treat as a full restart
+        if (scene.buildIndex == 0)
+        {
+            ResetRuntimeData();
+            return;
+        }
+
         // reapply player health
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player != null && persistentHealth >= 0f)
