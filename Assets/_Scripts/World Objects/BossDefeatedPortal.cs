@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Collider2D))]
 public class BossDefeatedPortal : MonoBehaviour, IInteractable
@@ -8,6 +9,7 @@ public class BossDefeatedPortal : MonoBehaviour, IInteractable
     public int newStoryStage;
 
     bool playerInRange;
+    bool isInteracting = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,7 +29,9 @@ public class BossDefeatedPortal : MonoBehaviour, IInteractable
 
     public void TryInteract()
     {
-        if (!playerInRange) return;
+        if (!playerInRange || isInteracting) return;
+
+        isInteracting = true;
 
         int currentProgress = PlayerPrefs.GetInt("StoryProgress", 0);
         if (currentProgress < newStoryStage)
@@ -37,6 +41,16 @@ public class BossDefeatedPortal : MonoBehaviour, IInteractable
         }
 
         if (LevelTransition.Instance != null)
+        {
             LevelTransition.Instance.TransitionToScene(hubSceneIndex);
+        }
+
+        StartCoroutine(ResetInteractionFlag(2f));
+    }
+
+    private IEnumerator ResetInteractionFlag(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isInteracting = false;
     }
 }

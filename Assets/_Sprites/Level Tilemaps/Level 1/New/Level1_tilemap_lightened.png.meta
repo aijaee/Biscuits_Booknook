@@ -1,0 +1,1053 @@
+fileFormatVersion: 2
+guid: bc61a8db91d7d7143a5c63a521a2a379
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4902608835073497958
+    second: Level1_tilemap_lightened_0
+  - first:
+      213: 9204348084297276118
+    second: Level1_tilemap_lightened_1
+  - first:
+      213: 8237234643364552473
+    second: Level1_tilemap_lightened_2
+  - first:
+      213: -4527551480349385336
+    second: Level1_tilemap_lightened_3
+  - first:
+      213: -6963384501976462207
+    second: Level1_tilemap_lightened_4
+  - first:
+      213: 5212767703391057693
+    second: Level1_tilemap_lightened_5
+  - first:
+      213: -6731638818129491399
+    second: Level1_tilemap_lightened_6
+  - first:
+      213: 2330733628577976491
+    second: Level1_tilemap_lightened_7
+  - first:
+      213: -2330613744052086872
+    second: Level1_tilemap_lightened_8
+  - first:
+      213: -5235602393194534070
+    second: Level1_tilemap_lightened_9
+  - first:
+      213: -6602088056069797038
+    second: Level1_tilemap_lightened_10
+  - first:
+      213: -5413929909017237504
+    second: Level1_tilemap_lightened_11
+  - first:
+      213: 2975615852621284296
+    second: Level1_tilemap_lightened_12
+  - first:
+      213: 7611765313467939274
+    second: Level1_tilemap_lightened_13
+  - first:
+      213: 1696780007645518572
+    second: Level1_tilemap_lightened_14
+  - first:
+      213: 6278942027567572964
+    second: Level1_tilemap_lightened_15
+  - first:
+      213: 7815994037074785252
+    second: Level1_tilemap_lightened_16
+  - first:
+      213: -5813285342554177682
+    second: Level1_tilemap_lightened_17
+  - first:
+      213: 4201980387632342796
+    second: Level1_tilemap_lightened_18
+  - first:
+      213: 2903327330371824403
+    second: Level1_tilemap_lightened_19
+  - first:
+      213: 2069543725000547253
+    second: Level1_tilemap_lightened_20
+  - first:
+      213: -888228071795825558
+    second: Level1_tilemap_lightened_21
+  - first:
+      213: 4242854126878137763
+    second: Level1_tilemap_lightened_22
+  - first:
+      213: -4561893198083934944
+    second: Level1_tilemap_lightened_23
+  - first:
+      213: 8603953456149124663
+    second: Level1_tilemap_lightened_24
+  - first:
+      213: -4641372556631497568
+    second: Level1_tilemap_lightened_25
+  - first:
+      213: -999379261292298794
+    second: Level1_tilemap_lightened_26
+  - first:
+      213: 6349963304340727964
+    second: Level1_tilemap_lightened_27
+  - first:
+      213: 7191856550225703843
+    second: Level1_tilemap_lightened_28
+  - first:
+      213: 3585444772971551619
+    second: Level1_tilemap_lightened_29
+  - first:
+      213: 5651504308586090780
+    second: Level1_tilemap_lightened_30
+  - first:
+      213: 4237252755482799226
+    second: Level1_tilemap_lightened_31
+  - first:
+      213: -3534348819718301590
+    second: Level1_tilemap_lightened_32
+  - first:
+      213: 7209090672316375706
+    second: Level1_tilemap_lightened_33
+  - first:
+      213: -1338732263150933463
+    second: Level1_tilemap_lightened_34
+  - first:
+      213: 3543917123718750402
+    second: Level1_tilemap_lightened_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_0
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1380
+        width: 1972
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b5f37a2c0990440800000000000000
+      internalID: 4902608835073497958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_1
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 1338
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6da1691e0d96cbf70800000000000000
+      internalID: 9204348084297276118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_2
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 1316
+        width: 56
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f1941f349805270800000000000000
+      internalID: 8237234643364552473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_3
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 1333
+        width: 175
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d1b77aae7ea21c0800000000000000
+      internalID: -4527551480349385336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_4
+      rect:
+        serializedVersion: 2
+        x: 2087
+        y: 1298
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c8b3560b61d5f90800000000000000
+      internalID: -6963384501976462207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_5
+      rect:
+        serializedVersion: 2
+        x: 2452
+        y: 1292
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17b0499b98775840800000000000000
+      internalID: 5212767703391057693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_6
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 602
+        width: 319
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a4921292a6492a0800000000000000
+      internalID: -6731638818129491399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_7
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 611
+        width: 265
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0927de2ed685020800000000000000
+      internalID: 2330733628577976491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_8
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 862
+        width: 262
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a7d12dd52ff7afd0800000000000000
+      internalID: -2330613744052086872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_9
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 1063
+        width: 85
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b6470ec576757b0800000000000000
+      internalID: -5235602393194534070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_10
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 872
+        width: 328
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b4c1274eba064a0800000000000000
+      internalID: -6602088056069797038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_11
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 872
+        width: 328
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0082a269e6bddd4b0800000000000000
+      internalID: -5413929909017237504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_12
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 815
+        width: 103
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c3438b3ad28b4920800000000000000
+      internalID: 2975615852621284296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_13
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 820
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac975e6493c62a960800000000000000
+      internalID: 7611765313467939274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_14
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 839
+        width: 71
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea12b15d6c2c8710800000000000000
+      internalID: 1696780007645518572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_15
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 567
+        width: 235
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e7af6eb188432750800000000000000
+      internalID: 6278942027567572964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_16
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 537
+        width: 209
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e3f9627a2df77c60800000000000000
+      internalID: 7815994037074785252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_17
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 540
+        width: 181
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6fb213f7cf035fa0800000000000000
+      internalID: -5813285342554177682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_18
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 535
+        width: 232
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c07ebf546ee605a30800000000000000
+      internalID: 4201980387632342796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_19
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 520
+        width: 425
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31bee7113d0ba4820800000000000000
+      internalID: 2903327330371824403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_20
+      rect:
+        serializedVersion: 2
+        x: 2104
+        y: 657
+        width: 193
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bbdbcf8d0f78bc10800000000000000
+      internalID: 2069543725000547253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_21
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 276
+        width: 233
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a64641556416ca3f0800000000000000
+      internalID: -888228071795825558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_22
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 45
+        width: 444
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad1f5a4955a1ea30800000000000000
+      internalID: 4242854126878137763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_23
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 264
+        width: 217
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 025bfe86e46e0b0c0800000000000000
+      internalID: -4561893198083934944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_24
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 267
+        width: 217
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73653c92512676770800000000000000
+      internalID: 8603953456149124663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_25
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 125
+        width: 358
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4abb33048869fb0800000000000000
+      internalID: -4641372556631497568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_26
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 411
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddb7c65bdd7122f0800000000000000
+      internalID: -999379261292298794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_27
+      rect:
+        serializedVersion: 2
+        x: 2313
+        y: 273
+        width: 234
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98aef35bf99f1850800000000000000
+      internalID: 6349963304340727964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_28
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 133
+        width: 223
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a3f4c7ad6b9ec360800000000000000
+      internalID: 7191856550225703843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_29
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 133
+        width: 223
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b10c6460f02c130800000000000000
+      internalID: 3585444772971551619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_30
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 23
+        width: 223
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c111dd7c93d2e6e40800000000000000
+      internalID: 5651504308586090780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_31
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 13
+        width: 217
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ce8126eeebdca30800000000000000
+      internalID: 4237252755482799226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_32
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 14
+        width: 224
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a689e58697873fec0800000000000000
+      internalID: -3534348819718301590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_33
+      rect:
+        serializedVersion: 2
+        x: 2353
+        y: 63
+        width: 186
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92eff465c5db0460800000000000000
+      internalID: 7209090672316375706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_34
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 31
+        width: 310
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92aa88d791edb6de0800000000000000
+      internalID: -1338732263150933463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level1_tilemap_lightened_35
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 28
+        width: 74
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c02ea8f8d58e2130800000000000000
+      internalID: 3543917123718750402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level1_tilemap_lightened_0: 4902608835073497958
+      Level1_tilemap_lightened_1: 9204348084297276118
+      Level1_tilemap_lightened_10: -6602088056069797038
+      Level1_tilemap_lightened_11: -5413929909017237504
+      Level1_tilemap_lightened_12: 2975615852621284296
+      Level1_tilemap_lightened_13: 7611765313467939274
+      Level1_tilemap_lightened_14: 1696780007645518572
+      Level1_tilemap_lightened_15: 6278942027567572964
+      Level1_tilemap_lightened_16: 7815994037074785252
+      Level1_tilemap_lightened_17: -5813285342554177682
+      Level1_tilemap_lightened_18: 4201980387632342796
+      Level1_tilemap_lightened_19: 2903327330371824403
+      Level1_tilemap_lightened_2: 8237234643364552473
+      Level1_tilemap_lightened_20: 2069543725000547253
+      Level1_tilemap_lightened_21: -888228071795825558
+      Level1_tilemap_lightened_22: 4242854126878137763
+      Level1_tilemap_lightened_23: -4561893198083934944
+      Level1_tilemap_lightened_24: 8603953456149124663
+      Level1_tilemap_lightened_25: -4641372556631497568
+      Level1_tilemap_lightened_26: -999379261292298794
+      Level1_tilemap_lightened_27: 6349963304340727964
+      Level1_tilemap_lightened_28: 7191856550225703843
+      Level1_tilemap_lightened_29: 3585444772971551619
+      Level1_tilemap_lightened_3: -4527551480349385336
+      Level1_tilemap_lightened_30: 5651504308586090780
+      Level1_tilemap_lightened_31: 4237252755482799226
+      Level1_tilemap_lightened_32: -3534348819718301590
+      Level1_tilemap_lightened_33: 7209090672316375706
+      Level1_tilemap_lightened_34: -1338732263150933463
+      Level1_tilemap_lightened_35: 3543917123718750402
+      Level1_tilemap_lightened_4: -6963384501976462207
+      Level1_tilemap_lightened_5: 5212767703391057693
+      Level1_tilemap_lightened_6: -6731638818129491399
+      Level1_tilemap_lightened_7: 2330733628577976491
+      Level1_tilemap_lightened_8: -2330613744052086872
+      Level1_tilemap_lightened_9: -5235602393194534070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
