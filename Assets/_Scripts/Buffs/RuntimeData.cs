@@ -29,7 +29,7 @@ public class RuntimeData : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void ResetRuntimeData()
+    public void ResetRuntimeData()
     {
         persistentHealth = -1f;
         additionalDamageCount = 0;
