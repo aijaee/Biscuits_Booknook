@@ -10,6 +10,8 @@ public class LevelTransition : MonoBehaviour
     public Animator crossfadeAnimator; // Animator with Crossfade_Start & Crossfade_End
     public float transitionDuration = 1f; // Adjust to match animation length
 
+    private bool isTransitioning;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -23,6 +25,8 @@ public class LevelTransition : MonoBehaviour
 
     public void TransitionToScene(int sceneIndex)
     {
+        if (isTransitioning) return;
+        isTransitioning = true;
         StartCoroutine(DoTransition(sceneIndex));
     }
 
@@ -31,7 +35,7 @@ public class LevelTransition : MonoBehaviour
         // Play fade-out (to black)
         crossfadeAnimator.SetTrigger("CrossfadeStart");
 
-        // Wait until animation finishes
+        // Wait until fade-out finishes
         yield return new WaitForSeconds(transitionDuration);
 
         // Load next scene
@@ -39,5 +43,10 @@ public class LevelTransition : MonoBehaviour
 
         // Play fade-in (from black)
         crossfadeAnimator.SetTrigger("CrossfadeEnd");
+
+        // Wait until fade-in finishes
+        yield return new WaitForSeconds(transitionDuration);
+
+        isTransitioning = false;
     }
 }

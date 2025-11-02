@@ -25,6 +25,7 @@ public class BossDefeatedPortal : MonoBehaviour, IInteractable
         playerInRange = false;
         InteractUI.Instance.SetCurrentInteractable(null);
         InteractUI.Instance.ShowButton(false);
+        RuntimeData.Instance.ResetRuntimeData();
     }
 
     public void TryInteract()
