@@ -44451,6 +44451,7 @@ MonoBehaviour:
   dialogueController: {fileID: 656658009}
   dialogueData: {fileID: 11400000, guid: c5c0d1a9eeee6e64b84348d687565053, type: 2}
   delayAfterTransition: 1
+  dialogueID: IntroDialogueLevel1
 --- !u!4 &1939909755
 Transform:
   m_ObjectHideFlags: 0

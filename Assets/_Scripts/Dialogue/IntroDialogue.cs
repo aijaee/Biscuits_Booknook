@@ -10,11 +10,15 @@ public class IntroDialogue : MonoBehaviour
     [Header("Timing")]
     public float delayAfterTransition = 1f;
 
-    bool hasPlayed;
+    [Header("Dialogue ID")]
+    public string dialogueID;
 
     void Start()
     {
-        if (!hasPlayed)
+        if (string.IsNullOrEmpty(dialogueID))
+            dialogueID = name;
+
+        if (!PlayerPrefs.HasKey(dialogueID))
             StartCoroutine(StartIntro());
     }
 
@@ -33,7 +37,14 @@ public class IntroDialogue : MonoBehaviour
         if (dialogueController == null || dialogueData == null)
             yield break;
 
-        hasPlayed = true;
+        dialogueController.OnDialogueComplete += MarkDialogueComplete;
         dialogueController.StartDialogue(dialogueData);
+    }
+
+    void MarkDialogueComplete()
+    {
+        dialogueController.OnDialogueComplete -= MarkDialogueComplete;
+        PlayerPrefs.SetInt(dialogueID, 1);
+        PlayerPrefs.Save();
     }
 }

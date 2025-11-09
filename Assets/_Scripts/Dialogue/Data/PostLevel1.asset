@@ -20,14 +20,16 @@ MonoBehaviour:
     text: Mission complete! The scribbles are gone.
     walkIn: 1
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Lottie
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 9100000, guid: 0bd5f34aaa2626549b7961cd5c29373b, type: 2}
     nameImage: {fileID: 21300000, guid: d5deadc078a914a448fb88bc4334fa60, type: 3}
-    text: "Wow! The words are back! I can finally read \u2018<i>Exploring Your Favorite
-      Seafoods and Where They Live.</i>\u2019"
+    text: Wow! The words are back! I can finally read '<b>Exploring Your Favorite
+      Seafoods and Where They Live.</b>'
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 0}
@@ -35,6 +37,7 @@ MonoBehaviour:
     text: Every book deserves to be read. Enjoy your sea adventure, Lottie!
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Lottie
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 9100000, guid: 0bd5f34aaa2626549b7961cd5c29373b, type: 2}
@@ -42,6 +45,7 @@ MonoBehaviour:
     text: "Thanks, Biscuit! You\u2019re the best."
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 0}
@@ -49,14 +53,16 @@ MonoBehaviour:
     text: "Anytime! I\u2019ll keep my eyes open for more scribbly trouble."
     walkIn: 0
     walkOut: 1
+    playOpenBoxAnimation: 0
   - speakerName: Sir B. Cheese
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 9100000, guid: 72fcf1f1642c6b04b9c3adaf132e8274, type: 2}
     nameImage: {fileID: 21300000, guid: 3078039a58ee8754984fbc66a9382421, type: 3}
-    text: "Biscuit\u2026 I borrowed this book called \u2018<i>The Giving Tree.</i>\u2019
+    text: "Biscuit\u2026 I borrowed this book called \u2018<b>The Giving Tree.</b>\u2019
       I really want to read it\u2026 but there are scribbles everywhere."
     walkIn: 1
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 0}
@@ -64,6 +70,7 @@ MonoBehaviour:
     text: Oh no! Scribbles again?
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Sir B. Cheese
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 9100000, guid: 72fcf1f1642c6b04b9c3adaf132e8274, type: 2}
@@ -71,6 +78,7 @@ MonoBehaviour:
     text: "Yes\u2026 I tried reading it, but I can\u2019t see the real words."
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 0}
@@ -79,6 +87,7 @@ MonoBehaviour:
       make the story shine again."
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Sir B. Cheese
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 9100000, guid: 72fcf1f1642c6b04b9c3adaf132e8274, type: 2}
@@ -86,14 +95,15 @@ MonoBehaviour:
     text: Really? You'll fix it?
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 0}
     nameImage: {fileID: 21300000, guid: c57f27e20edf34642a942929da7b4a13, type: 3}
-    text: "Of course! You\u2019ll be reading \u2018<i>The Giving Tree</i>\u2019 in
-      no time."
+    text: "Of course! You\u2019ll be reading '<b>The Giving Tree</b>' in no time."
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Sir B. Cheese
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 9100000, guid: 72fcf1f1642c6b04b9c3adaf132e8274, type: 2}
@@ -102,3 +112,4 @@ MonoBehaviour:
       story."
     walkIn: 0
     walkOut: 1
+    playOpenBoxAnimation: 0

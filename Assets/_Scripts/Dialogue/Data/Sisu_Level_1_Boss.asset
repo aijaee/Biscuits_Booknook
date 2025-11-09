@@ -26,7 +26,7 @@ MonoBehaviour:
   - speakerName: Vandal
     portraitSprite: {fileID: 7546044532336396947, guid: c911bb3691dab1d4eba5aa34efd4b705, type: 3}
     animatorController: {fileID: 9100000, guid: 0c913540612e7ac4dbca28dfa011b715, type: 2}
-    nameImage: {fileID: 0}
+    nameImage: {fileID: 21300000, guid: a256e68b0fbc22c4f9ef2767f6c211a7, type: 3}
     text: Reflect? Ha! Try dodging me, littel kats!
     walkIn: 0
     walkOut: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
   - speakerName: Vandal
     portraitSprite: {fileID: 4219921650144853661, guid: b1a3d28494a444e49b8075ff841b9c8c, type: 3}
     animatorController: {fileID: 9100000, guid: 0c913540612e7ac4dbca28dfa011b715, type: 2}
-    nameImage: {fileID: 0}
+    nameImage: {fileID: 21300000, guid: a256e68b0fbc22c4f9ef2767f6c211a7, type: 3}
     text: Edges? Stunned? Bah, I improvise, kats be ready!
     walkIn: 0
     walkOut: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   - speakerName: Vandal
     portraitSprite: {fileID: 4219921650144853661, guid: b1a3d28494a444e49b8075ff841b9c8c, type: 3}
     animatorController: {fileID: 9100000, guid: 0c913540612e7ac4dbca28dfa011b715, type: 2}
-    nameImage: {fileID: 0}
+    nameImage: {fileID: 21300000, guid: a256e68b0fbc22c4f9ef2767f6c211a7, type: 3}
     text: HERE I COME LITTOL KATZ!!!
     walkIn: 0
     walkOut: 0
