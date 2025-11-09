@@ -595,10 +595,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingPoint: {fileID: 106463083521763591}
-  swingDistanceFromPivot: 0.6
-  swingRange: 1.1
+  swingDistanceFromPivot: 0.9
+  swingRange: 0.8
   detectionRange: 10.8
   attackDamage: 10
+  attackHitDuration: 0.3
   attackCooldown: 0.5
   combo3DamageMultiplier: 1.2
   combo3RangeMultiplier: 1.2106537

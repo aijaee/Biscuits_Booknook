@@ -46,6 +46,7 @@ public class BossStatsMovement : MonoBehaviour
     [SerializeField] private float animationWaitTime = 1.5f; // new
 
     private bool hasStartedCutscene = false;   // new
+    public System.Action OnCutsceneComplete;
 
     // new fields for freezing player
     private Rigidbody2D playerRb;
@@ -328,6 +329,8 @@ public class BossStatsMovement : MonoBehaviour
 
         phase = BossPhase.Phase1;
         ChangeState(BossState.Flying);
+
+        OnCutsceneComplete?.Invoke();
     }
 
 

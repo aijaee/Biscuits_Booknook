@@ -22,6 +22,14 @@ public class IntroDialogue : MonoBehaviour
     {
         yield return new WaitForSeconds(delayAfterTransition);
 
+        var boss = FindObjectOfType<BossStatsMovement>();
+        if (boss != null)
+        {
+            bool cutsceneDone = false;
+            boss.OnCutsceneComplete += () => cutsceneDone = true;
+            yield return new WaitUntil(() => cutsceneDone);
+        }
+
         if (dialogueController == null || dialogueData == null)
             yield break;
 

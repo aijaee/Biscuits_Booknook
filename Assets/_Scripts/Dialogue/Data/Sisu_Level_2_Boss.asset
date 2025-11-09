@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d65186db4a01a4a81669d25d37f726, type: 3}
+  m_Name: Sisu_Level_2_Boss
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: Oh man, looks like trouble found us again!
+    walkIn: 1
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: Remember last time? Watch the ink and the falling things. Keep your eyes
+      open and be ready to move.
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Vandal
+    portraitSprite: {fileID: 7546044532336396947, guid: c911bb3691dab1d4eba5aa34efd4b705, type: 3}
+    animatorController: {fileID: 9100000, guid: 0c913540612e7ac4dbca28dfa011b715, type: 2}
+    nameImage: {fileID: 0}
+    text: "Move fast, littol kats! I won\u2019t make it easy this time!"
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "When he starts making walls and dashing, <b><color=#0f60db>try to make
+      him hit the edges of the stage</b></color>\u2026 when you stun him, that\u2019s
+      when you can get a hit in."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Vandal
+    portraitSprite: {fileID: 4219921650144853661, guid: b1a3d28494a444e49b8075ff841b9c8c, type: 3}
+    animatorController: {fileID: 9100000, guid: 0c913540612e7ac4dbca28dfa011b715, type: 2}
+    nameImage: {fileID: 0}
+    text: Hah! Me not folling for that again! Try hitting me, I dare you, kats!
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "Take your time, <b><color=#0f60db>bounce back his ink</b></color>, and
+      look for openings. You\u2019ve got this, Biscuit!"
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Vandal
+    portraitSprite: {fileID: 4219921650144853661, guid: b1a3d28494a444e49b8075ff841b9c8c, type: 3}
+    animatorController: {fileID: 9100000, guid: 0c913540612e7ac4dbca28dfa011b715, type: 2}
+    nameImage: {fileID: 0}
+    text: "GET READY, LITTOL KATZ! THIS TIME I\u2019M SERIOUS!"
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: Not again...
+    walkIn: 0
+    walkOut: 1
+    playOpenBoxAnimation: 0

@@ -33,24 +33,44 @@ public class RoomPrefab
         GameObject instance = GameObject.Instantiate(prefab, new Vector3(10000, 10000, 0), Quaternion.identity);
         instance.SetActive(false);
 
-        Bounds bounds = new Bounds();
+        Bounds bounds = new Bounds(Vector3.zero, Vector3.zero);
+        bool boundsSet = false;
 
         Collider2D collider = instance.GetComponentInChildren<Collider2D>();
         if (collider != null)
         {
             bounds = collider.bounds;
+            boundsSet = true;
         }
         else
         {
-            Renderer renderer = instance.GetComponentInChildren<Renderer>();
-            if (renderer != null)
-                bounds = renderer.bounds;
+            var renderers = instance.GetComponentsInChildren<Renderer>();
+            if (renderers != null && renderers.Length > 0)
+            {
+                bounds = renderers[0].bounds;
+                for (int i = 1; i < renderers.Length; i++)
+                    bounds.Encapsulate(renderers[i].bounds);
+                boundsSet = true;
+            }
         }
 
-        size = new Vector2Int(
-            Mathf.CeilToInt(bounds.size.x),
-            Mathf.CeilToInt(bounds.size.y)
-        );
+        if (!boundsSet || bounds.size == Vector3.zero)
+        {
+            Debug.LogWarning($"[DungeonGenerator] InitializeSize could not determine bounds for prefab '{prefab.name}'. Falling back to size (1,1). Ensure prefab has a Collider2D or Renderer in children.");
+            size = new Vector2Int(1, 1);
+        }
+        else
+        {
+            Vector3 worldSize = bounds.size;
+            Vector3 lossy = instance.transform.lossyScale;
+            if (lossy != Vector3.one)
+                worldSize = new Vector3(worldSize.x / lossy.x, worldSize.y / lossy.y, worldSize.z / Mathf.Max(1f, lossy.z));
+
+            size = new Vector2Int(
+                Mathf.Max(1, Mathf.CeilToInt(worldSize.x)),
+                Mathf.Max(1, Mathf.CeilToInt(worldSize.y))
+            );
+        }
 
         GameObject.DestroyImmediate(instance);
     }
@@ -129,6 +149,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [Header("Boss Room Prefabs")]
     [SerializeField] private List<RoomPrefab> bossRoomPrefabs;
     [SerializeField] private int maxPrefabsPerBossRoom = 1;
+    [SerializeField] private GameObject bossRoomNPCPrefab;
     public System.Action OnGenerationComplete;
 
 
@@ -139,6 +160,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         foreach (var prefab in explicitPuzzleRoomPrefabs)
             prefab.InitializeSize();
         foreach (var prefab in combatRoomPrefabs)
+            prefab.InitializeSize();
+        foreach (var prefab in bossRoomPrefabs)
             prefab.InitializeSize();
 
         RunProceduralGeneration();
@@ -636,44 +659,60 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         }
 
     }
+
     private void PlacePrefabsInBossRooms()
     {
-        HashSet<Vector2Int> occupiedTiles = new HashSet<Vector2Int>();
+        Debug.Log("=== [DungeonGenerator] BEGIN: PlacePrefabsInBossRooms ===");
 
         foreach (var room in roomDataList)
         {
-            if (room.Type != RoomType.Boss) continue;
-
-            int placedCount = 0;
-            int attempts = 0;
-            int maxAttempts = 10 * maxPrefabsPerBossRoom;
-
-            while (placedCount < maxPrefabsPerBossRoom && attempts < maxAttempts)
+            if (room.Type != RoomType.Boss)
             {
-                attempts++;
-                var prefabData = bossRoomPrefabs[Random.Range(0, bossRoomPrefabs.Count)];
-                Vector2Int prefabSize = prefabData.size;
+                Debug.Log($"Skipping room at {room.Center} because it is not a Boss room (type={room.Type})");
+                continue;
+            }
 
-                Vector2Int roomCenter = room.Center;
-                Vector2Int spawnPos = new Vector2Int(
-                    roomCenter.x - prefabSize.x / 2,
-                    roomCenter.y - prefabSize.y / 2
-                );
+            Debug.Log($"[DungeonGenerator] Processing boss room at center {room.Center}");
 
-                if (!IsWithinRoomBounds(room, spawnPos, prefabSize, objectBuffer) || 
-                    IsAreaOccupied(spawnPos, prefabSize, occupiedTiles))
-                    continue;
+            // Spawn boss room prefab if any exist
+            if (bossRoomPrefabs != null && bossRoomPrefabs.Count > 0)
+            {
+                foreach (var prefabData in bossRoomPrefabs)
+                {
+                    if (prefabData.prefab == null) continue;
+                    prefabData.InitializeSize();
+                    Vector2Int prefabSize = prefabData.size == Vector2Int.zero ? Vector2Int.one : prefabData.size;
+                    Vector2Int spawnPos = new Vector2Int(
+                        Mathf.Clamp(room.Center.x - prefabSize.x / 2, room.Bounds.xMin, room.Bounds.xMax - prefabSize.x),
+                        Mathf.Clamp(room.Center.y - prefabSize.y / 2, room.Bounds.yMin, room.Bounds.yMax - prefabSize.y)
+                    );
+                    Vector3 worldPos = new Vector3(spawnPos.x, spawnPos.y, 0);
+                    Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
+                    Debug.Log($"Spawned boss room prefab {prefabData.prefab.name} at {worldPos}");
+                }
+            }
+            else
+            {
+                Debug.Log("[DungeonGenerator] No boss room prefabs assigned, skipping prefab spawn");
+            }
 
-                MarkAreaOccupied(spawnPos - new Vector2Int(objectBuffer, objectBuffer),
-                                prefabSize + new Vector2Int(objectBuffer * 2, objectBuffer * 2),
-                                occupiedTiles);
-
-                Vector3 worldPos = new Vector3(spawnPos.x, spawnPos.y, 0);
-                Instantiate(prefabData.prefab, worldPos, Quaternion.identity, this.transform);
-
-                placedCount++;
+            // Spawn BossRoomNPC independently
+            if (bossRoomNPCPrefab != null)
+            {
+                Vector3 npcPos = new Vector3(room.Center.x, room.Center.y, 0);
+                GameObject npc = Instantiate(bossRoomNPCPrefab, npcPos, Quaternion.identity, this.transform);
+                if (npc != null)
+                    Debug.Log($"Spawned BossRoomNPC at {npcPos}");
+                else
+                    Debug.LogWarning($"Failed to spawn BossRoomNPC at {npcPos}");
+            }
+            else
+            {
+                Debug.LogWarning("bossRoomNPCPrefab is null, cannot spawn NPC");
             }
         }
+
+        Debug.Log("=== [DungeonGenerator] END: PlacePrefabsInBossRooms ===");
     }
 
     private bool IsAreaOccupied(Vector2Int startPos, Vector2Int size, HashSet<Vector2Int> occupied)
@@ -760,6 +799,20 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         return result;
     }
-    
+
+    private void SpawnBossRoomNPC(RoomData bossRoom)
+    {
+        if (bossRoomNPCPrefab == null) return;
+
+        Vector2Int center = bossRoom.Center;
+        Vector3 worldPos = new Vector3(center.x, center.y, 0);
+        GameObject npc = Instantiate(bossRoomNPCPrefab, worldPos, Quaternion.identity, this.transform);
+
+        if (npc.TryGetComponent<Collider2D>(out var col))
+            col.enabled = true;
+
+        Debug.Log($"Spawned BossRoomNPC at {worldPos}");
+    }
+
     public List<RoomData> GetRooms() => roomDataList;
 }

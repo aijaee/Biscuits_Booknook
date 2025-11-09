@@ -7,6 +7,7 @@ public class QuestItemSpawner : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject[] questItemPrefabs;
     [SerializeField] private RoomFirstDungeonGenerator dungeonGenerator;
+    [SerializeField] private QuestTracker questTracker;
 
     [Header("Spawn Settings")]
     [SerializeField] private int minItems = 4;
@@ -27,6 +28,9 @@ public class QuestItemSpawner : MonoBehaviour
         if (dungeonGenerator == null)
             dungeonGenerator = FindObjectOfType<RoomFirstDungeonGenerator>();
 
+        if (questTracker == null)
+            questTracker = FindObjectOfType<QuestTracker>();
+
         if (dungeonGenerator != null && autoSpawnOnGeneration)
             dungeonGenerator.OnGenerationComplete += HandleGenerationComplete;
     }
@@ -45,47 +49,28 @@ public class QuestItemSpawner : MonoBehaviour
     public void TrySpawnQuestItems()
     {
         if (spawnOnlyOnce && hasSpawned)
-        {
-            Debug.Log("[QuestItemSpawner] Skipping spawn: already spawned once.");
             return;
-        }
 
         if (questItemPrefabs == null || questItemPrefabs.Length == 0)
-        {
-            Debug.LogWarning("[QuestItemSpawner] No questItemPrefabs assigned.");
             return;
-        }
 
         if (dungeonGenerator == null)
-        {
-            Debug.LogWarning("[QuestItemSpawner] No dungeonGenerator assigned or found.");
             return;
-        }
 
         var rooms = dungeonGenerator.GetRooms();
         if (rooms == null || rooms.Count == 0)
-        {
-            Debug.LogWarning("[QuestItemSpawner] Dungeon generator returned no rooms.");
             return;
-        }
 
         var eligibleRooms = rooms.Where(r => r.Type == RoomType.Combat).ToList();
-
         if (eligibleRooms.Count == 0)
-        {
-            Debug.LogWarning("[QuestItemSpawner] No eligible combat rooms found for quest item placement.");
             return;
-        }
 
         int desiredCount = Mathf.Clamp(Random.Range(minItems, maxItems + 1), 0, Mathf.Min(eligibleRooms.Count, questItemPrefabs.Length));
         if (desiredCount == 0)
         {
-            Debug.Log("[QuestItemSpawner] Desired item count is 0; skipping spawn.");
             hasSpawned = true;
             return;
         }
-
-        Debug.Log($"[QuestItemSpawner] Spawning {desiredCount} unique quest item(s).");
 
         Shuffle(eligibleRooms);
         List<GameObject> availablePrefabs = new List<GameObject>(questItemPrefabs);
@@ -98,16 +83,16 @@ public class QuestItemSpawner : MonoBehaviour
             Vector3 spawnPos = FindFreePositionNear(cell);
 
             if (spawnPos == Vector3.positiveInfinity)
-            {
-                Debug.LogWarning($"[QuestItemSpawner] Could not find free spot in room {room.Center} for {availablePrefabs[i].name}");
                 continue;
-            }
 
             GameObject prefab = availablePrefabs[i];
             GameObject spawned = Instantiate(prefab, spawnPos, Quaternion.identity, spawnParent);
 
-            spawned.name = $"QuestItem_{prefab.name}_({room.Center.x},{room.Center.y})";
-            Debug.Log($"[QuestItemSpawner] Spawned {spawned.name} at {spawnPos}");
+            QuestCollectible collectible = spawned.GetComponent<QuestCollectible>();
+            if (collectible != null && questTracker != null)
+                collectible.SetTracker(questTracker);
+
+            spawned.name = $"QuestItem_{prefab.name}_({cell.x},{cell.y})";
         }
 
         hasSpawned = true;

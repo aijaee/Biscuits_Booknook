@@ -1,0 +1,367 @@
+fileFormatVersion: 2
+guid: df5ba26698555c74a96b09498724ab5a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6806769602774028763
+    second: Level2_tilemap_revision_0
+  - first:
+      213: -3241055904648494722
+    second: Level2_tilemap_revision_1
+  - first:
+      213: -5888424447424057482
+    second: Level2_tilemap_revision_2
+  - first:
+      213: -6641705756343482788
+    second: Level2_tilemap_revision_3
+  - first:
+      213: 7299251212852379438
+    second: Level2_tilemap_revision_4
+  - first:
+      213: -8007957936988362796
+    second: Level2_tilemap_revision_5
+  - first:
+      213: -2795242468540460092
+    second: Level2_tilemap_revision_6
+  - first:
+      213: 613155564256321141
+    second: Level2_tilemap_revision_7
+  - first:
+      213: 3077986492785649088
+    second: Level2_tilemap_revision_8
+  - first:
+      213: 8461142678106467601
+    second: Level2_tilemap_revision_9
+  - first:
+      213: 3161068300862362524
+    second: Level2_tilemap_revision_10
+  - first:
+      213: 5015093806676171902
+    second: Level2_tilemap_revision_11
+  - first:
+      213: 4801379930831986786
+    second: Level2_tilemap_revision_12
+  - first:
+      213: -2904934367108619658
+    second: Level2_tilemap_revision_13
+  - first:
+      213: 6845707960205500303
+    second: Level2_tilemap_revision_14
+  - first:
+      213: -272875218527349733
+    second: Level2_tilemap_revision_15
+  - first:
+      213: 5184452810858218284
+    second: Level2_tilemap_revision_16
+  - first:
+      213: 4244223590376362820
+    second: Level2_tilemap_revision_17
+  - first:
+      213: -5671616738905214400
+    second: Level2_tilemap_revision_18
+  - first:
+      213: -5327115194252819857
+    second: Level2_tilemap_revision_19
+  - first:
+      213: 321020139936006317
+    second: Level2_tilemap_revision_20
+  - first:
+      213: 840698239235647029
+    second: Level2_tilemap_revision_21
+  - first:
+      213: -6242834683948604509
+    second: Level2_tilemap_revision_22
+  - first:
+      213: 7415905630067084384
+    second: Level2_tilemap_revision_23
+  - first:
+      213: -7624244003968940791
+    second: Level2_tilemap_revision_24
+  - first:
+      213: -4603515991193738019
+    second: Level2_tilemap_revision_25
+  - first:
+      213: 50441853005180932
+    second: Level2_tilemap_revision_26
+  - first:
+      213: -1085274450298748068
+    second: Level2_tilemap_revision_27
+  - first:
+      213: 2750491058634564066
+    second: Level2_tilemap_revision_28
+  - first:
+      213: 6913469787972759896
+    second: Level2_tilemap_revision_29
+  - first:
+      213: 2107085517853892074
+    second: Level2_tilemap_revision_30
+  - first:
+      213: -4568218163467471885
+    second: Level2_tilemap_revision_31
+  - first:
+      213: -2363535812819730355
+    second: Level2_tilemap_revision_32
+  - first:
+      213: -4757787916457599944
+    second: Level2_tilemap_revision_33
+  - first:
+      213: 4895550636137178104
+    second: Level2_tilemap_revision_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level2_tilemap_revision_18
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 801
+        width: 148
+        height: 184
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 042356f10ae5a41b0800000000000000
+      internalID: -5671616738905214400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level2_tilemap_revision_19
+      rect:
+        serializedVersion: 2
+        x: 2586
+        y: 801
+        width: 182
+        height: 210
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6289f084f84216b0800000000000000
+      internalID: -5327115194252819857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level2_tilemap_revision_20
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 360
+        width: 291
+        height: 292
+      alignment: 9
+      pivot: {x: 0.5, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0c1aecd1e747400800000000000000
+      internalID: 321020139936006317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level2_tilemap_revision_25
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 85
+        width: 686
+        height: 386
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd42113b8960d10c0800000000000000
+      internalID: -4603515991193738019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level2_tilemap_revision_29
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 179
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851f28d942491ff50800000000000000
+      internalID: 6913469787972759896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 098e065e6908fe743b3a4ec7efd85df4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level2_tilemap_revision_0: 6806769602774028763
+      Level2_tilemap_revision_1: -3241055904648494722
+      Level2_tilemap_revision_10: 3161068300862362524
+      Level2_tilemap_revision_11: 5015093806676171902
+      Level2_tilemap_revision_12: 4801379930831986786
+      Level2_tilemap_revision_13: -2904934367108619658
+      Level2_tilemap_revision_14: 6845707960205500303
+      Level2_tilemap_revision_15: -272875218527349733
+      Level2_tilemap_revision_16: 5184452810858218284
+      Level2_tilemap_revision_17: 4244223590376362820
+      Level2_tilemap_revision_18: -5671616738905214400
+      Level2_tilemap_revision_19: -5327115194252819857
+      Level2_tilemap_revision_2: -5888424447424057482
+      Level2_tilemap_revision_20: 321020139936006317
+      Level2_tilemap_revision_21: 840698239235647029
+      Level2_tilemap_revision_22: -6242834683948604509
+      Level2_tilemap_revision_23: 7415905630067084384
+      Level2_tilemap_revision_24: -7624244003968940791
+      Level2_tilemap_revision_25: -4603515991193738019
+      Level2_tilemap_revision_26: 50441853005180932
+      Level2_tilemap_revision_27: -1085274450298748068
+      Level2_tilemap_revision_28: 2750491058634564066
+      Level2_tilemap_revision_29: 6913469787972759896
+      Level2_tilemap_revision_3: -6641705756343482788
+      Level2_tilemap_revision_30: 2107085517853892074
+      Level2_tilemap_revision_31: -4568218163467471885
+      Level2_tilemap_revision_32: -2363535812819730355
+      Level2_tilemap_revision_33: -4757787916457599944
+      Level2_tilemap_revision_34: 4895550636137178104
+      Level2_tilemap_revision_4: 7299251212852379438
+      Level2_tilemap_revision_5: -8007957936988362796
+      Level2_tilemap_revision_6: -2795242468540460092
+      Level2_tilemap_revision_7: 613155564256321141
+      Level2_tilemap_revision_8: 3077986492785649088
+      Level2_tilemap_revision_9: 8461142678106467601
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

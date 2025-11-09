@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d65186db4a01a4a81669d25d37f726, type: 3}
+  m_Name: Grouper
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Grouper
+    portraitSprite: {fileID: 21300000, guid: 0cdbfba78a1c8fc42a58b5015b7e9596, type: 3}
+    animatorController: {fileID: 9100000, guid: 1905f8654f5a25142930011d8ba7b6f5, type: 2}
+    nameImage: {fileID: 21300000, guid: 8c8402ad90ecccb4690d155d3e547d40, type: 3}
+    text: Blub blub!
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Grouper
+    portraitSprite: {fileID: 21300000, guid: 0cdbfba78a1c8fc42a58b5015b7e9596, type: 3}
+    animatorController: {fileID: 9100000, guid: 1905f8654f5a25142930011d8ba7b6f5, type: 2}
+    nameImage: {fileID: 21300000, guid: 8c8402ad90ecccb4690d155d3e547d40, type: 3}
+    text: Behold!
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Grouper
+    portraitSprite: {fileID: 21300000, guid: 0cdbfba78a1c8fc42a58b5015b7e9596, type: 3}
+    animatorController: {fileID: 9100000, guid: 1905f8654f5a25142930011d8ba7b6f5, type: 2}
+    nameImage: {fileID: 21300000, guid: 8c8402ad90ecccb4690d155d3e547d40, type: 3}
+    text: "You\u2019ve discovered me!"
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Grouper
+    portraitSprite: {fileID: 21300000, guid: 0cdbfba78a1c8fc42a58b5015b7e9596, type: 3}
+    animatorController: {fileID: 9100000, guid: 1905f8654f5a25142930011d8ba7b6f5, type: 2}
+    nameImage: {fileID: 21300000, guid: 13f23db81cd413b4d8edc2e0a8f13ca1, type: 3}
+    text: "I\u2019m the Grouper, also called Lapu-Lapu."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Grouper
+    portraitSprite: {fileID: 21300000, guid: 0cdbfba78a1c8fc42a58b5015b7e9596, type: 3}
+    animatorController: {fileID: 9100000, guid: 1905f8654f5a25142930011d8ba7b6f5, type: 2}
+    nameImage: {fileID: 21300000, guid: 13f23db81cd413b4d8edc2e0a8f13ca1, type: 3}
+    text: I shine in coral reefs, with colors as bright and lively as the reef itself!
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0

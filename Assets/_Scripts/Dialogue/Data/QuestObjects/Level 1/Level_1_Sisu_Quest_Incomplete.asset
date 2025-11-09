@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d65186db4a01a4a81669d25d37f726, type: 3}
+  m_Name: Level_1_Sisu_Quest_Incomplete
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: 8c8402ad90ecccb4690d155d3e547d40, type: 3}
+    text: Ah, Biscuit... it seems you still have tasks to finish
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: 8c8402ad90ecccb4690d155d3e547d40, type: 3}
+    text: "Return to me once you have completed your quest, and I shall grant you
+      fish\u2014sage\u2014erm, I mean, <b><color=#0f60db>passage</b></color>."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
