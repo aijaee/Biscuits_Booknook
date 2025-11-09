@@ -33,7 +33,7 @@ MonoBehaviour:
     portraitSprite: {fileID: 21300000, guid: 638e3246874c0f449b3b71c06a9e819a, type: 3}
     animatorController: {fileID: 9100000, guid: d7dbcb78f4db9ca49989f474904a8d5a, type: 2}
     nameImage: {fileID: 21300000, guid: 9c7f58dc2bcb88549b00e0f760e052be, type: 3}
-    text: "Well.. Hi! I\u2019m the Mangrove Crab!"
+    text: "Well.. Hi! I\u2019m the <b><color=#cb4222>Mangrove Crab!</b></color>"
     walkIn: 0
     walkOut: 0
     playOpenBoxAnimation: 0

@@ -41,7 +41,7 @@ MonoBehaviour:
     portraitSprite: {fileID: 21300000, guid: 0cdbfba78a1c8fc42a58b5015b7e9596, type: 3}
     animatorController: {fileID: 9100000, guid: 1905f8654f5a25142930011d8ba7b6f5, type: 2}
     nameImage: {fileID: 21300000, guid: 13f23db81cd413b4d8edc2e0a8f13ca1, type: 3}
-    text: "I\u2019m the Grouper, also called Lapu-Lapu."
+    text: "I\u2019m the <b><color=#e6652b>Grouper,</b></color> also called Lapu-Lapu."
     walkIn: 0
     walkOut: 0
     playOpenBoxAnimation: 0

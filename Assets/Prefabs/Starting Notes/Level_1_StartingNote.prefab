@@ -151,57 +151,58 @@ MonoBehaviour:
   passageBody: 
   manualTitles:
   - Exploring Your Favorite Seafoods and Where They Live
-  - Grouper (Lapu-Lapu)
-  - Crab (Alimango)
-  - Squid and Octopus (Pusit ug Pugita)
-  - Tiger Prawns (Pantas or Sugpo)
+  - <color=#e6652b>Grouper (Lapu-Lapu)</color>
+  - <color=#cb4222>Crab (Alimango)</color>
+  - <color=#d47990>Squid and Octopus (Pusit ug Pugita)</color>
+  - <color=#80765b>Tiger Prawns (Pantas or Sugpo)</color>
   manualPages:
   - <align="center">by Myla June T. Patron</align>
-  - "Characteristics: The grouper fish, which is named after a famous Filipino hero,
-    is also called Lapu-Lapu. The grouper fish is one of the most popular kinds of
-    coral reef fishes that are cooked during parties and celebrations. This fish
+  - "<b>Characteristics:</b> The grouper fish, which is named after a famous Filipino
+    hero, is also called Lapu-Lapu. The grouper fish is one of the most popular kinds
+    of coral reef fishes that are cooked during parties and celebrations. This fish
     comes in different kinds and colors. Some are dull green or brown while others
     have brighter colors and patterns. The grouper surely reflects the colorful habitat
-    it comes from. Can you guess where it lives?\n\nHabitat: Coral Reef. Groupers
+    it comes from. Can you guess where it lives?\n\n<b>Habitat:</b> Coral Reef. Groupers
     live in coral reefs. What are coral reefs? Coral reefs are marine ecosystems,
     and they are an important source of food and livelihood for Filipinos. The coral,
     which builds the reef, is an animal called coral polyp. The coral comes in different
     varieties and forms. Some are large reef builders while others look like \u201Cgraceful
     flowing fans.\u201D Coral reefs are the largest sources of fish and other seafood
     for world fisheries.\r"
-  - 'Characteristics: Have you ever eaten a crab? Crabs may look a bit scary with
-    their sharp claws, but they are actually a popular Filipino seafood. One kind
-    of crab that is caught for food is the mangrove crab. Mangrove crabs, as their
-    name tells, are found in mangrove forests. They live in muddy and sandy floors
-    of semi-salty (or brackish) water in mangrove forests. Have you ever been to
-    a mangrove forest?
+  - '<b>Characteristics:</b> Have you ever eaten a crab? Crabs may look a bit scary
+    with their sharp claws, but they are actually a popular Filipino seafood. One
+    kind of crab that is caught for food is the mangrove crab. Mangrove crabs, as
+    their name tells, are found in mangrove forests. They live in muddy and sandy
+    floors of semi-salty (or brackish) water in mangrove forests. Have you ever been
+    to a mangrove forest?
 
 
-    Habitat: Mangrove Forests. Many varieties of crabs live
-    in mangrove forests. Mangrove forests are found in salty or brackish intertidal
-    waters. The soil in mangrove areas are wet and are often lacking in oxygen. Mangrove
-    ecosystems are very important because they serve as nursery grounds or temporary
-    homes to newborn or young reef fishes. Different kinds of fish and invertebrates
-    such as lobster, shrimp, crabs, and sea urchins live in mangrove forests.'
-  - 'Characteristics: Have you tried eating dried squid, either grilled or fried?
-    Dried squid is also a popular Filipino food. Squids have long, slender bodies
-    with soft, flexible arms. Like octopuses, squids swim in the open ocean, but
-    they rest in seagrass beds and meadows found in the ocean floor.
+    <b>Habitat:</b> Mangrove Forests. Many varieties
+    of crabs live in mangrove forests. Mangrove forests are found in salty or brackish
+    intertidal waters. The soil in mangrove areas are wet and are often lacking in
+    oxygen. Mangrove ecosystems are very important because they serve as nursery
+    grounds or temporary homes to newborn or young reef fishes. Different kinds of
+    fish and invertebrates such as lobster, shrimp, crabs, and sea urchins live in
+    mangrove forests.'
+  - '<b>Characteristics:</b> Have you tried eating dried squid, either grilled or
+    fried? Dried squid is also a popular Filipino food. Squids have long, slender
+    bodies with soft, flexible arms. Like octopuses, squids swim in the open ocean,
+    but they rest in seagrass beds and meadows found in the ocean floor.
 
 
 
-    Habitat:
+    <b>Habitat:</b>
     Seagrasses. Seagrasses are like the lungs of the ocean because they produce an
     abundant supply of oxygen. Seagrasses can be found in the ocean floor or in shallow,
     brackish waters. They have long, green, grass-like leaves, and they look very
     similar to seaweeds. However, unlike seaweeds, seagrasses have roots, stems,
     and leaves. They also produce flowers and seeds like plants on dry land.'
-  - "\rCharacteristics: Has someone in your household ever cooked tiger prawns for
-    your birthday or a town fiesta? For Filipinos, the tiger prawn is a favorite
+  - "\r<b>Characteristics:</b> Has someone in your household ever cooked tiger prawns
+    for your birthday or a town fiesta? For Filipinos, the tiger prawn is a favorite
     food during celebrations and special occasions\u2014or even on ordinary days.
     Prawns have long, slender, curve-shaped bodies. Did you know that this tasty
     crustacean lives in brackish waters? They also live in and get food from seagrasses,
-    beds of seaweed or algae, and on floating types of sea algae.\r\n\r\nHabitat:
+    beds of seaweed or algae, and on floating types of sea algae.\r\n\r\n<b>Habitat:</b>
     Seaweed (or Algae). Like seagrasses, algae or seaweeds provide home and food
     to different kinds of reef fishes and marine creatures. However, unlike seagrasses,
     algae do not produce flowers and their roots do not absorb nutrients. Despite
