@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d65186db4a01a4a81669d25d37f726, type: 3}
+  m_Name: SIsu_Level 1
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: Hello, Biscuit...
+    walkIn: 1
+    walkOut: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: "You don\u2019t know me yet, but you will soon enough."
+    walkIn: 0
+    walkOut: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: "Before you begin, take a moment to read the <b><color=#0f60db>passage</b></color>
+      ahead \u2014 carefully."
+    walkIn: 0
+    walkOut: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: It holds clues about what you need to <b><color=#f29900>collect</b></color>.
+    walkIn: 0
+    walkOut: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: You may encounter <b><color=#0f60db>puzzles</b></color> along the way.
+    walkIn: 0
+    walkOut: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: Answer them <b><color=#1e9c38>correctly</b></color>, and you might find
+      something... useful.
+    walkIn: 0
+    walkOut: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: "But answer them <b><color=#cc0202>wrong</b></color>... and let\u2019s
+      just say, not every chest holds a gift."
+    walkIn: 0
+    walkOut: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: Pay <b><color=#0f60db>close attention</b></color>... the details will matter
+      later.
+    walkIn: 0
+    walkOut: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: "Once you\u2019ve gathered everything it speaks of, <b><color=#0f60db>come
+      find me</b></color>."
+    walkIn: 0
+    walkOut: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 0}
+    text: "I\u2019ll be waiting for you at the end of this stage."
+    walkIn: 0
+    walkOut: 1

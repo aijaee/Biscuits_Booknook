@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,10 @@ using TMPro;
 
 public class DialogueController : MonoBehaviour
 {
+    [Header("Portrait Settings")]
     public PortraitController portraitController;
+    public Vector2 portraitFinalPosition = new Vector2(0f, 60f);
+
     public GameObject dialogueRoot;
     public CanvasGroup canvasGroup;
     public Image fadeImage;
@@ -18,6 +22,9 @@ public class DialogueController : MonoBehaviour
     public bool IsRunning { get; private set; }
 
     private JoystickPlayerExample playerMovement;
+    private MeleeAttackController playerMeleeAttack;
+    private AStarPathfinder[] pathfinders;
+    private List<AStarPathfinder> disabledPathfinders = new List<AStarPathfinder>();
     private bool clickPressed = false;
     private bool skipRequested = false;
     private Coroutine typingCoroutine = null;
@@ -38,11 +45,28 @@ public class DialogueController : MonoBehaviour
     {
         if (IsRunning || data == null) return;
 
+        if (playerMeleeAttack == null)
+            playerMeleeAttack = FindObjectOfType<MeleeAttackController>();
+
         if (playerMovement == null)
             playerMovement = FindObjectOfType<JoystickPlayerExample>();
 
         if (playerMovement != null)
             playerMovement.enabled = false;
+
+        if (playerMeleeAttack != null)
+            playerMeleeAttack.enabled = false;
+
+        pathfinders = FindObjectsOfType<AStarPathfinder>();
+        disabledPathfinders.Clear();
+        foreach (var p in pathfinders)
+        {
+            if (p.enabled)
+            {
+                p.enabled = false;
+                disabledPathfinders.Add(p);
+            }
+        }
 
         dialogueRoot?.SetActive(true);
         StartCoroutine(RunDialogueSequence(data));
@@ -119,6 +143,15 @@ public class DialogueController : MonoBehaviour
 
         if (playerMovement != null)
             playerMovement.enabled = true;
+
+        if (playerMeleeAttack != null)
+            playerMeleeAttack.enabled = true;
+
+        foreach (var p in disabledPathfinders)
+            if (p != null)
+                p.enabled = true;
+
+        disabledPathfinders.Clear();
 
         IsRunning = false;
         OnDialogueComplete?.Invoke();
@@ -219,7 +252,7 @@ public class DialogueController : MonoBehaviour
         Canvas parentCanvas = portraitRect.GetComponentInParent<Canvas>();
         RectTransform canvasRect = parentCanvas.GetComponent<RectTransform>();
 
-        Vector2 finalPos = new Vector2(0f, 60f);
+        Vector2 finalPos = portraitFinalPosition;
         Vector2 startPos = finalPos + new Vector2(-canvasRect.rect.width, 0f);
         portraitRect.anchoredPosition = startPos;
 
@@ -264,7 +297,7 @@ public class DialogueController : MonoBehaviour
         Canvas parentCanvas = portraitRect.GetComponentInParent<Canvas>();
         RectTransform canvasRect = parentCanvas.GetComponent<RectTransform>();
 
-        Vector2 startPos = new Vector2(0f, 60f);
+        Vector2 startPos = portraitFinalPosition;
         Vector2 endPos = startPos + new Vector2(canvasRect.rect.width, 0f);
 
         CanvasGroup portraitGroup = portraitRect.GetComponent<CanvasGroup>();

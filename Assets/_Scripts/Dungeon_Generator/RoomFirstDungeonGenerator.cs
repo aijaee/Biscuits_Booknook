@@ -129,6 +129,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [Header("Boss Room Prefabs")]
     [SerializeField] private List<RoomPrefab> bossRoomPrefabs;
     [SerializeField] private int maxPrefabsPerBossRoom = 1;
+    public System.Action OnGenerationComplete;
 
 
     private void Start()
@@ -311,7 +312,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         {
             enemySpawner.SetValidSpawnTiles(floor);
             enemySpawner.SetFloorToRoomMapping(floorToRoom);
-            
+
             if (floor.Count > 0)
             {
                 int enemyCount = enemySpawner.EnemyCount;
@@ -319,6 +320,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 enemySpawner.SpawnEnemies(enemySpawns);
             }
         }
+        
+        OnGenerationComplete?.Invoke();
     }
 
     private void PlacePrefabsInPuzzleRooms()
@@ -710,7 +713,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         Vector2Int totalSize = new Vector2Int(size.x + buffer * 2, size.y + buffer * 2);
         MarkAreaOccupied(start, totalSize, occupied);
     }
-    
+
     private List<RoomData> SplitOversizedRooms(List<RoomData> rooms)
     {
         List<RoomData> result = new List<RoomData>();
@@ -757,4 +760,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         return result;
     }
+    
+    public List<RoomData> GetRooms() => roomDataList;
 }

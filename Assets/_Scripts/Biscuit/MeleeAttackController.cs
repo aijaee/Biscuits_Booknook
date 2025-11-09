@@ -115,7 +115,7 @@ public class MeleeAttackController : MonoBehaviour
         float swingDistance = swingDistanceFromPivot;
         
         if (comboStep == 3)
-            swingDistance *= combo3RangeMultiplier;
+            aoeRadius *= combo3RangeMultiplier;
 
         Vector2 direction = useMouseAim ? mouseDirection : GetClosestDirection() ?? lastMoveDirection;
         PositionSwingPoint(direction, swingDistance);

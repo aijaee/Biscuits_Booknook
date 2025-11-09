@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4350008865354826187}
   - component: {fileID: 5242233082600298534}
   m_Layer: 0
-  m_Name: Fish_1
+  m_Name: Squid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ SpriteRenderer:
   m_SortingLayerID: 1661798873
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1216504626, guid: dde69b8fbe408d646904c97926569be7, type: 3}
+  m_Sprite: {fileID: 1875986641, guid: af69d8cc47f768b4da3e0b6124bc6177, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

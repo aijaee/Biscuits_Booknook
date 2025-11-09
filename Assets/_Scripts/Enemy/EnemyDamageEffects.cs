@@ -10,7 +10,7 @@ public class EnemyDamageEffects : MonoBehaviour
     private EnemyController enemyController;
 
     [Header("Knockback")]
-    public float knockbackDistance = 0.9f;
+    public float knockbackForce = 8f;
     public float knockbackDuration = 0.35f;
 
     [Header("Shake")]
@@ -20,7 +20,6 @@ public class EnemyDamageEffects : MonoBehaviour
     [Header("Stun")]
     public float stunDuration = 0.5f;
 
-    private float animatorOriginalSpeed = 1f;
     private Coroutine damageCoroutine;
 
     private void Awake()
@@ -28,7 +27,6 @@ public class EnemyDamageEffects : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemyController = GetComponent<EnemyController>();
-        animatorOriginalSpeed = animator != null ? animator.speed : 1f;
     }
 
     public void PlayDamageEffects(Vector2 hitDir)
@@ -37,6 +35,21 @@ public class EnemyDamageEffects : MonoBehaviour
             StopCoroutine(damageCoroutine);
 
         damageCoroutine = StartCoroutine(DamageRoutine(hitDir));
+    }
+
+    public void StopAllEffectsImmediately()
+    {
+        if (damageCoroutine != null)
+        {
+            StopCoroutine(damageCoroutine);
+            damageCoroutine = null;
+        }
+
+        if (enemyController != null)
+        {
+            enemyController.isStunned = false;
+            enemyController.SetKnockbackState(false);
+        }
     }
 
     private IEnumerator DamageRoutine(Vector2 hitDir)
@@ -50,46 +63,24 @@ public class EnemyDamageEffects : MonoBehaviour
         if (animator != null)
             animator.SetTrigger("Damaged");
 
-        Vector2 startPos = rb != null ? rb.position : (Vector2)transform.position;
-        Vector2 targetPos = startPos + hitDir.normalized * knockbackDistance;
+        if (rb != null)
+            rb.AddForce(hitDir.normalized * knockbackForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(knockbackDuration);
+
+        rb.linearVelocity = Vector2.zero;
 
         float elapsed = 0f;
-        while (elapsed < knockbackDuration)
-        {
-            float t = elapsed / knockbackDuration;
-            float smooth = Mathf.SmoothStep(0f, 1f, t);
-            Vector2 newPos = Vector2.Lerp(startPos, targetPos, smooth);
-
-            if (rb != null)
-                rb.MovePosition(newPos);
-            else
-                transform.position = newPos;
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        if (rb != null) rb.MovePosition(targetPos);
-        else transform.position = targetPos;
-
-        Vector2 shakeBase = rb != null ? rb.position : (Vector2)transform.position;
-        elapsed = 0f;
+        Vector2 shakeBase = rb.position;
         while (elapsed < shakeDuration)
         {
             Vector2 offset = Random.insideUnitCircle * shakeAmount;
-            Vector2 pos = shakeBase + offset;
-
-            if (rb != null)
-                rb.MovePosition(pos);
-            else
-                transform.position = pos;
-
+            rb.MovePosition(shakeBase + offset);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        if (rb != null) rb.MovePosition(shakeBase);
-        else transform.position = shakeBase;
+        rb.MovePosition(shakeBase);
 
         yield return new WaitForSeconds(stunDuration);
 
