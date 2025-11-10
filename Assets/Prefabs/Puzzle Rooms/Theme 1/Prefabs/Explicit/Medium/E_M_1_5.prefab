@@ -143,7 +143,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 768422973578343593, guid: dfcec9a28128cdc4fad504c5517f0251, type: 3}
       propertyPath: chestText
-      value: Slender Body
+      value: Has a slender Body
       objectReference: {fileID: 0}
     - target: {fileID: 973032638916191079, guid: dfcec9a28128cdc4fad504c5517f0251, type: 3}
       propertyPath: m_LocalPosition.x

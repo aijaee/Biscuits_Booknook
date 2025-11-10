@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040562754642717044, guid: d50ae0b508dd4ad45908ea39612d9134, type: 3}
       propertyPath: chestText
-      value: Persuade
+      value: To persuade
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040562754642717044, guid: d50ae0b508dd4ad45908ea39612d9134, type: 3}
       propertyPath: chestText
-      value: Entertain
+      value: To entertain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -319,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040562754642717044, guid: 64cfbd1084e655c43aa66b447956593e, type: 3}
       propertyPath: chestText
-      value: Inform
+      value: To inform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

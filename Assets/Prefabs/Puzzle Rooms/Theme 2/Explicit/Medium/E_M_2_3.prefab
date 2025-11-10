@@ -213,8 +213,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: "After a long time since the boy took the tree\u2019s trunk and built
-        a boat, he came back. What did the tree tell him this time?"
+      value: "After a long time since the boy had taken the tree\u2019s trunk and
+        built a boat, he came back. What did the tree tell him this time?"
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle

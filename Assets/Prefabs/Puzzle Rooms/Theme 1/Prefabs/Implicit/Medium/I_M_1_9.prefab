@@ -77,7 +77,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5911510054710512422, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: chestText
-      value: Animals with hard shells and several pairs of legs
+      value: Relating to animals with hard shells and several pairs of legs
       objectReference: {fileID: 0}
     - target: {fileID: 6134170471160913128, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -143,7 +143,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 768422973578343593, guid: dfcec9a28128cdc4fad504c5517f0251, type: 3}
       propertyPath: chestText
-      value: Slightly or a little salty; having low salt content
+      value: Relating to having a little salt or low salt content
       objectReference: {fileID: 0}
     - target: {fileID: 973032638916191079, guid: dfcec9a28128cdc4fad504c5517f0251, type: 3}
       propertyPath: m_LocalPosition.x
@@ -213,9 +213,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: <b><color=#1e90ff>Semi-salty or brackish</b></color> water are not as
-        salty as water in the seas and ocean. They are usually found in mangrove
-        areas or river bends.
+      value: <b><color=#1e90ff>Semi-salty or brackish</b></color> water is not as
+        salty as water in the seas and ocean. It is usually found in mangrove areas
+        or river bends.
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle

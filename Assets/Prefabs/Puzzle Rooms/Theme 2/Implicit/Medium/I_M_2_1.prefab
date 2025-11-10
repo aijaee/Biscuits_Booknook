@@ -77,7 +77,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5911510054710512422, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: chestText
-      value: When the boy played
+      value: When the boy was playing
       objectReference: {fileID: 0}
     - target: {fileID: 6134170471160913128, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: When was the tree often alone?
+      value: When did the tree feel alone?
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle

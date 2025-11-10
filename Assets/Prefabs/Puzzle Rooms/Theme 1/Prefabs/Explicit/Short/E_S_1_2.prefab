@@ -147,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: "According to the text, what is the Squid/Octopus\u2019s Habitat?"
+      value: According to the text, what do you call the Squid/Octopus's habitat?
       objectReference: {fileID: 0}
     - target: {fileID: 8856905469235115552, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: m_LocalPosition.x
