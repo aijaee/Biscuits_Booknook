@@ -27,9 +27,15 @@ public class BossPhase2InkWallAttack : MonoBehaviour
 
     private List<GameObject> activeWalls = new List<GameObject>();
 
+    private Dictionary<GameObject, List<(Collider2D bossCol, Collider2D wallCol)>> ignoredPairs2D;
+    private Dictionary<GameObject, List<(Collider bossCol, Collider wallCol)>> ignoredPairs3D;
+
     private void Awake()
     {
         EnsureReferences();
+
+        ignoredPairs2D = new Dictionary<GameObject, List<(Collider2D, Collider2D)>>();
+        ignoredPairs3D = new Dictionary<GameObject, List<(Collider, Collider)>>();
     }
     private void EnsureReferences()
     {
@@ -96,6 +102,44 @@ public class BossPhase2InkWallAttack : MonoBehaviour
             GameObject w = Instantiate(inkWallPrefab, pos, Quaternion.identity);
             activeWalls.Add(w);
 
+			var wallCols2D = new List<Collider2D>(w.GetComponents<Collider2D>());
+			var wallCols3D = new List<Collider>(w.GetComponents<Collider>());
+			var boss = GetComponentInParent<BossStatsMovement>();
+			var stored2D = new List<(Collider2D bossCol, Collider2D wallCol)>();
+			var stored3D = new List<(Collider bossCol, Collider wallCol)>();
+
+			if (boss != null)
+			{
+				var bossCols2D = boss.GetComponentsInChildren<Collider2D>();
+				foreach (var bc in bossCols2D)
+				{
+					foreach (var wc in wallCols2D)
+					{
+						if (bc != null && wc != null)
+						{
+							Physics2D.IgnoreCollision(bc, wc, true);
+							stored2D.Add((bc, wc));
+						}
+					}
+				}
+
+				var bossCols3D = boss.GetComponentsInChildren<Collider>();
+				foreach (var bc3 in bossCols3D)
+				{
+					foreach (var wc3 in wallCols3D)
+					{
+						if (bc3 != null && wc3 != null)
+						{
+							Physics.IgnoreCollision(bc3, wc3, true);
+							stored3D.Add((bc3, wc3));
+						}
+					}
+				}
+			}
+
+			if (stored2D.Count > 0) ignoredPairs2D[w] = stored2D;
+			if (stored3D.Count > 0) ignoredPairs3D[w] = stored3D;
+
             if (wallAnimatorController != null)
             {
                 var animator = w.GetComponent<Animator>() ?? w.AddComponent<Animator>();
@@ -115,6 +159,31 @@ public class BossPhase2InkWallAttack : MonoBehaviour
     private IEnumerator RemoveSegment(GameObject w)
     {
         yield return new WaitForSeconds(wallDuration);
+
+
+        if (w != null)
+        {
+
+            if (ignoredPairs2D.TryGetValue(w, out var pairs2D))
+            {
+                foreach (var p in pairs2D)
+                {
+                    if (p.bossCol != null && p.wallCol != null)
+                        Physics2D.IgnoreCollision(p.bossCol, p.wallCol, false);
+                }
+                ignoredPairs2D.Remove(w);
+            }
+
+            if (ignoredPairs3D.TryGetValue(w, out var pairs3D))
+            {
+                foreach (var p in pairs3D)
+                {
+                    if (p.bossCol != null && p.wallCol != null)
+                        Physics.IgnoreCollision(p.bossCol, p.wallCol, false);
+                }
+                ignoredPairs3D.Remove(w);
+            }
+        }
 
         if (w)
         {
