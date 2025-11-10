@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8703511960343649127}
   m_Layer: 0
-  m_Name: E_S_2_2
+  m_Name: E_S_1_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040562754642717044, guid: d50ae0b508dd4ad45908ea39612d9134, type: 3}
       propertyPath: chestText
-      value: Trunk
+      value: Persuasive
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -147,12 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: When the boy came back after he had taken the apples, what did the tree
-        offer the boy so he could be happy?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
-      propertyPath: passageTitle
-      value: 'Answer the question based on the story you have read:'
+      value: What type of text is this?
       objectReference: {fileID: 0}
     - target: {fileID: 8856905469235115552, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -258,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040562754642717044, guid: d50ae0b508dd4ad45908ea39612d9134, type: 3}
       propertyPath: chestText
-      value: Apples
+      value: Narrative
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -324,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040562754642717044, guid: 64cfbd1084e655c43aa66b447956593e, type: 3}
       propertyPath: chestText
-      value: Branches
+      value: Informative
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

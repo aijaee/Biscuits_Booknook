@@ -77,7 +77,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5911510054710512422, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: chestText
-      value: An area where the ocean meets the land
+      value: Relating to an area where the ocean meets the land
       objectReference: {fileID: 0}
     - target: {fileID: 6134170471160913128, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040562754642717044, guid: d50ae0b508dd4ad45908ea39612d9134, type: 3}
       propertyPath: chestText
-      value: A large area covered by grass or seagrass
+      value: Relating to a large area covered by grass or seagrass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

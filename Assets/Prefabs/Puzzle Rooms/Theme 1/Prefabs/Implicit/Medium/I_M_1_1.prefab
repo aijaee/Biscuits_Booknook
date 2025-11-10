@@ -77,7 +77,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5911510054710512422, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: chestText
-      value: Relating to water or the ocean
+      value: Animals living only in water or the ocean
       objectReference: {fileID: 0}
     - target: {fileID: 6134170471160913128, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: m_LocalPosition.x

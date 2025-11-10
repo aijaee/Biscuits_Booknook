@@ -214,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
       value: "After a long time since the boy took the tree\u2019s trunk and built
-        a boat, was the boy still a boy this time?"
+        a boat, did the boy remain a boy this time?"
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle
@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040562754642717044, guid: d50ae0b508dd4ad45908ea39612d9134, type: 3}
       propertyPath: chestText
-      value: Yes, he stayed a child forever
+      value: Yes, he remained a child forever
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -44543,6 +44543,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
+      propertyPath: notePrefab
+      value: 
+      objectReference: {fileID: 8188768632608287906, guid: 240b2856c232fd94ebc452dda3758980, type: 3}
+    - target: {fileID: 5445378835654150650, guid: 3cef45b547b678746a837de4f9109815, type: 3}
       propertyPath: wallBuffer
       value: 1
       objectReference: {fileID: 0}

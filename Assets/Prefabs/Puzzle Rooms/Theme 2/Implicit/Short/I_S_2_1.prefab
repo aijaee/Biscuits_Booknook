@@ -147,7 +147,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: What did the tree feel when the boy came back after he took the apples?
+      value: What did the tree feel when the boy came back after he had taken the
+        apples?
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle

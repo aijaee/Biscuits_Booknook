@@ -77,7 +77,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5911510054710512422, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: chestText
-      value: A place where fish is caught or fishing activities are done
+      value: A place where fish are caught or where fishing activities are done
       objectReference: {fileID: 0}
     - target: {fileID: 6134170471160913128, guid: a46d3378e93c13842abb9225df034a62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -213,8 +213,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageBody
-      value: Marine <b><color=#1e90ff>ecosystems</b></color> are made up of fish,
-        crustaceans, mammals, and other creatures and the environment they live in.
+      value: Marine <b><color=#1e90ff>ecosystems</b></color> consist of fish, crustaceans,
+        mammals, and other creatures and the environment they live in.
       objectReference: {fileID: 0}
     - target: {fileID: 8830904287564957113, guid: 4ef12f33de8b92f45a4211dca6dd5e1b, type: 3}
       propertyPath: passageTitle
