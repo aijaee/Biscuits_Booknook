@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d65186db4a01a4a81669d25d37f726, type: 3}
+  m_Name: Squid
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Squid
+    portraitSprite: {fileID: 21300000, guid: c38a51ef3f3098f4ea5d8117cc7cb381, type: 3}
+    animatorController: {fileID: 9100000, guid: e3f892f3ba2b5d8478523c457729d5c4, type: 2}
+    nameImage: {fileID: 21300000, guid: 8c8402ad90ecccb4690d155d3e547d40, type: 3}
+    text: "Swoosh\u2026"
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Squid
+    portraitSprite: {fileID: 21300000, guid: c38a51ef3f3098f4ea5d8117cc7cb381, type: 3}
+    animatorController: {fileID: 9100000, guid: e3f892f3ba2b5d8478523c457729d5c4, type: 2}
+    nameImage: {fileID: 21300000, guid: 8c8402ad90ecccb4690d155d3e547d40, type: 3}
+    text: Ah, you caught me!
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Squid
+    portraitSprite: {fileID: 21300000, guid: c38a51ef3f3098f4ea5d8117cc7cb381, type: 3}
+    animatorController: {fileID: 9100000, guid: e3f892f3ba2b5d8478523c457729d5c4, type: 2}
+    nameImage: {fileID: 21300000, guid: 60a5e708a6c34424ab8d94e4a9105caa, type: 3}
+    text: "I\u2019m the <b><color=#d47990>Squid,</b></color> the ocean\u2019s sneaky
+      dancer."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Squid
+    portraitSprite: {fileID: 21300000, guid: c38a51ef3f3098f4ea5d8117cc7cb381, type: 3}
+    animatorController: {fileID: 9100000, guid: e3f892f3ba2b5d8478523c457729d5c4, type: 2}
+    nameImage: {fileID: 21300000, guid: 60a5e708a6c34424ab8d94e4a9105caa, type: 3}
+    text: "I roam the open sea, but when I rest, you\u2019ll find me hiding among
+      soft underwater meadows."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0

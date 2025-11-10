@@ -1,0 +1,418 @@
+fileFormatVersion: 2
+guid: af69d8cc47f768b4da3e0b6124bc6177
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2499880084049695418
+    second: Level1_tilemap_withnewfish_0
+  - first:
+      213: 8464391292924708580
+    second: Level1_tilemap_withnewfish_1
+  - first:
+      213: -1094609850506284225
+    second: Level1_tilemap_withnewfish_2
+  - first:
+      213: 8660873066660328654
+    second: Level1_tilemap_withnewfish_3
+  - first:
+      213: -1999332826610230349
+    second: Level1_tilemap_withnewfish_4
+  - first:
+      213: 7148872819699394721
+    second: Level1_tilemap_withnewfish_5
+  - first:
+      213: 542337263164503539
+    second: Level1_tilemap_withnewfish_6
+  - first:
+      213: -7521570806433360431
+    second: Level1_tilemap_withnewfish_7
+  - first:
+      213: -7817286695286937651
+    second: Level1_tilemap_withnewfish_8
+  - first:
+      213: 1681686350088261714
+    second: Level1_tilemap_withnewfish_9
+  - first:
+      213: 2829724599985035673
+    second: Level1_tilemap_withnewfish_10
+  - first:
+      213: 630708219679130750
+    second: Level1_tilemap_withnewfish_11
+  - first:
+      213: -5106741627601773363
+    second: Level1_tilemap_withnewfish_12
+  - first:
+      213: 8154364805161890838
+    second: Level1_tilemap_withnewfish_13
+  - first:
+      213: -5009927437439716166
+    second: Level1_tilemap_withnewfish_14
+  - first:
+      213: 6030553285736012050
+    second: Level1_tilemap_withnewfish_15
+  - first:
+      213: -1914421104841433530
+    second: Level1_tilemap_withnewfish_16
+  - first:
+      213: 5626529550219824950
+    second: Level1_tilemap_withnewfish_17
+  - first:
+      213: -9070229633206073898
+    second: Level1_tilemap_withnewfish_18
+  - first:
+      213: -880194919662691497
+    second: Level1_tilemap_withnewfish_19
+  - first:
+      213: 5492084109130723359
+    second: Level1_tilemap_withnewfish_20
+  - first:
+      213: -4244565031247016184
+    second: Level1_tilemap_withnewfish_21
+  - first:
+      213: -644970798020052226
+    second: Level1_tilemap_withnewfish_22
+  - first:
+      213: 7447532723393730931
+    second: Level1_tilemap_withnewfish_23
+  - first:
+      213: 3438547225347418969
+    second: Level1_tilemap_withnewfish_24
+  - first:
+      213: 4405471923927548567
+    second: Level1_tilemap_withnewfish_25
+  - first:
+      213: -7815733291519256378
+    second: Level1_tilemap_withnewfish_26
+  - first:
+      213: 1538977843209558714
+    second: Level1_tilemap_withnewfish_27
+  - first:
+      213: 2732185664236925208
+    second: Level1_tilemap_withnewfish_28
+  - first:
+      213: -6323170343976684358
+    second: Level1_tilemap_withnewfish_29
+  - first:
+      213: -6283659605231823342
+    second: Level1_tilemap_withnewfish_30
+  - first:
+      213: -8367003850091258780
+    second: Level1_tilemap_withnewfish_31
+  - first:
+      213: -7170964114669215396
+    second: Level1_tilemap_withnewfish_32
+  - first:
+      213: 6807256503426498232
+    second: Level1_tilemap_withnewfish_33
+  - first:
+      213: -303794881278329795
+    second: Level1_tilemap_withnewfish_34
+  - first:
+      213: -1488421847698418361
+    second: Level1_tilemap_withnewfish_35
+  - first:
+      213: -3862536524114867764
+    second: Level1_tilemap_withnewfish_36
+  - first:
+      213: 6466129867549266363
+    second: Level1_tilemap_withnewfish_37
+  - first:
+      213: -57156132517924839
+    second: Level1_tilemap_withnewfish_38
+  - first:
+      213: -3187599375179296378
+    second: Level1_tilemap_withnewfish_39
+  - first:
+      213: -8897563924816805525
+    second: Level1_tilemap_withnewfish_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Guidance_ForPrefabs_43
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1073
+        width: 256
+        height: 207
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64fd74a0090e4c41962289fd2572868
+      internalID: -2018226834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guidance_ForPrefabs_54
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 817
+        width: 256
+        height: 207
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890421952feb2bd45ad71974cd27850b
+      internalID: 438105959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guidance_ForPrefabs_65
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 561
+        width: 256
+        height: 207
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bee958f7eb6b8e4c9d52258f169b3d3
+      internalID: 1875986641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guidance_ForPrefabs_76
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 305
+        width: 256
+        height: 207
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add445e8e918a3241ad159e80cdacdb3
+      internalID: -105206055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bbbd16abc210e5f49917a4cd8594366e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Guidance_ForPrefabs_0: -1447797690
+      Guidance_ForPrefabs_1: -799655845
+      Guidance_ForPrefabs_10: -604473695
+      Guidance_ForPrefabs_11: 57927602
+      Guidance_ForPrefabs_12: -1508639000
+      Guidance_ForPrefabs_13: -319322684
+      Guidance_ForPrefabs_14: 614657034
+      Guidance_ForPrefabs_15: -976989511
+      Guidance_ForPrefabs_16: -1193243069
+      Guidance_ForPrefabs_17: -1964956851
+      Guidance_ForPrefabs_18: 1195213056
+      Guidance_ForPrefabs_19: -2132842306
+      Guidance_ForPrefabs_2: 399749320
+      Guidance_ForPrefabs_20: 682291291
+      Guidance_ForPrefabs_21: 889390379
+      Guidance_ForPrefabs_22: 577570029
+      Guidance_ForPrefabs_23: -1259927741
+      Guidance_ForPrefabs_24: -1473690869
+      Guidance_ForPrefabs_25: 168747998
+      Guidance_ForPrefabs_26: 733573024
+      Guidance_ForPrefabs_27: 233840992
+      Guidance_ForPrefabs_28: 133749390
+      Guidance_ForPrefabs_29: -216098926
+      Guidance_ForPrefabs_3: -1694730420
+      Guidance_ForPrefabs_30: -378199601
+      Guidance_ForPrefabs_31: -1589523922
+      Guidance_ForPrefabs_32: -581324399
+      Guidance_ForPrefabs_33: -1233825492
+      Guidance_ForPrefabs_34: 880381148
+      Guidance_ForPrefabs_35: -1748311751
+      Guidance_ForPrefabs_36: 1193023461
+      Guidance_ForPrefabs_37: -715936503
+      Guidance_ForPrefabs_38: 332043363
+      Guidance_ForPrefabs_39: 656222194
+      Guidance_ForPrefabs_4: 762537718
+      Guidance_ForPrefabs_40: 550698002
+      Guidance_ForPrefabs_41: 939007587
+      Guidance_ForPrefabs_42: -983159201
+      Guidance_ForPrefabs_43: -2018226834
+      Guidance_ForPrefabs_44: -1306904976
+      Guidance_ForPrefabs_45: 808627595
+      Guidance_ForPrefabs_46: -325272495
+      Guidance_ForPrefabs_47: 1295247752
+      Guidance_ForPrefabs_48: -1112416924
+      Guidance_ForPrefabs_49: 338898142
+      Guidance_ForPrefabs_5: -405171054
+      Guidance_ForPrefabs_50: -945345575
+      Guidance_ForPrefabs_51: 603111405
+      Guidance_ForPrefabs_52: 9131331
+      Guidance_ForPrefabs_53: 738603448
+      Guidance_ForPrefabs_54: 438105959
+      Guidance_ForPrefabs_55: -1825647140
+      Guidance_ForPrefabs_56: 568260509
+      Guidance_ForPrefabs_57: 1693812988
+      Guidance_ForPrefabs_58: -1440263189
+      Guidance_ForPrefabs_59: -1395191772
+      Guidance_ForPrefabs_6: 1526420272
+      Guidance_ForPrefabs_60: 1155701530
+      Guidance_ForPrefabs_61: 1621294738
+      Guidance_ForPrefabs_62: -458310702
+      Guidance_ForPrefabs_63: -471734778
+      Guidance_ForPrefabs_64: 200287508
+      Guidance_ForPrefabs_65: 1875986641
+      Guidance_ForPrefabs_66: 821719309
+      Guidance_ForPrefabs_67: -700801909
+      Guidance_ForPrefabs_68: -512297246
+      Guidance_ForPrefabs_69: -2041483904
+      Guidance_ForPrefabs_7: -1373634145
+      Guidance_ForPrefabs_70: 2049154726
+      Guidance_ForPrefabs_71: 2001731183
+      Guidance_ForPrefabs_72: 1676359950
+      Guidance_ForPrefabs_73: 1702003066
+      Guidance_ForPrefabs_74: 922243826
+      Guidance_ForPrefabs_75: -567559407
+      Guidance_ForPrefabs_76: -105206055
+      Guidance_ForPrefabs_77: 1091727475
+      Guidance_ForPrefabs_78: -135251012
+      Guidance_ForPrefabs_79: -1132997745
+      Guidance_ForPrefabs_8: 1706545899
+      Guidance_ForPrefabs_80: -934627726
+      Guidance_ForPrefabs_81: 269090397
+      Guidance_ForPrefabs_82: -656355785
+      Guidance_ForPrefabs_83: -2081432037
+      Guidance_ForPrefabs_84: -1352528391
+      Guidance_ForPrefabs_85: -2003600467
+      Guidance_ForPrefabs_86: 1835287131
+      Guidance_ForPrefabs_87: 1170574222
+      Guidance_ForPrefabs_9: -687352797
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &816216731354068902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8427538814271013775}
+  m_Layer: 0
+  m_Name: SwingPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8427538814271013775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816216731354068902}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.437, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 106463083521763591}
+  m_Father: {fileID: 7063649998216673579}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2371316193253061126
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +171,7 @@ Transform:
   m_GameObject: {fileID: 6439910626036983480}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.5812712, w: 0.8137099}
-  m_LocalPosition: {x: -3.72, y: 1.61, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8.26, y: 8.26, z: 8.26}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -286,14 +318,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7401377963442277116}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.86, y: -0, z: 3.3}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.728, y: 0, z: 3.3}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4156209955706803345}
   - {fileID: 5176418363314703645}
-  m_Father: {fileID: 7063649998216673579}
+  m_Father: {fileID: 8427538814271013775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7495270131960863358
 GameObject:
@@ -458,7 +490,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4480659697699187445}
-  - {fileID: 106463083521763591}
+  - {fileID: 8427538814271013775}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4954268750313930919
@@ -563,15 +595,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingPoint: {fileID: 106463083521763591}
-  swingRange: 0.9
+  swingDistanceFromPivot: 0.9
+  swingRange: 0.8
   detectionRange: 10.8
-  attackDamage: 20
+  attackDamage: 10
+  attackHitDuration: 0.3
   attackCooldown: 0.5
+  combo3DamageMultiplier: 1.2
+  combo3RangeMultiplier: 1.2106537
+  attackBufferTime: 0.2
+  postCombo3Cooldown: 0.5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
   meleeWeapon: {fileID: 6439910626036983480}
-  animator: {fileID: 0}
+  swingPivot: {fileID: 8427538814271013775}
+  animator: {fileID: 3431465593987345487}
 --- !u!114 &7380229578531379278
 MonoBehaviour:
   m_ObjectHideFlags: 0

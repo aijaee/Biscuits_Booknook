@@ -20,13 +20,15 @@ MonoBehaviour:
     text: All done! The scribbles are gone.
     walkIn: 1
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Sir B. Cheese
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 9100000, guid: 72fcf1f1642c6b04b9c3adaf132e8274, type: 2}
     nameImage: {fileID: 21300000, guid: 3078039a58ee8754984fbc66a9382421, type: 3}
-    text: "Wow! I can see every word now. \u2018The Giving Tree\u2019 looks perfect!"
+    text: Wow! I can see every word now. '<b>The Giving Tree</b>' looks perfect!
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 0}
@@ -34,6 +36,7 @@ MonoBehaviour:
     text: Every story should be read and shared. Enjoy your reading, Sir Cheese.
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Sir B. Cheese
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 9100000, guid: 72fcf1f1642c6b04b9c3adaf132e8274, type: 2}
@@ -41,10 +44,12 @@ MonoBehaviour:
     text: "Thank you so much, Biscuit! You\u2019re amazing."
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 3279881bdf1484842986d380491a0351, type: 3}
     animatorController: {fileID: 0}
     nameImage: {fileID: 21300000, guid: c57f27e20edf34642a942929da7b4a13, type: 3}
-    text: "\u201CAnytime! Let\u2019s keep these stories safe from scribbles."
+    text: "Anytime! Let\u2019s keep these stories safe from scribbles."
     walkIn: 0
     walkOut: 1
+    playOpenBoxAnimation: 0

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d65186db4a01a4a81669d25d37f726, type: 3}
+  m_Name: Sisu_Level_1_Boss
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "Great! You\u2019ve made it here safely. Listen carefully\u2014you can\u2019t
+      hit him directly. <b><color=#0f60db>Reflect his ink projectiles and watch your
+      step for the falling ones</b></color>."
+    walkIn: 1
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Vandal
+    portraitSprite: {fileID: 7546044532336396947, guid: c911bb3691dab1d4eba5aa34efd4b705, type: 3}
+    animatorController: {fileID: 9100000, guid: 0c913540612e7ac4dbca28dfa011b715, type: 2}
+    nameImage: {fileID: 21300000, guid: a256e68b0fbc22c4f9ef2767f6c211a7, type: 3}
+    text: Reflect? Ha! Try dodging me, littel kats!
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "When he shifts to phase two, he\u2019ll build walls and dash around. <b><color=#0f60db>Bump
+      him into the room\u2019s edge, and he\u2019ll get stunned\u2014your opening.</b></color>"
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Vandal
+    portraitSprite: {fileID: 4219921650144853661, guid: b1a3d28494a444e49b8075ff841b9c8c, type: 3}
+    animatorController: {fileID: 9100000, guid: 0c913540612e7ac4dbca28dfa011b715, type: 2}
+    nameImage: {fileID: 21300000, guid: a256e68b0fbc22c4f9ef2767f6c211a7, type: 3}
+    text: Edges? Stunned? Bah, I improvise, kats be ready!
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "Take it slow, keep bouncing his attacks back, and wait for openings. You\u2019ll
+      do fine."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Vandal
+    portraitSprite: {fileID: 4219921650144853661, guid: b1a3d28494a444e49b8075ff841b9c8c, type: 3}
+    animatorController: {fileID: 9100000, guid: 0c913540612e7ac4dbca28dfa011b715, type: 2}
+    nameImage: {fileID: 21300000, guid: a256e68b0fbc22c4f9ef2767f6c211a7, type: 3}
+    text: HERE I COME LITTOL KATZ!!!
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "Uh oh..... Well, Best I go\u2026 wouldn\u2019t want to get in the way!"
+    walkIn: 0
+    walkOut: 1
+    playOpenBoxAnimation: 0

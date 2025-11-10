@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,11 +7,17 @@ using TMPro;
 
 public class DialogueController : MonoBehaviour
 {
+    [Header("Portrait Settings")]
     public PortraitController portraitController;
+    public Vector2 portraitFinalPosition = new Vector2(0f, 60f);
+    private float previousTimeScale = 1f;
+
     public GameObject dialogueRoot;
     public CanvasGroup canvasGroup;
     public Image fadeImage;
     public Image speakerNameImage;
+    private Sprite previousNameImage = null;
+    private Sprite previousPortraitSprite = null;
     public TMP_Text dialogueText;
     public Image nextIndicator;
     public float fadeDuration = 0.5f;
@@ -18,12 +25,32 @@ public class DialogueController : MonoBehaviour
     public bool IsRunning { get; private set; }
 
     private JoystickPlayerExample playerMovement;
+    private MeleeAttackController playerMeleeAttack;
+    private AStarPathfinder[] pathfinders;
+    private List<AStarPathfinder> disabledPathfinders = new List<AStarPathfinder>();
     private bool clickPressed = false;
     private bool skipRequested = false;
     private Coroutine typingCoroutine = null;
     private bool isTyping = false;
+    private Animator dialoguePortraitAnimator;
 
     public System.Action OnDialogueComplete;
+
+    private void Awake()
+    {
+        playerMeleeAttack = FindObjectOfType<MeleeAttackController>();
+        playerMovement = FindObjectOfType<JoystickPlayerExample>();
+        pathfinders = FindObjectsOfType<AStarPathfinder>();
+
+        if (speakerNameImage != null && speakerNameImage.GetComponent<CanvasGroup>() == null)
+            speakerNameImage.gameObject.AddComponent<CanvasGroup>();
+
+        if (dialogueText != null && dialogueText.GetComponent<CanvasGroup>() == null)
+            dialogueText.gameObject.AddComponent<CanvasGroup>();
+
+        if (portraitController != null && portraitController.GetComponent<CanvasGroup>() == null)
+            portraitController.gameObject.AddComponent<CanvasGroup>();
+    }
 
     void Update()
     {
@@ -36,13 +63,26 @@ public class DialogueController : MonoBehaviour
 
     public void StartDialogue(DialogueData data)
     {
-        if (IsRunning || data == null) return;
+        PauseGameForDialogue();
 
-        if (playerMovement == null)
-            playerMovement = FindObjectOfType<JoystickPlayerExample>();
+        if (IsRunning || data == null) return;
 
         if (playerMovement != null)
             playerMovement.enabled = false;
+
+        if (playerMeleeAttack != null)
+            playerMeleeAttack.enabled = false;
+
+        disabledPathfinders.Clear();
+        if (pathfinders != null)
+        {
+            foreach (var p in pathfinders)
+                if (p.enabled)
+                {
+                    p.enabled = false;
+                    disabledPathfinders.Add(p);
+                }
+        }
 
         dialogueRoot?.SetActive(true);
         StartCoroutine(RunDialogueSequence(data));
@@ -76,34 +116,76 @@ public class DialogueController : MonoBehaviour
             var line = data.lines[i];
 
             if (portraitController != null)
+            {
                 portraitController.SetCharacter(line.portraitSprite, line.animatorController);
 
-            if (line.walkIn && portraitController != null)
-            {
-                clickPressed = false;
-                skipRequested = false;
-                isTyping = false;
-                yield return StartCoroutine(WalkInCharacter());
+                CanvasGroup portraitGroup = portraitController.GetComponent<CanvasGroup>();
+                if (portraitGroup == null)
+                    portraitGroup = portraitController.gameObject.AddComponent<CanvasGroup>();
+
+                RectTransform portraitRect = portraitController.GetComponent<RectTransform>();
+                bool spriteChanged = previousPortraitSprite != line.portraitSprite;
+
+                if (line.walkIn)
+                {
+                    clickPressed = false;
+                    skipRequested = false;
+                    isTyping = false;
+                    yield return StartCoroutine(WalkInCharacter());
+                    previousPortraitSprite = line.portraitSprite;
+                }
+                else if (spriteChanged)
+                {
+                    portraitRect.anchoredPosition = portraitFinalPosition;
+                    portraitGroup.alpha = 0f;
+
+                    float t = 0f;
+                    float fadeDurationLocal = 0.5f;
+                    while (t < fadeDurationLocal)
+                    {
+                        t += Time.unscaledDeltaTime;
+                        portraitGroup.alpha = Mathf.Lerp(0f, 1f, t / fadeDurationLocal);
+                        yield return null;
+                    }
+                    portraitGroup.alpha = 1f;
+
+                    previousPortraitSprite = line.portraitSprite;
+                }
             }
 
             if (speakerNameImage != null)
                 yield return StartCoroutine(FadeNameImage(line.nameImage, 0.35f, true));
 
+            // Start typing the current line
             dialogueText.text = "";
             isTyping = true;
             skipRequested = false;
-            clickPressed = false;
-
-            portraitController?.SetTalking(true);
             typingCoroutine = StartCoroutine(TypeText(line.text));
             yield return new WaitUntil(() => !isTyping);
+
             portraitController?.SetTalking(false);
 
+            // Show next indicator and wait for click
             nextIndicator?.gameObject.SetActive(true);
             clickPressed = false;
             yield return new WaitUntil(() => clickPressed);
             nextIndicator?.gameObject.SetActive(false);
 
+            // Play open box animation if flagged for the NEXT line
+            if (line.playOpenBoxAnimation && portraitController != null)
+            {
+                Animator animator = portraitController.GetComponent<Animator>();
+                if (animator != null)
+                {
+                    animator.SetTrigger("openBox");
+                    // wait until animation finishes
+                    AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+                    float animDuration = state.length;
+                    yield return new WaitForSecondsRealtime(animDuration);
+                }
+            }
+
+            // Walk-out if flagged
             if (line.walkOut && portraitController != null)
             {
                 clickPressed = false;
@@ -117,9 +199,15 @@ public class DialogueController : MonoBehaviour
 
         dialogueRoot?.SetActive(false);
 
-        if (playerMovement != null)
-            playerMovement.enabled = true;
+        foreach (var p in disabledPathfinders)
+            if (p != null)
+                p.enabled = true;
 
+        disabledPathfinders.Clear();
+
+        ResumeGameAfterDialogue();
+        previousNameImage = null;
+        previousPortraitSprite = null;
         IsRunning = false;
         OnDialogueComplete?.Invoke();
     }
@@ -171,7 +259,7 @@ public class DialogueController : MonoBehaviour
                     i = len;
                     break;
                 }
-                elapsed += Time.deltaTime;
+                elapsed += Time.unscaledDeltaTime;
                 yield return null;
             }
 
@@ -192,7 +280,7 @@ public class DialogueController : MonoBehaviour
 
         while (t < duration)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             float alpha = Mathf.Lerp(from, to, Mathf.Clamp01(t / duration));
             if (canvasGroup != null) canvasGroup.alpha = alpha;
             if (fadeImage != null)
@@ -219,7 +307,7 @@ public class DialogueController : MonoBehaviour
         Canvas parentCanvas = portraitRect.GetComponentInParent<Canvas>();
         RectTransform canvasRect = parentCanvas.GetComponent<RectTransform>();
 
-        Vector2 finalPos = new Vector2(0f, 60f);
+        Vector2 finalPos = portraitFinalPosition;
         Vector2 startPos = finalPos + new Vector2(-canvasRect.rect.width, 0f);
         portraitRect.anchoredPosition = startPos;
 
@@ -238,7 +326,7 @@ public class DialogueController : MonoBehaviour
 
         while (t < duration)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             float eased = Mathf.SmoothStep(0f, 1f, t / duration);
             float bobOffset = Mathf.Sin(t * bobFrequency) * bobAmplitude * (1 - eased);
             float rotOffset = Mathf.Sin(t * bobFrequency * 0.8f) * rotAmplitude * (1 - eased);
@@ -264,7 +352,7 @@ public class DialogueController : MonoBehaviour
         Canvas parentCanvas = portraitRect.GetComponentInParent<Canvas>();
         RectTransform canvasRect = parentCanvas.GetComponent<RectTransform>();
 
-        Vector2 startPos = new Vector2(0f, 60f);
+        Vector2 startPos = portraitFinalPosition;
         Vector2 endPos = startPos + new Vector2(canvasRect.rect.width, 0f);
 
         CanvasGroup portraitGroup = portraitRect.GetComponent<CanvasGroup>();
@@ -281,7 +369,7 @@ public class DialogueController : MonoBehaviour
 
         while (t < duration)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             float eased = Mathf.SmoothStep(0f, 1f, t / duration);
             float intensity = eased;
             float bobOffset = Mathf.Sin(t * bobFrequency) * bobAmplitude * intensity;
@@ -304,6 +392,9 @@ public class DialogueController : MonoBehaviour
     {
         if (speakerNameImage == null) yield break;
 
+        if (previousNameImage == newSprite) yield break;
+        previousNameImage = newSprite;
+
         CanvasGroup nameGroup = speakerNameImage.GetComponent<CanvasGroup>();
         if (nameGroup == null)
             nameGroup = speakerNameImage.gameObject.AddComponent<CanvasGroup>();
@@ -322,7 +413,7 @@ public class DialogueController : MonoBehaviour
 
         while (t < duration)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             float alpha = Mathf.Lerp(startAlphaName, 0f, t / duration);
             nameGroup.alpha = alpha;
             if (textGroup != null)
@@ -336,7 +427,7 @@ public class DialogueController : MonoBehaviour
         t = 0f;
         while (t < duration)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             nameGroup.alpha = Mathf.Lerp(0f, 1f, t / duration);
             yield return null;
         }
@@ -344,5 +435,27 @@ public class DialogueController : MonoBehaviour
 
         if (textGroup != null)
             textGroup.alpha = 1f;
+    }
+
+    private void PauseGameForDialogue()
+    {
+        previousTimeScale = Time.timeScale;
+        Time.timeScale = 0f;
+
+        if (portraitController != null && portraitController.portraitAnimator != null)
+        {
+            dialoguePortraitAnimator = portraitController.portraitAnimator;
+            dialoguePortraitAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        }
+    }
+
+    private void ResumeGameAfterDialogue()
+    {
+        Time.timeScale = previousTimeScale;
+
+        if (dialoguePortraitAnimator != null)
+            dialoguePortraitAnimator.updateMode = AnimatorUpdateMode.Normal;
+
+        dialoguePortraitAnimator = null;
     }
 }

@@ -11,4 +11,6 @@ public class DialogueLine
     public string text;
     public bool walkIn;
     public bool walkOut;
+
+    public bool playOpenBoxAnimation;
 }

@@ -23,16 +23,23 @@ public class Enemy_HealthAndDamage : MonoBehaviour
     {
         if (enemyController != null && enemyController.isDead) return;
 
-        currentHealth -= damage;
+        int newHealth = currentHealth - damage;
+        bool willDie = newHealth <= 0;
 
-        if (currentHealth <= 0)
+        // If enemy survives, apply knockback
+        if (!willDie)
         {
-            Die();
-            return;
+            currentHealth = newHealth;
+            if (damageEffects != null)
+                damageEffects.PlayDamageEffects(hitDirection);
         }
-
-        if (damageEffects != null)
-            damageEffects.PlayDamageEffects(hitDirection);
+        else
+        {
+            currentHealth = 0;
+            if (damageEffects != null)
+                damageEffects.StopAllEffectsImmediately();
+            Die();
+        }
     }
 
     private void Die()

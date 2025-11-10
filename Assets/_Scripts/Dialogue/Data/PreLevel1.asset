@@ -17,11 +17,12 @@ MonoBehaviour:
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 9100000, guid: 0bd5f34aaa2626549b7961cd5c29373b, type: 2}
     nameImage: {fileID: 21300000, guid: d5deadc078a914a448fb88bc4334fa60, type: 3}
-    text: "Biscuit\u2026 I found this book called \u2018<i>Exploring Your Favorite
-      Seafoods and Where They Live.</i>\u2019 But\u2026 I can\u2019t read it! There
+    text: "Biscuit\u2026 I found this book called \u2018<b>Exploring Your Favorite
+      Seafoods and Where They Live.</b>\u2019 But\u2026 I can\u2019t read it! There
       are scribbles all over the pages!"
     walkIn: 1
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 0}
@@ -29,6 +30,7 @@ MonoBehaviour:
     text: Scribbles again? Oh no! They must be trying to hide the stories.
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Lottie
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 9100000, guid: 0bd5f34aaa2626549b7961cd5c29373b, type: 2}
@@ -36,6 +38,7 @@ MonoBehaviour:
     text: "I really want to read it, but I can\u2019t understand anything\u2026"
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 0}
@@ -44,6 +47,7 @@ MonoBehaviour:
       away!"
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Lottie
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 9100000, guid: 0bd5f34aaa2626549b7961cd5c29373b, type: 2}
@@ -51,6 +55,7 @@ MonoBehaviour:
     text: "You will? That\u2019s awesome!"
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0
   - speakerName: Biscuit
     portraitSprite: {fileID: 21300000, guid: 33bd663ffdc92ff4997502d7b732102e, type: 3}
     animatorController: {fileID: 0}
@@ -59,3 +64,4 @@ MonoBehaviour:
       adventures."
     walkIn: 0
     walkOut: 0
+    playOpenBoxAnimation: 0

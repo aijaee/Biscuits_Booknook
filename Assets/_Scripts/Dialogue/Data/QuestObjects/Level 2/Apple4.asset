@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d65186db4a01a4a81669d25d37f726, type: 3}
+  m_Name: Apple4
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Biscuit
+    portraitSprite: {fileID: -7061908773405209524, guid: c982c885fd7d60d47b30e8c2c644d806, type: 3}
+    animatorController: {fileID: 0}
+    nameImage: {fileID: 21300000, guid: c57f27e20edf34642a942929da7b4a13, type: 3}
+    text: "Can\u2019t say no to that one!"
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
