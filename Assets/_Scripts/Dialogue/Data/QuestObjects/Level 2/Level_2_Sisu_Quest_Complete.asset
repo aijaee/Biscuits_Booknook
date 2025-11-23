@@ -17,7 +17,7 @@ MonoBehaviour:
     portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
     animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
     nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
-    text: You did well, Biscuit. Your efforts deserve more than words.
+    text: You did well, Biscuit. Another task finished without complaint.
     walkIn: 0
     walkOut: 0
     playOpenBoxAnimation: 0
@@ -25,8 +25,8 @@ MonoBehaviour:
     portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
     animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
     nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
-    text: "Step lightly\u2014every choice here is a trade, and some are worth <b><color=#0f60db>more</b></color>
-      than they seem."
+    text: "I pay attention to how people move, and you\u2019re fast\u2014but you\u2019re
+      holding back between those bursts."
     walkIn: 0
     walkOut: 0
     playOpenBoxAnimation: 0
@@ -34,7 +34,35 @@ MonoBehaviour:
     portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
     animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
     nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
-    text: The way forward is <b><color=#0f60db>open</color></b>. Be careful.
+    text: "So here\u2019s something useful\u2014learn to recover quicker after a
+      dash. Move, breathe, and get right back into the fight."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 1
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "<b><color=#0f60db>I\u2019ve shortened the time between your dashes</b></color>\u2014make
+      it count. Consider it earned, not given. I don\u2019t hand out advantages for
+      free."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "Now then\u2026the path ahead has <b><color=#0f60db>opened</b></color>
+      again. Be careful."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "Step forward when you\u2019re ready, and <b><color=#0f60db>mind your footing.</b></color>"
     walkIn: 0
     walkOut: 1
-    playOpenBoxAnimation: 1
+    playOpenBoxAnimation: 0

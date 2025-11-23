@@ -150,15 +150,15 @@ public class BossRoomNPC : MonoBehaviour, IInteractable
                 }
                 break;
 
-            case UpgradeType.ReduceDashCooldown:
-                if (dash != null)
-                {
-                    dash.dashCooldown = Mathf.Max(0.1f, dash.dashCooldown - upgradeToGive.value);
-                    PlayerPrefs.SetFloat("DashCooldown", dash.dashCooldown);
-                    PlayerPrefs.Save();
-                    Debug.Log("Dash cooldown reduced and saved!");
-                }
-                break;
+        case UpgradeType.ReduceDashCooldown:
+            if (dash != null)
+            {
+                dash.dashCooldown = upgradeToGive.value;
+                PlayerPrefs.SetFloat("DashCooldown", dash.dashCooldown);
+                PlayerPrefs.Save();
+                Debug.Log($"Dash cooldown set to {dash.dashCooldown} and saved!");
+            }
+            break;
         }
     }
 

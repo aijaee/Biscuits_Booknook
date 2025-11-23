@@ -25,8 +25,8 @@ MonoBehaviour:
     portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
     animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
     nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
-    text: "Name\u2019s <b><color=#0f60db>Sisu</b></color>. I travel these halls trading
-      wares and wisdom."
+    text: "Name\u2019s <b><color=#0f60db>Sisu</b></color>\u2014merchant, wanderer,
+      and occasional problem-solver. I don\u2019t offer help to just anyone."
     walkIn: 0
     walkOut: 0
     playOpenBoxAnimation: 0
@@ -34,8 +34,9 @@ MonoBehaviour:
     portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
     animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
     nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
-    text: "You probably noticed I kept quiet at first\u2026 I like to see who\u2019s
-      capable before I strike up a conversation\u2014<b><color=#f29900>or a deal.</b></color>"
+    text: "I stayed quiet earlier because I like to see who\u2019s worth trading
+      time or skill with before I strike up a conversation\u2014<b><color=#f29900>or
+      a deal.</b></color>"
     walkIn: 0
     walkOut: 0
     playOpenBoxAnimation: 0
@@ -43,8 +44,44 @@ MonoBehaviour:
     portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
     animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
     nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
-    text: The path ahead is now <b><color=#0f60db>open</color></b>. May fortune guide
-      you beyond this chamber.
+    text: "Watching you fight, though\u2014you're landing solid blows, but you\u2019re
+      stopping right before the real payoff."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "So I\u2019m giving you something I usually keep for paying customers:
+      <b><color=#0f60db>an extra strike.</b></color> Hits harder, reaches a bit further,
+      and lets you finish strong once your momentum is built."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 1
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "Consider it a <b><color=#f29900>\u201Cfair trade\u201D</b></color> for
+      getting the job done."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "Now that you\u2019ve got that technique, the way forward has opened."
+    walkIn: 0
+    walkOut: 0
+    playOpenBoxAnimation: 0
+  - speakerName: Sisu
+    portraitSprite: {fileID: 21300000, guid: c36c0caf0c9c9234b9f3021c71580f70, type: 3}
+    animatorController: {fileID: 9100000, guid: 0670a23ec18c2ed438a63523041ad31c, type: 2}
+    nameImage: {fileID: 21300000, guid: a233f0dacbb7aad44b4ecc31921969d2, type: 3}
+    text: "A <b><color=#0f60db>portal is waiting ahead</b></color>\u2014step through
+      when you\u2019re ready."
     walkIn: 0
     walkOut: 1
-    playOpenBoxAnimation: 1
+    playOpenBoxAnimation: 0
