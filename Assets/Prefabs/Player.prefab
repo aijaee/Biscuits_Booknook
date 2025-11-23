@@ -161,7 +161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4156209955706803345
 Transform:
   m_ObjectHideFlags: 0
@@ -601,8 +601,11 @@ MonoBehaviour:
   attackDamage: 10
   attackHitDuration: 0.3
   attackCooldown: 0.5
+  maxComboStep: 3
   combo3DamageMultiplier: 1.2
   combo3RangeMultiplier: 1.2106537
+  combo4DamageMultiplier: 1.5
+  combo4RangeMultiplier: 1.2
   attackBufferTime: 0.2
   postCombo3Cooldown: 0.5
   enemyLayers:

@@ -36,6 +36,9 @@ public class DashController : MonoBehaviour
 
         if (animator == null)
             animator = GetComponent<Animator>();
+
+        if (PlayerPrefs.HasKey("DashCooldown"))
+            dashCooldown = PlayerPrefs.GetFloat("DashCooldown");
     }
 
     private void Update()

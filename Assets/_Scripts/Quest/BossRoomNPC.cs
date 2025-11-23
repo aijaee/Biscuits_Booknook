@@ -18,6 +18,10 @@ public class BossRoomNPC : MonoBehaviour, IInteractable
     public Vector3 portalSpawnOffset = new Vector3(0, -2f, 0);
     public float portalFadeDuration = 1f;
 
+    [Header("Player Upgrade")]
+    public PlayerUpgrade upgradeToGive;
+
+
     bool playerInRange;
     bool hasSpawnedPortal;
 
@@ -73,10 +77,11 @@ public class BossRoomNPC : MonoBehaviour, IInteractable
             dialogueController.OnDialogueComplete -= OnDialogueFinished;
 
         bool questCompleted = questTracker != null && questTracker.objectives != null &&
-                              System.Array.TrueForAll(questTracker.objectives, o => o.currentAmount >= o.targetAmount);
+                            System.Array.TrueForAll(questTracker.objectives, o => o.currentAmount >= o.targetAmount);
 
         if (questCompleted)
         {
+            GiveUpgrade();
             StartCoroutine(HandlePortalSpawn());
             StartCoroutine(RemoveNPCAfterDialogue());
         }
@@ -123,6 +128,37 @@ public class BossRoomNPC : MonoBehaviour, IInteractable
                 tmp.color = originalTMPColor;
 
             hasSpawnedPortal = true;
+        }
+    }
+
+    private void GiveUpgrade()
+    {
+        if (upgradeToGive == null) return;
+
+        MeleeAttackController melee = FindObjectOfType<MeleeAttackController>();
+        DashController dash = FindObjectOfType<DashController>();
+
+        switch (upgradeToGive.upgradeType)
+        {
+            case UpgradeType.AddStrongAttack:
+                if (melee != null)
+                {
+                    melee.maxComboStep = 4;
+                    PlayerPrefs.SetInt("UnlockedCombo4", 1);
+                    PlayerPrefs.Save();
+                    Debug.Log("Unlocked 4th attack and saved!");
+                }
+                break;
+
+            case UpgradeType.ReduceDashCooldown:
+                if (dash != null)
+                {
+                    dash.dashCooldown = Mathf.Max(0.1f, dash.dashCooldown - upgradeToGive.value);
+                    PlayerPrefs.SetFloat("DashCooldown", dash.dashCooldown);
+                    PlayerPrefs.Save();
+                    Debug.Log("Dash cooldown reduced and saved!");
+                }
+                break;
         }
     }
 
