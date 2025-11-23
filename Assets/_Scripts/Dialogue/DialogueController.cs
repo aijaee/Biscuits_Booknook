@@ -160,15 +160,10 @@ public class DialogueController : MonoBehaviour
             dialogueText.text = "";
             isTyping = true;
             skipRequested = false;
-
-            if (portraitController != null && portraitController.portraitAnimator != null)
-                portraitController.portraitAnimator.SetBool("isTalking", true);
-
             typingCoroutine = StartCoroutine(TypeText(line.text));
             yield return new WaitUntil(() => !isTyping);
 
-            if (portraitController != null && portraitController.portraitAnimator != null)
-                portraitController.portraitAnimator.SetBool("isTalking", false);
+            portraitController?.SetTalking(false);
 
             // Show next indicator and wait for click
             nextIndicator?.gameObject.SetActive(true);
