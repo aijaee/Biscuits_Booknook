@@ -13,10 +13,14 @@ public class MeleeAttackController : MonoBehaviour
     public int attackDamage = 40;
     public float attackHitDuration = 0.3f;
     public float attackCooldown = 0.6f;
+    [Header("Combo Settings")]
+    public int maxComboStep = 3;
     public float combo3DamageMultiplier = 1.5f;
     public float combo3RangeMultiplier = 10f / 8.26f;
+    public float combo4DamageMultiplier = 2f;
+    public float combo4RangeMultiplier = 1.2f;
     public float attackBufferTime = 0.2f;
-    public float postCombo3Cooldown = 0.5f;
+    public float lastHitCooldown = 0.5f;
 
     [Header("References")]
     public LayerMask enemyLayers;
@@ -39,6 +43,9 @@ public class MeleeAttackController : MonoBehaviour
     private void Awake()
     {
         enemyLayers |= LayerMask.GetMask("Boss");
+
+        if (PlayerPrefs.GetInt("UnlockedCombo4", 0) == 1)
+            maxComboStep = 4;
     }
 
     private void Update()
@@ -108,14 +115,22 @@ public class MeleeAttackController : MonoBehaviour
         if (Time.time - lastAttackTime < attackCooldown) return;
 
         comboStep = (Time.time - lastComboTime > 0.8f) ? 1 : comboStep + 1;
-        if (comboStep > 3) comboStep = 1;
+        if (comboStep > maxComboStep) comboStep = 1;
 
         float damage = attackDamage;
         float aoeRadius = swingRange;
         float swingDistance = swingDistanceFromPivot;
-        
+
         if (comboStep == 3)
+        {
             aoeRadius *= combo3RangeMultiplier;
+            damage = Mathf.RoundToInt(damage * combo3DamageMultiplier);
+        }
+        else if (comboStep == 4)
+        {
+            aoeRadius *= combo4RangeMultiplier;
+            damage = Mathf.RoundToInt(damage * combo4DamageMultiplier);
+        }
 
         Vector2 direction = useMouseAim ? mouseDirection : GetClosestDirection() ?? lastMoveDirection;
         PositionSwingPoint(direction, swingDistance);
@@ -127,8 +142,8 @@ public class MeleeAttackController : MonoBehaviour
         lastComboTime = Time.time;
         lastAttackTime = Time.time;
 
-        if (comboStep == 3)
-            lastAttackTime += postCombo3Cooldown;
+        if (comboStep == maxComboStep)
+            lastAttackTime += lastHitCooldown;
 
         StartCoroutine(HitEnemiesDuringAttack(damage, aoeRadius));
     }

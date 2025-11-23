@@ -296,6 +296,7 @@ MonoBehaviour:
   portalPrefab: {fileID: 8188768632608287906, guid: e22339e41926a6f46bff71c8c69b19d1, type: 3}
   portalSpawnOffset: {x: 0, y: -1, z: 0}
   portalFadeDuration: 1
+  upgradeToGive: {fileID: 11400000, guid: 3f69409cfa2bc60499603169d40bf6e8, type: 2}
 --- !u!95 &-1984033349251140034
 Animator:
   serializedVersion: 7
