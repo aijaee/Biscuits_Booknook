@@ -7,8 +7,8 @@ public class ResetPlayerPrefsOnSlash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Slash))
         {
             PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("HasPlayedBefore", 0);
             PlayerPrefs.Save();
-            Debug.Log("All PlayerPrefs have been cleared.");
         }
     }
 }
