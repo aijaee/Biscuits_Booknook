@@ -603,11 +603,11 @@ MonoBehaviour:
   attackCooldown: 0.5
   maxComboStep: 3
   combo3DamageMultiplier: 1.2
-  combo3RangeMultiplier: 1.2106537
-  combo4DamageMultiplier: 1.5
+  combo3RangeMultiplier: 1.2
+  combo4DamageMultiplier: 3.5
   combo4RangeMultiplier: 1.2
   attackBufferTime: 0.2
-  postCombo3Cooldown: 0.5
+  lastHitCooldown: 0.5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
